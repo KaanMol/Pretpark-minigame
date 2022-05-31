@@ -10,6 +10,7 @@
     <ImageView
         android:id="@+id/ItemImage"
         style="@style/RecycleShopImage"
+        android:clickable="true"
         app:srcCompat="@drawable/burger" />
 
     <TextView

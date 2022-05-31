@@ -2,7 +2,6 @@ package com.a2.essteling;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -11,7 +10,7 @@ import android.view.View;
 
 import java.util.LinkedList;
 
-public class ShopActivity extends AppCompatActivity {
+public class ShopActivity extends AppCompatActivity implements ShopItemListener {
     private static final String LOG_TAG = ShopActivity.class.getSimpleName();
     private RecyclerView mRecyclerView;
     private ShopListAdapter mAdapter;
@@ -39,7 +38,7 @@ public class ShopActivity extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.ShopRecyclerView);
 
-        mAdapter = new ShopListAdapter(this, items);
+        mAdapter = new ShopListAdapter(this, items, this);
 
         mRecyclerView.setAdapter(mAdapter);
 
@@ -50,4 +49,10 @@ public class ShopActivity extends AppCompatActivity {
         Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);
 
-    }}
+    }
+
+    @Override
+    public void onItemClicked(ShopItem item) {
+        System.out.println(item.getName());
+    }
+}

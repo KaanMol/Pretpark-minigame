@@ -1,6 +1,8 @@
 package com.a2.essteling;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,20 +12,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.LinkedList;
 
 public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopViewHolder> {
     private static final String LOG_TAG = ShopListAdapter.class.getSimpleName();
     private LayoutInflater mInflater;
     private final LinkedList<ShopItem> mShopItems;
+    private ShopItemListener listener;
 
 
 
-    public ShopListAdapter(Context context, LinkedList<ShopItem> mShopItems) {
+    public ShopListAdapter(Context context, LinkedList<ShopItem> mShopItems, ShopItemListener listener) {
         this.mInflater = LayoutInflater.from(context);
         this.mShopItems = mShopItems;
+        this.listener = listener;
     }
 
     @NonNull
@@ -33,11 +35,21 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
         return new ShopViewHolder(mShopView, this);
     }
 
+    @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
         holder.ShopItemName.setText(mShopItems.get(position).getName());
         holder.ShopItemPrice.setText(mShopItems.get(position).getPrice());
         holder.ShopItemImage.setImageResource(mShopItems.get(position).getImage());
+
+        holder.ShopItemImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(LOG_TAG, view.toString() + " Button clicked!");
+                listener.onItemClicked(mShopItems.get(position));
+
+            }
+        });
     }
 
     @Override
