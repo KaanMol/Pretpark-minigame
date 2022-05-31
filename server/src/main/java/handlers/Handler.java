@@ -111,6 +111,7 @@ public abstract class Handler implements HttpHandler {
 
     private void reply(int status, String response) throws IOException {
         exchange.sendResponseHeaders(status, response.length());
+        exchange.getResponseHeaders().set("Content-Type", "application/json");
         exchange.getResponseBody().write(response.getBytes());
         exchange.getResponseBody().close();
     }
