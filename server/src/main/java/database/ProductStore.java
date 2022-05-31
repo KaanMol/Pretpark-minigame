@@ -13,18 +13,18 @@ public class ProductStore {
     public ProductStore() {
         this.products = new ArrayList<>();
 
-        create("Fries", 10);
-        create("Coke", 5);
-        create("Coffee", 10);
-        create("Tea", 10);
-        create("Ice cream", 20);
-        create("Sandwich", 15);
-        create("Cake", 30);
-        create("Cupcake", 15);
+        create("Fries", "404.jpeg", "Description",10);
+        create("Coke", "404.jpeg", "Description",5);
+        create("Coffee", "404.jpeg", "Description",10);
+        create("Tea", "404.jpeg", "Description",10);
+        create("Ice cream", "404.jpeg", "Description",20);
+        create("Sandwich", "404.jpeg", "Description",15);
+        create("Cake", "404.jpeg", "Description",30);
+        create("Cupcake", "404.jpeg", "Description", 15);
     }
 
-    public Product create(String name, int price) {
-        Product product = new Product(products.size() + 1 + "", name, price);
+    public Product create(String name, String image, String description, int price) {
+        Product product = new Product(products.size() + 1 + "", name, image, description, price);
         products.add(product);
         return product;
     }
