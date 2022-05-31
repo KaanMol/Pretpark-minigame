@@ -62,9 +62,7 @@ public class Logger {
             StackTraceElement[] trace = exception.getStackTrace();
 
             int stackCounter = 0;
-            for (int i = 0, traceLength = trace.length; i < traceLength; i++) {
-                StackTraceElement stack = trace[i];
-
+            for (StackTraceElement stack : trace) {
                 if (stack.getClassName().startsWith("logging") || stack.getClassName().startsWith("java.lang")) {
                     continue;
                 }
@@ -137,24 +135,14 @@ public class Logger {
     }
 
     private static String getColorCode(LogLevel level) {
-        switch (level) {
-            case DEBUG:
-                return gray;
-
-            case INFO:
-                return blue;
-
-            case WARN:
-                return yellow;
-
-            case ERROR:
-                return red;
-
-            case FATAL:
-                return magenta;
-        }
-
-        return "";
+        // rust switch?!
+        return switch (level) {
+            case DEBUG -> gray;
+            case INFO -> blue;
+            case WARN -> yellow;
+            case ERROR -> red;
+            case FATAL -> magenta;
+        };
     }
 
     public static void addListener(LogListener listener) {
@@ -162,17 +150,13 @@ public class Logger {
     }
 
     private static String buildStackTraceElement(StackTraceElement stack) {
-        StringBuilder builder = new StringBuilder();
-
-        builder.append(cyan);
-        builder.append(stack.getClassName());
-        builder.append(gray);
-        builder.append(".");
-        builder.append(green);
-        builder.append(stack.getMethodName());
-        builder.append(gray);
-        builder.append("()");
-
-        return builder.toString();
+        return  cyan +
+                stack.getClassName() +
+                gray +
+                "." +
+                green +
+                stack.getMethodName() +
+                gray +
+                "()";
     }
 }
