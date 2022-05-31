@@ -37,6 +37,8 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
         items.add(new ShopItem("Cola", "6 punten", R.drawable.cola));
         items.add(new ShopItem("Fanta", "6 punten", R.drawable.fanta));
         items.add(new ShopItem("Pepsi", "6 punten", R.drawable.pepsi));
+        items.add(new ShopItem("Ashizon's Paprika", "69 punten", R.drawable.ashizons_paprika_logo));
+        items.add(new ShopItem("test", "test"));
 
         //get the recyclerview
         mRecyclerView = findViewById(R.id.ShopRecyclerView);
@@ -55,5 +57,9 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
     @Override
     public void onItemClicked(ShopItem item) {
         System.out.println(item.getName());
+        Intent intent = new Intent(this,PurchaseActivity.class);
+        intent.putExtra("item", item);
+
+        startActivity(intent);
     }
 }

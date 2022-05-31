@@ -1,6 +1,8 @@
 package com.a2.essteling;
 
-public class ShopItem {
+import java.io.Serializable;
+
+public class ShopItem implements Serializable {
     private String name;
     private String price;
 
@@ -19,6 +21,12 @@ public class ShopItem {
         this.name = name;
         this.price = price;
         this.image = imageID;
+    }
+
+    public ShopItem(String name, String price) {
+        this.name = name;
+        this.price = price;
+        this.image = R.drawable.ashizons_paprika_logo;
     }
 
     public String getName() {

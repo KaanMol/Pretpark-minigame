@@ -11,7 +11,7 @@
         android:id="@+id/ItemImage"
         style="@style/RecycleShopImage"
         android:clickable="true"
-        app:srcCompat="@drawable/burger" />
+        app:srcCompat="@drawable/ashizons_paprika_logo" />
 
     <TextView
         android:id="@+id/itemName"
