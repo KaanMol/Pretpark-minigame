@@ -20,7 +20,7 @@ public class PointsHandler extends Handler{
         } else if (cardId != null) {
             return getByCardId(cardId);
         } else {
-            return error("Missing parameters accountId or cardId");
+            return error("Missing parameter; accountId or cardId");
         }
     }
 

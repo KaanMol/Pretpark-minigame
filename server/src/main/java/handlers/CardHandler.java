@@ -5,12 +5,32 @@ import domain.Card;
 import http.HttpResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 public class CardHandler extends Handler {
     @Override
     protected HttpResponse get() throws IOException {
         String cardId = getParameter("cardId");
+        String accountId = getParameter("accountId");
 
+        if (cardId != null) {
+            return getCardById(cardId);
+        } else if (accountId != null) {
+            return getCardsByAccount(accountId);
+        } else {
+            return error("Missing parameter; accountId or cardId");
+        }
+    }
+
+    private HttpResponse getCardsByAccount(String accountId) throws IOException {
+        Account account = getStore().accounts().findOrCreate(accountId);
+
+        List<Card> cards = getStore().cards().findByAccount(account);
+
+        return ok(cards);
+    }
+
+    private HttpResponse getCardById(String cardId) throws IOException {
         Card card = getStore().cards().find(cardId);
 
         if (card == null) {
