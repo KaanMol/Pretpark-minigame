@@ -52,4 +52,13 @@ public class AccountStore {
         }
         return null;
     }
+
+    public List<Account> all() {
+        return accounts;
+    }
+
+    public void set(List<Account> accounts) {
+        this.accounts.clear();
+        this.accounts.addAll(accounts);
+    }
 }

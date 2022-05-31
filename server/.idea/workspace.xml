@@ -24,6 +24,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/PointsHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/http/HttpMethod.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/http/HttpResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/FileManager.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/LogLevel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/LogListener.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/Logger.java" afterDir="false" />

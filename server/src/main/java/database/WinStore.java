@@ -33,4 +33,13 @@ public class WinStore {
         }
         return result;
     }
+
+    public List<Win> all() {
+        return wins;
+    }
+
+    public void set(List<Win> wins) {
+        this.wins.clear();
+        this.wins.addAll(wins);
+    }
 }

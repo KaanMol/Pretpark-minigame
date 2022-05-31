@@ -56,4 +56,13 @@ public class CardStore {
             }
         }
     }
+
+    public List<Card> all() {
+        return cards;
+    }
+
+    public void set(List<Card> cards) {
+        this.cards.clear();
+        this.cards.addAll(cards);
+    }
 }
