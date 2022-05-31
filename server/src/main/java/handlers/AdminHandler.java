@@ -1,6 +1,7 @@
 package handlers;
 
 import http.HttpResponse;
+import http.JsonHttpResponse;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -8,7 +9,7 @@ import java.util.Locale;
 public class AdminHandler extends Handler {
     @Override
     protected HttpResponse get() throws IOException {
-        return null;
+        return error("Not implemented");
     }
 
     @Override
@@ -27,11 +28,11 @@ public class AdminHandler extends Handler {
 
     @Override
     protected HttpResponse put() throws IOException {
-        return null;
+        return error("Not implemented");
     }
 
     @Override
     protected HttpResponse delete() throws IOException {
-        return null;
+        return error("Not implemented");
     }
 }
