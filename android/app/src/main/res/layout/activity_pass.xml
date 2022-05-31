@@ -6,4 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".PassActivity">
 
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/layout_title"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputEditText"
+        app:layout_constraintEnd_toStartOf="@+id/textInputEditText"
+        app:layout_constraintTop_toTopOf="@+id/textInputEditText" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputEditText2"
+        app:layout_constraintEnd_toStartOf="@+id/textInputEditText2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="253dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="165dp">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="285dp">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="127dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
