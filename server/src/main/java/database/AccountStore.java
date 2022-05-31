@@ -36,6 +36,14 @@ public class AccountStore {
         }
     }
 
+    public Account findOrCreate(String id) {
+        Account account = find(id);
+        if (account == null) {
+            account = create(id);
+        }
+        return account;
+    }
+
     public Account find(String id) {
         for (Account account : accounts) {
             if (account.accountId().equals(id)) {
