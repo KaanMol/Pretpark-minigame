@@ -2,6 +2,7 @@ package database;
 
 import domain.Account;
 import domain.Card;
+import logging.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,14 @@ public class CardStore {
     }
 
     public Card create(String id, Account account) {
-        Card card = new Card(id, account.accountId());
+        Card card = find(id);
+        if (card != null) {
+            return card;
+        }
+
+        Logger.debug("Creating card with id " + id);
+
+        card = new Card(id, account.accountId());
         cards.add(card);
         return card;
     }
@@ -41,6 +49,8 @@ public class CardStore {
     public void delete(String id) {
         for (Card card : cards) {
             if (card.cardId().equals(id)) {
+                Logger.debug("Deleting card with id " + id);
+
                 cards.remove(card);
                 return;
             }

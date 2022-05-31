@@ -2,8 +2,10 @@ package database;
 
 import domain.Card;
 import domain.Win;
+import logging.Logger;
 
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,9 @@ public class WinStore {
     }
 
     public Win create(String gameId, Card card, LocalDateTime timestamp, int points) {
-        Win win = new Win(gameId, card.cardId(), timestamp, points);
+        Logger.debug("Creating win for cardId " + card.cardId() + " with gameId " + gameId);
+
+        Win win = new Win(gameId, card.cardId(), timestamp.toString(), points);
         wins.add(win);
         return win;
     }
