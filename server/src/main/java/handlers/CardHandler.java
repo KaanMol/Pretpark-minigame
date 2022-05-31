@@ -53,12 +53,7 @@ public class CardHandler extends Handler {
             return conflict("Card already registered");
         }
 
-        Account account = getStore().accounts().find(accountId);
-
-        if(account == null) {
-            return conflict("Account not registered");
-        }
-
+        Account account = getStore().accounts().findOrCreate(accountId);
         Card card = getStore().cards().create(cardId, account);
 
         return ok(card);
