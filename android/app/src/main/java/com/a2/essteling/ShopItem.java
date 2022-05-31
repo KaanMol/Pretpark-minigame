@@ -3,10 +3,20 @@ package com.a2.essteling;
 public class ShopItem {
     private String name;
     private String price;
+    private int image;
 
-    public ShopItem(String name, String price) {
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public ShopItem(String name, String price, int imageID) {
         this.name = name;
         this.price = price;
+        this.image = imageID;
     }
 
     public String getName() {

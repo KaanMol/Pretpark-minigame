@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/ItemImage"
-        app:srcCompat="?android:attr/galleryItemBackground"
-        style="@style/RecycleShopImage" />
+        style="@style/RecycleShopImage"
+        app:srcCompat="@drawable/burger" />
 
     <TextView
         android:id="@+id/itemName"

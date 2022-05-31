@@ -37,6 +37,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
         holder.ShopItemName.setText(mShopItems.get(position).getName());
         holder.ShopItemPrice.setText(mShopItems.get(position).getPrice());
+        holder.ShopItemImage.setImageResource(mShopItems.get(position).getImage());
     }
 
     @Override

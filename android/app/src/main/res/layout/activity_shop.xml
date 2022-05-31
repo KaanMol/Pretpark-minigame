@@ -12,18 +12,41 @@
         android:layout_height="0dp"
         android:fadeScrollbars="false"
         android:scrollbarAlwaysDrawVerticalTrack="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/shopToHomeButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ShopTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/logoLine" />
 
     <TextView
         android:id="@+id/ShopTitle"
         style="@style/layout_title"
+        android:fontFamily="@font/interbold"
         android:singleLine="false"
         android:text="EsShop"
-        android:textSize="34dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/shopToHomeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#9F0A27"
+        android:fontFamily="@font/inter"
+        android:onClick="onHomeButton"
+        android:text="Home"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-34dp"
+        app:layout_constraintEnd_toEndOf="@+id/ShopTitle"
+        app:layout_constraintStart_toStartOf="@+id/ShopTitle"
+        app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
+        app:srcCompat="@drawable/logo_line" />
 </androidx.constraintlayout.widget.ConstraintLayout>

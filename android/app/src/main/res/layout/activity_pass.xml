@@ -7,13 +7,21 @@
     tools:context=".PassActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/passScanner"
         style="@style/layout_title"
         android:text="EsScanner"
-        android:textSize="34dp"
-        android:textColor="@color/Red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-34dp"
+        app:layout_constraintEnd_toEndOf="@+id/passScanner"
+        app:layout_constraintStart_toStartOf="@+id/passScanner"
+        app:layout_constraintTop_toBottomOf="@+id/passScanner"
+        app:srcCompat="@drawable/logo_line" />
 
     <TextView
         android:id="@+id/textView3"
