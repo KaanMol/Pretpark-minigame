@@ -11,16 +11,16 @@
         android:theme="@style/Theme.Essteling">
         <activity
             android:name=".HomeActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".ShopActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ShopActivity"
+            android:exported="true" />
         <activity
             android:name=".PassActivity"
             android:exported="true">
