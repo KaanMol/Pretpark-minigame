@@ -62,7 +62,11 @@ public class CardStore {
     }
 
     public void set(List<Card> cards) {
-        this.cards.clear();
+        clear();
         this.cards.addAll(cards);
+    }
+
+    public void clear() {
+        cards.clear();
     }
 }

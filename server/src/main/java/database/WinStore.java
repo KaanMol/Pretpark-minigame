@@ -39,7 +39,11 @@ public class WinStore {
     }
 
     public void set(List<Win> wins) {
-        this.wins.clear();
+        clear();
         this.wins.addAll(wins);
+    }
+
+    public void clear() {
+        this.wins.clear();
     }
 }
