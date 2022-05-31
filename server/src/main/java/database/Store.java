@@ -53,6 +53,12 @@ public class Store {
             Logger.warn(ex, "Could not load store state");
         }
     }
+
+    public void clear() {
+        accounts.clear();
+        cards.clear();
+        wins.clear();
+    }
 }
 
 record StoreState(List<Account> accounts, List<Card> cards, List<Win> wins) {
