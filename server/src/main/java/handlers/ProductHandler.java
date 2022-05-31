@@ -2,6 +2,7 @@ package handlers;
 
 import domain.Product;
 import http.HttpResponse;
+import http.JsonHttpResponse;
 
 import java.io.IOException;
 import java.util.List;
@@ -32,16 +33,16 @@ public class ProductHandler extends Handler{
 
     @Override
     protected HttpResponse post() throws IOException {
-        return null;
+        return error("Not implemented");
     }
 
     @Override
     protected HttpResponse put() throws IOException {
-        return null;
+        return error("Not implemented");
     }
 
     @Override
     protected HttpResponse delete() throws IOException {
-        return null;
+        return error("Not implemented");
     }
 }

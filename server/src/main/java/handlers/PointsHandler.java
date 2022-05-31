@@ -3,7 +3,7 @@ package handlers;
 import domain.Account;
 import domain.Card;
 import domain.Win;
-import http.HttpResponse;
+import http.JsonHttpResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PointsHandler extends Handler{
     @Override
-    protected HttpResponse get() {
+    protected JsonHttpResponse get() {
         String accountId = getParameter("accountId");
         String cardId = getParameter("cardId");
 
@@ -24,7 +24,7 @@ public class PointsHandler extends Handler{
         }
     }
 
-    private HttpResponse getByAccountId(String accountId) {
+    private JsonHttpResponse getByAccountId(String accountId) {
         Account account = getStore().accounts().find(accountId);
 
         if(account == null) {
@@ -46,7 +46,7 @@ public class PointsHandler extends Handler{
         return ok(new PointsResult(wins, totalPoints));
     }
 
-    private HttpResponse getByCardId(String cardId) {
+    private JsonHttpResponse getByCardId(String cardId) {
         Card card = getStore().cards().find(cardId);
 
         if (card == null) {
@@ -65,7 +65,7 @@ public class PointsHandler extends Handler{
     }
 
     @Override
-    protected HttpResponse post() {
+    protected JsonHttpResponse post() {
         String cardId = getParameter("cardId");
         String gameId = getParameter("gameId");
 
@@ -84,12 +84,12 @@ public class PointsHandler extends Handler{
     }
 
     @Override
-    protected HttpResponse put() throws IOException {
+    protected JsonHttpResponse put() throws IOException {
         return error("Not implemented");
     }
 
     @Override
-    protected HttpResponse delete() throws IOException {
+    protected JsonHttpResponse delete() throws IOException {
         return error("Not implemented");
     }
 }
