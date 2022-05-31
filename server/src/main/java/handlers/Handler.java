@@ -121,6 +121,11 @@ public abstract class Handler implements HttpHandler {
     }
 
     private Map<String, String> extractQuery(URI url) {
+
+        if(url.getQuery() == null) {
+            return new HashMap<>();
+        }
+
         Map<String, String> query_pairs = new LinkedHashMap<>();
         String query = url.getQuery();
         String[] pairs = query.split("&");
