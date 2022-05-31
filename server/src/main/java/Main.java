@@ -1,7 +1,4 @@
-import handlers.AdminHandler;
-import handlers.CardHandler;
-import handlers.PointsHandler;
-import handlers.ProductHandler;
+import handlers.*;
 import logging.Logger;
 
 import java.io.IOException;
@@ -14,6 +11,7 @@ public class Main {
             server.route("/points", new PointsHandler());
             server.route("/products", new ProductHandler());
             server.route("/admin", new AdminHandler());
+            server.route("/cdn", new CdnHandler());
             server.start();
 
         } catch (IOException ex) {
