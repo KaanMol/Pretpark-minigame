@@ -25,6 +25,10 @@ public class CardHandler extends Handler {
         String accountId = getParameter("accountId");
         String cardId = getParameter("cardId");
 
+        if(getStore().cards().find(cardId) != null) {
+            return conflict("Card already registered");
+        }
+
         Account account = getStore().accounts().findOrCreate(accountId);
         Card card = getStore().cards().create(cardId, account);
 
