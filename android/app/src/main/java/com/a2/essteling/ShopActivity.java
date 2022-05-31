@@ -25,6 +25,8 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
 //            items.add(new ShopItem("item" + i, i + "0,00", 1));
 //        }
 
+        //add items you want in the shop
+
         items.add(new ShopItem("burger", "12 punten", R.drawable.burger));
         items.add(new ShopItem("burger2", "12 punten", R.drawable.burger2));
         items.add(new ShopItem("burger3", "12 punten", R.drawable.burger3));
@@ -36,21 +38,20 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
         items.add(new ShopItem("Fanta", "6 punten", R.drawable.fanta));
         items.add(new ShopItem("Pepsi", "6 punten", R.drawable.pepsi));
 
+        //get the recyclerview
         mRecyclerView = findViewById(R.id.ShopRecyclerView);
 
+        //create the adapter
         mAdapter = new ShopListAdapter(this, items, this);
 
+        //give the adapter to the recyclerview
         mRecyclerView.setAdapter(mAdapter);
 
+        //make the recyclerview a grid layout
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     }
 
-    public void onHomeButton(View view){
-        Intent intent = new Intent(this,HomeActivity.class);
-        startActivity(intent);
-
-    }
-
+    //react to clicked items
     @Override
     public void onItemClicked(ShopItem item) {
         System.out.println(item.getName());

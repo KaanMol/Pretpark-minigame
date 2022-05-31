@@ -3,6 +3,8 @@ package com.a2.essteling;
 public class ShopItem {
     private String name;
     private String price;
+
+    //the id of the used image
     private int image;
 
     public int getImage() {
