@@ -47,7 +47,7 @@ public abstract class Handler implements HttpHandler {
                 default -> get();
             };
 
-            reply(response.code(), response.body());
+            reply(response.code(), response.json());
         } catch (Exception ex) {
             Logger.warn(ex, "Exception while handling request");
             reply(500, ex.getMessage());
@@ -67,45 +67,45 @@ public abstract class Handler implements HttpHandler {
         return params.get(name);
     }
 
-    protected HttpResponse ok(String body) {
-        return new HttpResponse(200, body);
+    protected HttpResponse ok(String content) {
+        return ok(new Message(content));
     }
 
     protected HttpResponse ok(Object object) {
         try {
             String json = new ObjectMapper().writeValueAsString(object);
-            return ok(json);
+            return new HttpResponse(200, json);
         } catch (Exception ex) {
             Logger.warn(ex, "Exception while serializing object");
-            return error(ex.getMessage());
+            return new HttpResponse(500, ex.getMessage());
         }
     }
 
-    protected HttpResponse conflict(String body) {
-        return new HttpResponse(400, body);
+    protected HttpResponse conflict(String error) {
+        return conflict(new Error(error));
     }
 
     protected HttpResponse conflict(Object object) {
         try {
             String json = new ObjectMapper().writeValueAsString(object);
-            return conflict(json);
+            return new HttpResponse(400, json);
         } catch (Exception ex) {
             Logger.warn(ex, "Exception while serializing object");
-            return error(ex.getMessage());
+            return new HttpResponse(500, ex.getMessage());
         }
     }
 
-    protected HttpResponse error(String body) {
-        return new HttpResponse(500, body);
+    protected HttpResponse error(String error) {
+        return error(new Error(error));
     }
 
     protected HttpResponse error(Object object) {
         try {
             String json = new ObjectMapper().writeValueAsString(object);
-            return error(json);
+            return new HttpResponse(500, json);
         } catch (Exception ex) {
             Logger.warn(ex, "Exception while serializing object");
-            return error(ex.getMessage());
+            return new HttpResponse(500, ex.getMessage());
         }
     }
 
@@ -128,3 +128,6 @@ public abstract class Handler implements HttpHandler {
         return query_pairs;
     }
 }
+
+record Error(String error) {}
+record Message(String message) {}
