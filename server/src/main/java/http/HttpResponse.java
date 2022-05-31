@@ -1,4 +1,4 @@
 package http;
 
-public record HttpResponse(int code, String body) {
+public record HttpResponse(int code, String json) {
 }

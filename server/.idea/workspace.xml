@@ -18,6 +18,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/database/WinStore.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/domain/Account.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/domain/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Product.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/domain/Win.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/CardHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/Handler.java" afterDir="false" />

@@ -40,6 +40,7 @@ public class CardHandler extends Handler {
         return error("Not implemented");
     }
 
+
     @Override
     protected HttpResponse delete() throws IOException {
         return error("Not implemented");
