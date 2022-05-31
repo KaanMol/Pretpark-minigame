@@ -14,14 +14,22 @@ public class AccountStore {
     }
 
     public Account create(String id) {
+        Account account = find(id);
+
+        if (account != null) {
+            return account;
+        }
+
         Logger.debug("Creating account with id: " + id);
-        Account account = new Account(id);
+
+        account = new Account(id);
         accounts.add(account);
         return account;
     }
 
     public void delete(String id) {
         Logger.debug("Deleting account with id: " + id);
+
         Account account = find(id);
         if (account != null) {
             accounts.remove(account);
