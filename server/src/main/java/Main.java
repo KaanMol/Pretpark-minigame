@@ -1,6 +1,7 @@
 import handlers.AdminHandler;
 import handlers.CardHandler;
 import handlers.PointsHandler;
+import handlers.ProductHandler;
 import logging.Logger;
 
 import java.io.IOException;
@@ -11,6 +12,7 @@ public class Main {
             Server server = new Server(8000);
             server.route("/cards", new CardHandler());
             server.route("/points", new PointsHandler());
+            server.route("/products", new ProductHandler());
             server.route("/admin", new AdminHandler());
             server.start();
 
