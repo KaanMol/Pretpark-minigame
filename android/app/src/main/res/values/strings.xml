@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Essteling</string>
+    <string name="itemPrice">Price</string>
+    <string name="itemName">Name</string>
 </resources>
