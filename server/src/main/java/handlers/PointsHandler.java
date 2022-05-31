@@ -25,7 +25,12 @@ public class PointsHandler extends Handler{
     }
 
     private HttpResponse getByAccountId(String accountId) {
-        Account account = getStore().accounts().findOrCreate(accountId);
+        Account account = getStore().accounts().find(accountId);
+
+        if(account == null) {
+            return conflict("Account not registered");
+        }
+
         List<Card> cards = getStore().cards().findByAccount(account);
         List<Win> wins = new ArrayList<>();
 
