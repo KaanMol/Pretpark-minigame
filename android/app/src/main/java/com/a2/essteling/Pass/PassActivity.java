@@ -1,6 +1,7 @@
 package com.a2.essteling.Pass;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 import android.provider.Settings;
@@ -19,6 +20,8 @@ public class PassActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pass);
 

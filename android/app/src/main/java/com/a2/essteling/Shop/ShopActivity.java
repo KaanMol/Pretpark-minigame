@@ -1,6 +1,7 @@
 package com.a2.essteling.Shop;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +19,8 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 

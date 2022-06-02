@@ -5,6 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.a2.essteling.R;
 import com.bumptech.glide.Glide;
@@ -18,6 +19,8 @@ public class PurchaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
         this.item = (ShopItem) getIntent().getExtras().get("item");

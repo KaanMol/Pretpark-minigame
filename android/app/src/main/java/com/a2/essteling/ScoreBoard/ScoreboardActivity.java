@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.a2.essteling.Pass.Player;
@@ -23,6 +24,8 @@ public class ScoreboardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
+
         super.onCreate(savedInstanceState);
         testlayers();
 
