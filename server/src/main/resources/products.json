@@ -6,8 +6,8 @@
             "english": "Cotton Candy"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis suikerspin te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get free cotton candy in a restaurant of the Essteling"
         },
         "image": "suikerspin.png",
         "price": 2
@@ -19,8 +19,8 @@
             "english": "Burger"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis hamburger naar keuze te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get a free burger of choice in a restaurant of the Essteling"
         },
         "image": "burger.png",
         "price": 3
@@ -32,8 +32,8 @@
             "english": "Coke"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis 500ml cola fles te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get a free 500ml bottle of coke in a restaurant of the Essteling"
         },
         "image": "cola.png",
         "price": 1
@@ -41,8 +41,8 @@
     {
         "id": "fanta",
         "name": {
-            "dutch": "Fanta",
-            "english": "Fanta"
+            "dutch": "Verzilver deze coupon om een gratis 500ml Fanta fles te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get a free 500ml bottle of Fanta in a restaurant of the Essteling"
         },
         "description": {
             "dutch": "momin vul dit in",
@@ -58,8 +58,8 @@
             "english": "Ice-cream"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis ijsje te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get a free ice-cream in a restaurant of the Essteling"
         },
         "image": "ijs.webp",
         "price": 1
@@ -71,8 +71,8 @@
             "english": "Chicken Nuggets"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om 6 gratis kipnuggets te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get 6 free chicken nuggets in a restaurant of the Essteling"
         },
         "image": "nuggets.png",
         "price": 2
@@ -80,12 +80,12 @@
     {
         "id": "patat",
         "name": {
-            "dutch": "Patatjes",
+            "dutch": "Patat",
             "english": "French Fries"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis patat te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get free french fries in a restaurant of the Essteling"
         },
         "image": "patat.png",
         "price": 2
@@ -97,8 +97,8 @@
             "english": "Pizza"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis pizza naar keuze te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get a free pizza of choice in a restaurant of the Essteling"
         },
         "image": "pizza.png",
         "price": 3
@@ -110,11 +110,11 @@
             "english": "Slushpuppy"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis slushpuppy naar keuze op te halen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get a free slushpuppy of choice in a restaurant of the Essteling"
         },
         "image": "slush.png",
-        "price": 1 
+        "price": 1
     },
     {
         "id": "spa",
@@ -123,8 +123,8 @@
             "english": "Spa water"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis fles Spa water te krijgen in een restaurant van de Essteling/",
+            "english": "Redeem this coupon to get a bottle of Spa water in a restaurant of the Essteling"
         },
         "image": "spa.png",
         "price": 1
