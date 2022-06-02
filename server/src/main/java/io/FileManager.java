@@ -2,39 +2,32 @@ package io;
 
 import logging.Logger;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.InputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class FileManager {
     public static String read(String path) {
         try {
-            URL fileUrl = FileManager.class.getClassLoader().getResource(path);
+            InputStream fileStream = FileManager.class.getClassLoader().getResourceAsStream(path);
 
-            if (fileUrl == null) {
+            if (fileStream == null) {
                 Logger.warn("Could not find resource: '" + path + "'");
                 return "";
             }
 
-            File file = new File(fileUrl.toURI());
+            InputStreamReader streamReader = new InputStreamReader(fileStream, StandardCharsets.UTF_8);
+            BufferedReader reader = new BufferedReader(streamReader);
 
-            if (!file.exists()) {
-                Logger.warn("Could not find file: '" + file.getAbsolutePath() + "'");
-                return "";
+            StringBuilder content = new StringBuilder();
+
+            for (String line; (line = reader.readLine()) != null;) {
+                content.append(line);
+                content.append("\n");
             }
 
-            Scanner scanner = new Scanner(new FileReader(file));
-            StringBuilder source = new StringBuilder();
-
-            while (scanner.hasNextLine()) {
-                source.append(scanner.nextLine());
-                source.append("\n");
-            }
-
-            return source.toString();
+            return content.toString();
         } catch (Exception e) {
             Logger.warn(e, "Could not read file: '" + path + "'");
             return "";
