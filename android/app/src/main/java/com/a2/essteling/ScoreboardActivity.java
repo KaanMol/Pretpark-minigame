@@ -15,7 +15,17 @@ public class ScoreboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        testlayers();
         setContentView(R.layout.activity_scoreboard);
+    }
+
+    private void testlayers(){
+        ArrayList<Historie> emptryArrayList = new ArrayList<Historie>();
+        players.add(new Player("Momin" , 0, Color.valueOf(255), emptryArrayList));
+        players.add(new Player("Coen" , 2, Color.valueOf(255), emptryArrayList));
+        players.add(new Player("Lucas" , 3, Color.valueOf(255), emptryArrayList));
+        players.add(new Player("Kaan" , 2, Color.valueOf(255), emptryArrayList));
+        players.add(new Player("Koen" , 4, Color.valueOf(255), emptryArrayList));
     }
 
     private void addPlayersList(String name, int punten, Color color, ArrayList<Historie> emptyArrayList) {
