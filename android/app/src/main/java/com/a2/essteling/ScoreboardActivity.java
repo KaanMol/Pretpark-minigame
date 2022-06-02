@@ -1,21 +1,32 @@
 package com.a2.essteling;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ScoreboardActivity extends AppCompatActivity {
     List<Player> players = new ArrayList<>();
+    private RecyclerView mRecyclerView;
+    private ShopListAdapter mAdapter;
+    private LinkedList<ShopItem> items = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         testlayers();
+
+
+        mRecyclerView = findViewById(R.id.tabNames);
+
+//        mAdapter = new ScoreBoardAdaptor(this, items, this);
+
+
         setContentView(R.layout.activity_scoreboard);
     }
 

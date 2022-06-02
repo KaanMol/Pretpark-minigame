@@ -29,51 +29,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_line" />
 
-    <ScrollView
-        android:id="@+id/tabNames"
-        android:layout_width="128dp"
-        android:layout_height="283dp"
-        android:layout_marginBottom="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/history"
-        app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
-    <ScrollView
-        android:id="@+id/history"
-        android:layout_width="266dp"
-        android:layout_height="538dp"
-        android:layout_marginStart="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tabNames"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.164">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="185dp"
         android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="4dp"
         android:text="Total Points:"
         android:textColor="@color/Red"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/history"
-        app:layout_constraintTop_toBottomOf="@+id/history" />
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="701dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tabNames"
+        android:layout_width="126dp"
+        android:layout_height="331dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tabHistorie" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tabHistorie"
+        android:layout_width="252dp"
+        android:layout_height="507dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@+id/tabNames"
+        tools:layout_editor_absoluteY="115dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
