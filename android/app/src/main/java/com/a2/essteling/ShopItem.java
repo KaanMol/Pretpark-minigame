@@ -1,5 +1,7 @@
 package com.a2.essteling;
 
+import com.bumptech.glide.Glide;
+
 import java.io.Serializable;
 
 public class ShopItem implements Serializable {
@@ -23,6 +25,7 @@ public class ShopItem implements Serializable {
         this.price = price;
         this.image = imageID;
         this.description = description;
+        
     }
 
     public String getDescription() {
