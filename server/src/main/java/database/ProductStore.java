@@ -33,8 +33,4 @@ public class ProductStore {
     public List<Product> all() {
         return products;
     }
-
-    public void clear() {
-        products.clear();
-    }
 }

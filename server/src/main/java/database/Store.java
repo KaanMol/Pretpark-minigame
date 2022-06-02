@@ -73,7 +73,6 @@ public class Store {
         accounts.clear();
         cards.clear();
         wins.clear();
-        products.clear();
     }
 }
 
