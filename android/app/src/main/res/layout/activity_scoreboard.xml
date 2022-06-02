@@ -31,10 +31,12 @@
         app:srcCompat="@drawable/logo_line" />
 
     <ScrollView
+        android:id="@+id/tabNames"
         android:layout_width="128dp"
         android:layout_height="283dp"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="148dp">
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,10 +45,14 @@
     </ScrollView>
 
     <ScrollView
+        android:id="@+id/history"
         android:layout_width="251dp"
         android:layout_height="583dp"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="148dp">
+        android:layout_marginStart="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tabNames">
 
         <LinearLayout
             android:layout_width="match_parent"
