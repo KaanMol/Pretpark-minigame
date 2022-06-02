@@ -12,7 +12,10 @@ public class Logger {
     private static final String blue = "\u001B[34m";
     private static final String magenta = "\u001B[35m";
     private static final String cyan = "\u001B[36m";
+
     private static final String white = "\u001B[37m";
+
+    private static final String reset = "\u001B[0m";
     private static final List<LogListener> listeners = new ArrayList<>();
 
     public static void log(LogLevel level, Exception exception, String message) {
@@ -82,6 +85,8 @@ public class Logger {
                 builder.append(stack.getLineNumber());
             }
         }
+
+        builder.append(reset);
 
         System.out.println(builder);
 

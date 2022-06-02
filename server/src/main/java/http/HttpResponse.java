@@ -1,4 +1,5 @@
 package http;
 
-public record HttpResponse(int code, String json) {
+public interface HttpResponse {
+
 }

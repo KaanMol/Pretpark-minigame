@@ -3,6 +3,7 @@ package database;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import domain.Account;
 import domain.Card;
+import domain.Product;
 import domain.Win;
 import io.FileManager;
 import logging.Logger;
@@ -14,10 +15,13 @@ public class Store {
     private final CardStore cards;
     private final WinStore wins;
 
+    private final ProductStore products;
+
     public Store() {
         accounts = new AccountStore();
         cards = new CardStore();
         wins = new WinStore();
+        products = new ProductStore();
     }
 
     public AccountStore accounts() {
@@ -32,9 +36,13 @@ public class Store {
         return wins;
     }
 
+    public ProductStore products() {
+        return products;
+    }
+
     public void save() {
         try {
-            StoreState state = new StoreState(accounts.all(), cards.all(), wins.all());
+            StoreState state = new StoreState(accounts.all(), cards.all(), wins.all(), products.all());
             String json = new ObjectMapper().writeValueAsString(state);
             FileManager.write("db.json", json);
         } catch (Exception ex) {
@@ -58,9 +66,9 @@ public class Store {
         accounts.clear();
         cards.clear();
         wins.clear();
+        products.clear();
     }
 }
 
-record StoreState(List<Account> accounts, List<Card> cards, List<Win> wins) {
-
+record StoreState(List<Account> accounts, List<Card> cards, List<Win> wins, List<Product> products) {
 }

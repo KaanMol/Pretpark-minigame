@@ -6,12 +6,15 @@ import com.sun.net.httpserver.HttpHandler;
 import database.Store;
 import http.HttpMethod;
 import http.HttpResponse;
+import http.JsonHttpResponse;
+import http.StreamHttpResponse;
 import logging.Logger;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -47,16 +50,23 @@ public abstract class Handler implements HttpHandler {
                 default -> get();
             };
 
-            reply(response.code(), response.json());
+            if (response instanceof JsonHttpResponse jsonResponse) {
+                replyJson(jsonResponse.code(), jsonResponse.json());
+            } else if (response instanceof StreamHttpResponse streamResponse) {
+                replyStream(streamResponse.mime(), streamResponse.bytes());
+            }
         } catch (Exception ex) {
             Logger.warn(ex, "Exception while handling request");
-            reply(500, ex.getMessage());
+            replyJson(500, ex.getMessage());
         }
     }
 
     abstract protected HttpResponse get() throws IOException;
+
     abstract protected HttpResponse post() throws IOException;
+
     abstract protected HttpResponse put() throws IOException;
+
     abstract protected HttpResponse delete() throws IOException;
 
     protected Store getStore() {
@@ -67,67 +77,82 @@ public abstract class Handler implements HttpHandler {
         return params.get(name);
     }
 
-    protected HttpResponse ok(String content) {
+    protected JsonHttpResponse ok(String content) {
         return ok(new Message(content));
     }
 
-    protected HttpResponse ok(Object object) {
+    protected JsonHttpResponse ok(Object object) {
         try {
             String json = new ObjectMapper().writeValueAsString(object);
-            return new HttpResponse(200, json);
+            return new JsonHttpResponse(200, json);
         } catch (Exception ex) {
             Logger.warn(ex, "Exception while serializing object");
-            return new HttpResponse(500, ex.getMessage());
+            return new JsonHttpResponse(500, ex.getMessage());
         }
     }
 
-    protected HttpResponse conflict(String error) {
+    protected JsonHttpResponse conflict(String error) {
         return conflict(new Error(error));
     }
 
-    protected HttpResponse conflict(Object object) {
+    protected JsonHttpResponse conflict(Object object) {
         try {
             String json = new ObjectMapper().writeValueAsString(object);
-            return new HttpResponse(400, json);
+            return new JsonHttpResponse(400, json);
         } catch (Exception ex) {
             Logger.warn(ex, "Exception while serializing object");
-            return new HttpResponse(500, ex.getMessage());
+            return new JsonHttpResponse(500, ex.getMessage());
         }
     }
 
-    protected HttpResponse error(String error) {
+    protected JsonHttpResponse error(String error) {
         return error(new Error(error));
     }
 
-    protected HttpResponse error(Object object) {
+    protected JsonHttpResponse error(Object object) {
         try {
             String json = new ObjectMapper().writeValueAsString(object);
-            return new HttpResponse(500, json);
+            return new JsonHttpResponse(500, json);
         } catch (Exception ex) {
             Logger.warn(ex, "Exception while serializing object");
-            return new HttpResponse(500, ex.getMessage());
+            return new JsonHttpResponse(500, ex.getMessage());
         }
     }
 
-    private void reply(int status, String response) throws IOException {
+    private void replyJson(int status, String json) throws IOException {
         exchange.getResponseHeaders().set("Content-Type", "application/json");
-        exchange.sendResponseHeaders(status, response.length());
-        exchange.getResponseBody().write(response.getBytes());
+        exchange.sendResponseHeaders(status, json.length());
+        exchange.getResponseBody().write(json.getBytes());
         exchange.getResponseBody().close();
     }
 
+    private void replyStream(String mime, byte[] bytes) throws IOException {
+        exchange.getResponseHeaders().set("Content-Type", mime);
+        exchange.sendResponseHeaders(200, bytes.length);
+        exchange.getResponseBody().write(bytes);
+        exchange.getResponseBody().close();
+    }
 
     private Map<String, String> extractQuery(URI url) {
+
+        if(url.getQuery() == null) {
+            return new HashMap<>();
+        }
+
         Map<String, String> query_pairs = new LinkedHashMap<>();
         String query = url.getQuery();
         String[] pairs = query.split("&");
         for (String pair : pairs) {
             int idx = pair.indexOf("=");
-            query_pairs.put(URLDecoder.decode(pair.substring(0, idx), StandardCharsets.UTF_8), URLDecoder.decode(pair.substring(idx + 1), StandardCharsets.UTF_8));
+            query_pairs.put(URLDecoder.decode(pair.substring(0, idx), StandardCharsets.UTF_8),
+                    URLDecoder.decode(pair.substring(idx + 1), StandardCharsets.UTF_8));
         }
         return query_pairs;
     }
 }
 
-record Error(String error) {}
-record Message(String message) {}
+record Error(String error) {
+}
+
+record Message(String message) {
+}
