@@ -15,6 +15,8 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/AccountStore.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/CardStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/Language.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/LocalisationStore.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/ProductStore.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/Store.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/WinStore.java" afterDir="false" />
@@ -28,6 +30,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/Handler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/PointsHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/ProductHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/helper/ProductLoader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/http/HttpMethod.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/http/HttpResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/http/JsonHttpResponse.java" afterDir="false" />
@@ -36,9 +39,8 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/LogLevel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/LogListener.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/404.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/products.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/suikerspin.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,8 +84,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">

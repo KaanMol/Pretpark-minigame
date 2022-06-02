@@ -11,11 +11,11 @@ public class Server {
     private final HttpServer server;
     private final Store store;
 
-    public Server(int port) throws IOException {
+    public Server(Store store, int port) throws IOException {
         try {
             this.server = HttpServer.create(new InetSocketAddress(port), 0);
             this.server.setExecutor(Executors.newCachedThreadPool());
-            this.store = new Store();
+            this.store = store;
         } catch (IOException ex) {
             Logger.error(ex, "Could not create server");
             throw ex;

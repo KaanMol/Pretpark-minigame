@@ -14,7 +14,7 @@ public class FileManager {
         File file = new File(path);
 
         if (!file.exists()) {
-            Logger.warn("Could not find file: '" + path + "'");
+            Logger.warn("Could not find file: '" + file.getAbsolutePath() + "'");
             return "";
         }
 

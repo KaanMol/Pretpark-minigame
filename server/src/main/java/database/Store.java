@@ -15,6 +15,8 @@ public class Store {
     private final CardStore cards;
     private final WinStore wins;
 
+    private final LocalisationStore localisations;
+
     private final ProductStore products;
 
     public Store() {
@@ -22,6 +24,7 @@ public class Store {
         cards = new CardStore();
         wins = new WinStore();
         products = new ProductStore();
+        localisations = new LocalisationStore();
     }
 
     public AccountStore accounts() {
@@ -38,6 +41,10 @@ public class Store {
 
     public ProductStore products() {
         return products;
+    }
+
+    public LocalisationStore localisations() {
+        return localisations;
     }
 
     public void save() {
