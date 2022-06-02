@@ -1,0 +1,28 @@
+[
+    {
+        "id": "burger",
+        "name": {
+            "dutch": "Burger",
+            "english": "Burger"
+        },
+        "description": {
+            "dutch": "description",
+            "english": "description"
+        },
+        "image": "burger.png",
+        "price": 2
+    },
+    {
+        "id": "pizza",
+        "name": {
+            "dutch": "Pizza",
+            "english": "Pizza"
+        },
+        "description": {
+            "dutch": "description",
+            "english": "description"
+        },
+        "image": "pizza.png",
+        "price": 3
+    }
+]
