@@ -17,7 +17,7 @@ public class Server {
             this.server.setExecutor(Executors.newCachedThreadPool());
             this.store = store;
         } catch (IOException ex) {
-            Logger.error(ex, "Could not create server");
+            Logger.error(ex, "Could not create server on port " + port);
             throw ex;
         }
     }
