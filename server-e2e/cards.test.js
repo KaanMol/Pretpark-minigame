@@ -1,7 +1,7 @@
 const request = require('superagent');
 const agent = request.agent();
 
-const host = 'http://localhost:8000';
+const host = 'localhost:8000';
 
 beforeAll(function(done) {
     agent.post(`${host}/admin?action=reset`).then(res => {
