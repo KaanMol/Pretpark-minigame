@@ -6,4 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".activity_scoreboard">
 
+    <TextView
+        android:id="@+id/textView"
+        style="@style/layout_title"
+        android:layout_width="266dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="EsScore"
+        android:textColor="@color/Red"
+        android:textSize="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoLine"
+        android:layout_width="193dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="188dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ShopTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_line" />
+
+    <ScrollView
+        android:layout_width="128dp"
+        android:layout_height="283dp"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="148dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="251dp"
+        android:layout_height="583dp"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="148dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
