@@ -1,15 +1,93 @@
 [
     {
+        "id": "suikerspin",
+        "name": {
+            "dutch": "Suikerspin",
+            "english": "Cotton Candy"
+        },
+        "description": {
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
+        },
+        "image": "suikerspin.png",
+        "price": 2
+    },
+    {
         "id": "burger",
         "name": {
-            "dutch": "Burger",
+            "dutch": "Hamburger",
             "english": "Burger"
         },
         "description": {
-            "dutch": "description",
-            "english": "description"
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
         },
         "image": "burger.png",
+        "price": 3
+    },
+    {
+        "id": "cola",
+        "name": {
+            "dutch": "Cola",
+            "english": "Coke"
+        },
+        "description": {
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
+        },
+        "image": "cola.png",
+        "price": 1
+    },
+    {
+        "id": "fanta",
+        "name": {
+            "dutch": "Fanta",
+            "english": "Fanta"
+        },
+        "description": {
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
+        },
+        "image": "fanta.png",
+        "price": 1
+    },
+    {
+        "id": "ijs",
+        "name": {
+            "dutch": "Softijs",
+            "english": "Ice-cream"
+        },
+        "description": {
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
+        },
+        "image": "ijs.webp",
+        "price": 1
+    },
+    {
+        "id": "nuggets",
+        "name": {
+            "dutch": "Kipnuggets",
+            "english": "Chicken Nuggets"
+        },
+        "description": {
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
+        },
+        "image": "nuggets.png",
+        "price": 2
+    },
+    {
+        "id": "patat",
+        "name": {
+            "dutch": "Patatjes",
+            "english": "French Fries"
+        },
+        "description": {
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
+        },
+        "image": "patat.png",
         "price": 2
     },
     {
@@ -19,10 +97,36 @@
             "english": "Pizza"
         },
         "description": {
-            "dutch": "description",
-            "english": "description"
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
         },
         "image": "pizza.png",
         "price": 3
+    },
+    {
+        "id": "slush",
+        "name": {
+            "dutch": "Slushpuppy",
+            "english": "Slushpuppy"
+        },
+        "description": {
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
+        },
+        "image": "slush.png",
+        "price": 1 
+    },
+    {
+        "id": "spa",
+        "name": {
+            "dutch": "Spa water",
+            "english": "Spa water"
+        },
+        "description": {
+            "dutch": "momin vul dit in",
+            "english": "momin fill this in"
+        },
+        "image": "spa.png",
+        "price": 1
     }
 ]

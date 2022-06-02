@@ -39,7 +39,16 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/LogLevel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/LogListener.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/logging/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/burger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cola.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fanta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ijs.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/nuggets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/patat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pizza.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/products.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/slush.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/spa.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/suikerspin.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
     </list>
