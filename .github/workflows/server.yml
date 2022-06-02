@@ -1,0 +1,30 @@
+name: E2E Testing HTTP Server
+
+on:
+  push:
+    branches:
+    - main
+    - dev
+  pull_request:
+    branches:
+    - main
+    - dev 
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.2.0
+
+      - name: Install depedencies
+        run: npm i -ci
+        working-directory: "server-e2e"
+
+      - name: Run tests
+        run: npm run test
+        working-directory: "server-e2e"
