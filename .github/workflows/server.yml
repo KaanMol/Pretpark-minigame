@@ -24,10 +24,6 @@ jobs:
       - name: Install depedencies
         run: npm i -ci
         working-directory: "server-e2e"
-
-      # - name: Run tests
-      #   run: npm run test
-      #   working-directory: "server-e2e"
         
       - name: Set up JDK 17
         uses: actions/setup-java@v1
