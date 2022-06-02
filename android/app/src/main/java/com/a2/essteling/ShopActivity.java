@@ -27,18 +27,18 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
 
         //add items you want in the shop
 
-        items.add(new ShopItem("burger", "12 punten", R.drawable.burger));
-        items.add(new ShopItem("burger2", "12 punten", R.drawable.burger2));
-        items.add(new ShopItem("burger3", "12 punten", R.drawable.burger3));
-        items.add(new ShopItem("burger4", "12 punten", R.drawable.burger4));
-        items.add(new ShopItem("fries", "15 punten", R.drawable.fries));
-        items.add(new ShopItem("Unox", "8 punten", R.drawable.sausage));
-        items.add(new ShopItem("Nuggets", "6 punten", R.drawable.nuggets));
-        items.add(new ShopItem("Cola", "6 punten", R.drawable.cola));
-        items.add(new ShopItem("Fanta", "6 punten", R.drawable.fanta));
-        items.add(new ShopItem("Pepsi", "6 punten", R.drawable.pepsi));
-        items.add(new ShopItem("Ashizon's Paprika", "69 punten", R.drawable.ashizons_paprika_logo));
-        items.add(new ShopItem("test", "test"));
+        items.add(new ShopItem("burger", "12 punten","test", R.drawable.burger));
+        items.add(new ShopItem("burger2", "12 punten", "test",R.drawable.burger2));
+        items.add(new ShopItem("burger3", "12 punten", "test",R.drawable.burger3));
+        items.add(new ShopItem("burger4", "12 punten", "test",R.drawable.burger4));
+        items.add(new ShopItem("fries", "15 punten", "test",R.drawable.fries));
+        items.add(new ShopItem("Unox", "8 punten", "test",R.drawable.sausage));
+        items.add(new ShopItem("Nuggets", "6 punten", "test",R.drawable.nuggets));
+        items.add(new ShopItem("Cola", "6 punten", "test",R.drawable.cola));
+        items.add(new ShopItem("Fanta", "6 punten", "test",R.drawable.fanta));
+        items.add(new ShopItem("Pepsi", "6 punten", "test",R.drawable.pepsi));
+        items.add(new ShopItem("Ashizon's Paprika", "69 punten","test", R.drawable.ashizons_paprika_logo));
+        items.add(new ShopItem("test", "test","test"));
 
         //get the recyclerview
         mRecyclerView = findViewById(R.id.ShopRecyclerView);

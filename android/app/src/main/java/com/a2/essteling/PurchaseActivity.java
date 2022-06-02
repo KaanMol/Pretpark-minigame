@@ -26,6 +26,7 @@ public class PurchaseActivity extends AppCompatActivity {
 
         itemName.setText(item.getName());
         itemPrice.setText(item.getPrice());
+        itemDescription.setText(item.getDescription());
         itemImage.setImageResource(item.getImage());
 
 
