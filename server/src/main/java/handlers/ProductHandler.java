@@ -14,6 +14,11 @@ public class ProductHandler extends Handler{
     protected HttpResponse get() throws IOException {
         String productId = getParameter("id");
         String languageRaw = getParameter("language");
+
+        if(languageRaw == null) {
+            languageRaw = "dutch";
+        }
+
         Language language = switch (languageRaw.trim().toLowerCase(Locale.ROOT)) {
             case "en", "english" -> Language.ENGLISH;
             default -> Language.DUTCH;
