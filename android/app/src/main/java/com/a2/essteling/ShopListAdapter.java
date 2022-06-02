@@ -19,12 +19,12 @@ import java.util.LinkedList;
 public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopViewHolder> {
     private static final String LOG_TAG = ShopListAdapter.class.getSimpleName();
     private LayoutInflater mInflater;
-    private final LinkedList<ShopItem> mShopItems;
+    private final ShopItem[] mShopItems;
     private ShopItemListener listener;
     Context context;
 
 
-    public ShopListAdapter(Context context, LinkedList<ShopItem> mShopItems, ShopItemListener listener) {
+    public ShopListAdapter(Context context, ShopItem[] mShopItems, ShopItemListener listener) {
         this.mInflater = LayoutInflater.from(context);
         this.mShopItems = mShopItems;
         this.listener = listener;
@@ -41,27 +41,29 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
     @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
-        holder.ShopItemName.setText(mShopItems.get(position).getName());
-        holder.ShopItemPrice.setText(mShopItems.get(position).getPrice());
+        holder.ShopItemName.setText(mShopItems[position].getName());
+        holder.ShopItemPrice.setText(mShopItems[position].getPrice()+"");
 
-        if (mShopItems.get(position).getImage() == -1) {
-            Glide.with(context).load(mShopItems.get(position).getImageURL()).into(holder.ShopItemImage);
+        if (mShopItems[position].getImageLocal() == -1) {
+            Glide.with(context).load(mShopItems[position].getImage()).into(holder.ShopItemImage);
         } else {
-            holder.ShopItemImage.setImageResource(mShopItems.get(position).getImage());
+            holder.ShopItemImage.setImageResource(mShopItems[position].getImageLocal());
         }
         holder.ShopItemImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(LOG_TAG, view.toString() + " Button clicked!");
-                listener.onItemClicked(mShopItems.get(position));
+                listener.onItemClicked(mShopItems[position]);
 
             }
         });
     }
 
+
+
     @Override
     public int getItemCount() {
-        return mShopItems.size();
+        return mShopItems.length;
     }
 
     class ShopViewHolder extends RecyclerView.ViewHolder {
