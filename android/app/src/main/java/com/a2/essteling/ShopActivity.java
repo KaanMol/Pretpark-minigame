@@ -5,40 +5,55 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.location.GnssAntennaInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.fasterxml.jackson.core.util.JsonParserSequence;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectReader;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.LinkedList;
 
 public class ShopActivity extends AppCompatActivity implements ShopItemListener {
     private static final String LOG_TAG = ShopActivity.class.getSimpleName();
     private RecyclerView mRecyclerView;
     private ShopListAdapter mAdapter;
-    private LinkedList<ShopItem> items = new LinkedList<>();
+
+    private ShopItem[] items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
+        items = new ShopItem[1];
+        items[1] = new ShopItem("placeholder", "placeholder", 1,"placeholder", "placeholder");
+
+
+
+//        RequestQueue requestQueue = Volley.newRequestQueue(this);
+//        requestQueue.add(stringRequest);
+
+
 //        for (int i = 0; i < 16; i++) {
 //            items.add(new ShopItem("item" + i, i + "0,00", 1));
 //        }
 
-        //add items you want in the shop
-
-        items.add(new ShopItem("burger", "12 punten","test", R.drawable.burger));
-        items.add(new ShopItem("burger2", "12 punten", "test",R.drawable.burger2));
-        items.add(new ShopItem("burger3", "12 punten", "test",R.drawable.burger3));
-        items.add(new ShopItem("burger4", "12 punten", "test",R.drawable.burger4));
-        items.add(new ShopItem("fries", "15 punten", "test",R.drawable.fries));
-        items.add(new ShopItem("Unox", "8 punten", "test",R.drawable.sausage));
-        items.add(new ShopItem("Nuggets", "6 punten", "test",R.drawable.nuggets));
-        items.add(new ShopItem("Cola", "6 punten", "test",R.drawable.cola));
-        items.add(new ShopItem("Fanta", "6 punten", "test",R.drawable.fanta));
-        items.add(new ShopItem("Pepsi", "6 punten", "test",R.drawable.pepsi));
-        items.add(new ShopItem("Ashizon's Paprika", "69 punten","test", R.drawable.ashizons_paprika_logo));
-        items.add(new ShopItem("test", "test","test", "https://cdn.quicq.io/borgor/smashburger01.png"));
 
         //get the recyclerview
         mRecyclerView = findViewById(R.id.ShopRecyclerView);
@@ -51,15 +66,46 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
 
         //make the recyclerview a grid layout
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+
+
+
+
+
+
     }
 
     //react to clicked items
     @Override
     public void onItemClicked(ShopItem item) {
         System.out.println(item.getName());
-        Intent intent = new Intent(this,PurchaseActivity.class);
+        Intent intent = new Intent(this, PurchaseActivity.class);
         intent.putExtra("item", item);
 
         startActivity(intent);
+    }
+
+    public static StringRequest getShopItemsRequest(){
+        return new StringRequest(Request.Method.GET, "https://mobiele-beleving-dev.herokuapp.com/products", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    Log.d(LOG_TAG, "response gotten");
+                    ShopItem[] shopItems = new ObjectMapper().readValue(response, ShopItem[].class);
+
+
+
+                    Log.d(LOG_TAG, "response succesfully received");
+
+                } catch (IOException e) {
+                    Log.d(LOG_TAG, "product loading failed!");
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d(LOG_TAG, "error");
+            }
+        });
     }
 }
