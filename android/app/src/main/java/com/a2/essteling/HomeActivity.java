@@ -1,6 +1,7 @@
 package com.a2.essteling;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ public class HomeActivity extends AppCompatActivity {
         ShopitemList.startQueue(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
     }
 
     //go to the shop
