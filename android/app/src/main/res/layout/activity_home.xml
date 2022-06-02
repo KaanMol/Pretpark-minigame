@@ -26,28 +26,46 @@
         android:id="@+id/shopButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="92dp"
         android:backgroundTint="@color/Red"
         android:onClick="onShopButton"
         android:text="EsShop"
         android:textAllCaps="false"
         android:textSize="38dp"
-        app:layout_constraintBottom_toTopOf="@+id/scannerButton"
         app:layout_constraintEnd_toEndOf="@+id/scannerButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/scannerButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/logoLine" />
 
     <Button
         android:id="@+id/scannerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="70dp"
         android:backgroundTint="@color/Red"
         android:onClick="onScannerButton"
         android:text="EsScanner"
         android:textAllCaps="false"
         android:textSize="38dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/shopButton" />
+
+    <Button
+        android:id="@+id/scoreButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/Red"
+        android:onClick="onScannerButton"
+        android:text="  EsScore "
+        android:textAllCaps="false"
+        android:textSize="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scannerButton" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
