@@ -16,8 +16,8 @@ jobs:
 
       - name: Install depedencies
         run: npm i -ci
-        working-directory: "server"
+        working-directory: "server-e2e"
 
       - name: Run tests
         run: npm run test
-        working-directory: "server"
+        working-directory: "server-e2e"
