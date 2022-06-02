@@ -39,6 +39,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/1.webp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/404.jpeg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +74,15 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
@@ -104,7 +109,8 @@
       <option name="presentableId" value="Default" />
       <updated>1653998464266</updated>
       <workItem from="1653998465381" duration="160000" />
-      <workItem from="1654033451067" duration="1677000" />
+      <workItem from="1654033451067" duration="2885000" />
+      <workItem from="1654156866653" duration="295000" />
     </task>
     <servers />
   </component>
