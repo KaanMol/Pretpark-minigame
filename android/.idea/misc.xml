@@ -17,7 +17,10 @@
         <entry key="app/src/main/res/layout/activity_purchase.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_scoreboard.xml" value="0.27071685791015626" />
         <entry key="app/src/main/res/layout/activity_shop.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/layout_scoreboard.xml" value="0.32879180908203126" />
+        <entry key="app/src/main/res/layout/layout_scoreboardtabmenu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_shopitem.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/layout_tabmenu.xml" value="0.1702606201171875" />
       </map>
     </option>
   </component>

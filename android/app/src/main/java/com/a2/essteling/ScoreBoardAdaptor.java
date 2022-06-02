@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +28,8 @@ public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.Sc
     @NonNull
     @Override
     public ScoreBoardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View mScoreBoardView = mInFlater.inflate(R.layout.layout_tabmenu, parent, false);
+        return new ScoreBoardViewHolder(mScoreBoardView, this);
     }
 
     @Override
@@ -41,8 +43,15 @@ public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.Sc
     }
 
     public class ScoreBoardViewHolder extends RecyclerView.ViewHolder {
-        public ScoreBoardViewHolder(@NonNull View itemView) {
+        final ScoreBoardAdaptor mAdaptor;
+        public final Button ScoreBoardButton;
+
+
+        public ScoreBoardViewHolder(@NonNull View itemView, ScoreBoardAdaptor scoreBoardAdaptor) {
             super(itemView);
+            ScoreBoardButton = itemView.findViewById(R.id.buttonPlayerName);
+            this.mAdaptor =  scoreBoardAdaptor;
+
         }
     }
 }
