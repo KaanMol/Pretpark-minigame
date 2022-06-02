@@ -1,6 +1,8 @@
-package com.a2.essteling;
+package com.a2.essteling.Pass;
 
 import android.graphics.Color;
+
+import com.a2.essteling.ScoreBoard.Historie;
 
 import java.util.ArrayList;
 

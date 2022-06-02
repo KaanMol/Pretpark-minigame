@@ -1,4 +1,4 @@
-package com.a2.essteling;
+package com.a2.essteling.Shop;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.a2.essteling.R;
 import com.bumptech.glide.Glide;
 
 public class PurchaseActivity extends AppCompatActivity {

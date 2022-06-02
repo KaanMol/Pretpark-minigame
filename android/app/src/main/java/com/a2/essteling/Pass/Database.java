@@ -1,4 +1,4 @@
-package com.a2.essteling;
+package com.a2.essteling.Pass;
 
 import java.util.HashMap;
 

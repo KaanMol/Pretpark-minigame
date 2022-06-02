@@ -1,10 +1,15 @@
-package com.a2.essteling;
+package com.a2.essteling.ScoreBoard;
 
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.a2.essteling.Pass.Player;
+import com.a2.essteling.R;
+import com.a2.essteling.Shop.ShopItem;
+import com.a2.essteling.Shop.ShopListAdapter;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

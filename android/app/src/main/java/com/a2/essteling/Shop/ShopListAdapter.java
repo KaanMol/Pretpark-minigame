@@ -1,4 +1,4 @@
-package com.a2.essteling;
+package com.a2.essteling.Shop;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,9 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.a2.essteling.R;
 import com.bumptech.glide.Glide;
-
-import java.util.LinkedList;
 
 public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopViewHolder> {
     private static final String LOG_TAG = ShopListAdapter.class.getSimpleName();

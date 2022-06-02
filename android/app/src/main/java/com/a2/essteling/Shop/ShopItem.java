@@ -1,5 +1,6 @@
-package com.a2.essteling;
+package com.a2.essteling.Shop;
 
+import com.a2.essteling.R;
 import com.bumptech.glide.Glide;
 
 import java.io.Serializable;

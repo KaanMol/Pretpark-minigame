@@ -1,33 +1,13 @@
-package com.a2.essteling;
+package com.a2.essteling.Shop;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.location.GnssAntennaInfo;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.fasterxml.jackson.core.util.JsonParserSequence;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.LinkedList;
+import com.a2.essteling.R;
 
 public class ShopActivity extends AppCompatActivity implements ShopItemListener {
     private static final String LOG_TAG = ShopActivity.class.getSimpleName();

@@ -1,4 +1,4 @@
-package com.a2.essteling;
+package com.a2.essteling.ScoreBoard;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.a2.essteling.Pass.Player;
+import com.a2.essteling.R;
 
 import java.util.LinkedList;
 

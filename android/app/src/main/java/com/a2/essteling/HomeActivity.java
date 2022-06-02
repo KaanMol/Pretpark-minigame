@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.a2.essteling.Pass.PassActivity;
+import com.a2.essteling.Shop.ShopActivity;
+import com.a2.essteling.Shop.ShopitemList;
+
 public class HomeActivity extends AppCompatActivity {
     private static final String LOG_TAG = HomeActivity.class.getSimpleName();
 
@@ -27,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 
     //go to the scanner
     public void onScannerButton(View view){
-        Intent intent = new Intent(this,PassActivity.class);
+        Intent intent = new Intent(this, PassActivity.class);
         startActivity(intent);
     }
 }

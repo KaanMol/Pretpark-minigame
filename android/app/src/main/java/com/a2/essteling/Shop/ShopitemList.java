@@ -1,4 +1,4 @@
-package com.a2.essteling;
+package com.a2.essteling.Shop;
 
 import android.app.Application;
 import android.content.Context;
@@ -13,11 +13,7 @@ import com.android.volley.toolbox.Volley;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class ShopitemList extends Application {
     private static final String LOG_TAG = ShopitemList.class.getSimpleName();

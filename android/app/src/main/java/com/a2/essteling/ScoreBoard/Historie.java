@@ -1,4 +1,4 @@
-package com.a2.essteling;
+package com.a2.essteling.ScoreBoard;
 
 public class Historie {
     private String gameName;
