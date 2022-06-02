@@ -27,7 +27,7 @@ public class PurchaseActivity extends AppCompatActivity {
         itemImage = findViewById(R.id.itemImageBuy);
 
         itemName.setText(item.getName());
-        itemPrice.setText(item.getPrice());
+        itemPrice.setText(item.getPrice()+ " points");
         itemDescription.setText(item.getDescription());
 
         if (item.getImageLocal() == -1) {

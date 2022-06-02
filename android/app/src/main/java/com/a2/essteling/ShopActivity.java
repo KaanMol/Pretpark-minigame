@@ -34,26 +34,12 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
     private RecyclerView mRecyclerView;
     private ShopListAdapter mAdapter;
 
-    private ShopItem[] items;
+    private ShopItem[] items = ShopitemList.getShopItems();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-
-        items = new ShopItem[1];
-        items[1] = new ShopItem("placeholder", "placeholder", 1,"placeholder", "placeholder");
-
-
-
-//        RequestQueue requestQueue = Volley.newRequestQueue(this);
-//        requestQueue.add(stringRequest);
-
-
-//        for (int i = 0; i < 16; i++) {
-//            items.add(new ShopItem("item" + i, i + "0,00", 1));
-//        }
-
 
         //get the recyclerview
         mRecyclerView = findViewById(R.id.ShopRecyclerView);
@@ -82,30 +68,5 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
         intent.putExtra("item", item);
 
         startActivity(intent);
-    }
-
-    public static StringRequest getShopItemsRequest(){
-        return new StringRequest(Request.Method.GET, "https://mobiele-beleving-dev.herokuapp.com/products", new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    Log.d(LOG_TAG, "response gotten");
-                    ShopItem[] shopItems = new ObjectMapper().readValue(response, ShopItem[].class);
-
-
-
-                    Log.d(LOG_TAG, "response succesfully received");
-
-                } catch (IOException e) {
-                    Log.d(LOG_TAG, "product loading failed!");
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d(LOG_TAG, "error");
-            }
-        });
     }
 }

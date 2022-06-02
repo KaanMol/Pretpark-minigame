@@ -9,8 +9,11 @@ import android.view.View;
 public class HomeActivity extends AppCompatActivity {
     private static final String LOG_TAG = HomeActivity.class.getSimpleName();
 
+    ShopitemList shopitemList = (ShopitemList) this.getApplication();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ShopitemList.startQueue(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
     }

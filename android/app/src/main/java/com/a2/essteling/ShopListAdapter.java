@@ -42,7 +42,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
     @Override
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
         holder.ShopItemName.setText(mShopItems[position].getName());
-        holder.ShopItemPrice.setText(mShopItems[position].getPrice()+"");
+        holder.ShopItemPrice.setText(mShopItems[position].getPrice()+" points");
 
         if (mShopItems[position].getImageLocal() == -1) {
             Glide.with(context).load(mShopItems[position].getImage()).into(holder.ShopItemImage);
