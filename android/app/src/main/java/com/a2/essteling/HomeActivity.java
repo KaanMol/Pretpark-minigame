@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.a2.essteling.Pass.PassActivity;
+import com.a2.essteling.ScoreBoard.ScoreboardActivity;
 import com.a2.essteling.Shop.ShopActivity;
 import com.a2.essteling.Shop.ShopitemList;
 
@@ -32,6 +33,12 @@ public class HomeActivity extends AppCompatActivity {
     //go to the scanner
     public void onScannerButton(View view){
         Intent intent = new Intent(this, PassActivity.class);
+        startActivity(intent);
+    }
+
+    //go to the scoreboard
+    public void onScoreButton(View view){
+        Intent intent = new Intent(this, ScoreboardActivity.class);
         startActivity(intent);
     }
 }

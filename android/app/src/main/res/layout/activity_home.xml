@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:backgroundTint="@color/Red"
-        android:onClick="onScannerButton"
+        android:onClick="onScoreButton"
         android:text="  EsScore "
         android:textAllCaps="false"
         android:textSize="38dp"
