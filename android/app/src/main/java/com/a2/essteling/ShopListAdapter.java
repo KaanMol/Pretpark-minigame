@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.LinkedList;
 
 public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopViewHolder> {
@@ -19,13 +21,14 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
     private LayoutInflater mInflater;
     private final LinkedList<ShopItem> mShopItems;
     private ShopItemListener listener;
-
+    Context context;
 
 
     public ShopListAdapter(Context context, LinkedList<ShopItem> mShopItems, ShopItemListener listener) {
         this.mInflater = LayoutInflater.from(context);
         this.mShopItems = mShopItems;
         this.listener = listener;
+        this.context = context;
     }
 
     @NonNull
@@ -40,8 +43,12 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
         holder.ShopItemName.setText(mShopItems.get(position).getName());
         holder.ShopItemPrice.setText(mShopItems.get(position).getPrice());
-        holder.ShopItemImage.setImageResource(mShopItems.get(position).getImage());
 
+        if (mShopItems.get(position).getImage() == -1) {
+            Glide.with(context).load(mShopItems.get(position).getImageURL()).into(holder.ShopItemImage);
+        } else {
+            holder.ShopItemImage.setImageResource(mShopItems.get(position).getImage());
+        }
         holder.ShopItemImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -12,6 +12,33 @@ public class ShopItem implements Serializable {
     //the id of the used image
     private int image;
 
+    private String imageURL;
+
+    public ShopItem(String name, String price, String description,int imageID) {
+        this.name = name;
+        this.price = price;
+        this.image = imageID;
+        this.description = description;
+
+    }
+
+    public ShopItem(String name, String price, String description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+
+        this.image = R.drawable.ashizons_paprika_logo;
+    }
+
+    public ShopItem(String name, String price, String description, String imageURL) {
+        this.name = name;
+        this.price = price;
+        this.imageURL = imageURL;
+        this.image = -1;
+        this.description = description;
+
+    }
+
     public int getImage() {
         return image;
     }
@@ -20,12 +47,12 @@ public class ShopItem implements Serializable {
         this.image = image;
     }
 
-    public ShopItem(String name, String price, String description,int imageID) {
-        this.name = name;
-        this.price = price;
-        this.image = imageID;
-        this.description = description;
-        
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public String getDescription() {
@@ -36,13 +63,7 @@ public class ShopItem implements Serializable {
         this.description = description;
     }
 
-    public ShopItem(String name, String price, String description) {
-        this.name = name;
-        this.price = price;
-        this.description = description;
 
-        this.image = R.drawable.ashizons_paprika_logo;
-    }
 
     public String getName() {
         return name;

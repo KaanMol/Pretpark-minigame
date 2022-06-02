@@ -38,7 +38,7 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
         items.add(new ShopItem("Fanta", "6 punten", "test",R.drawable.fanta));
         items.add(new ShopItem("Pepsi", "6 punten", "test",R.drawable.pepsi));
         items.add(new ShopItem("Ashizon's Paprika", "69 punten","test", R.drawable.ashizons_paprika_logo));
-        items.add(new ShopItem("test", "test","test"));
+        items.add(new ShopItem("test", "test","test", "https://cdn.quicq.io/borgor/smashburger01.png"));
 
         //get the recyclerview
         mRecyclerView = findViewById(R.id.ShopRecyclerView);
