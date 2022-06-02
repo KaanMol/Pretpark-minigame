@@ -7,6 +7,21 @@
     tools:context=".PassActivity"
     >
 
+    <Button
+        android:id="@+id/buttonConnect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#70C33C"
+        android:fontFamily="@font/intermedium"
+        android:text="connect"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/passScanner"
         style="@style/layout_title"
@@ -32,9 +47,9 @@
         android:text="Name:"
         android:textColor="@color/Red"
         android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/textName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textInputEditText"
+        app:layout_constraintTop_toTopOf="@+id/textName"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -45,18 +60,19 @@
         android:text="Card number:"
         android:textColor="@color/Red"
         android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputEditText2"
+        app:layout_constraintBottom_toBottomOf="@+id/textCard"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textInputEditText2"
+        app:layout_constraintTop_toTopOf="@+id/textCard"
         app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/textName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:hint="type your name"
+        android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -64,15 +80,16 @@
         app:layout_constraintVertical_bias="0.301" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText2"
+        android:id="@+id/textCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="16dp"
         android:hint="card number"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
