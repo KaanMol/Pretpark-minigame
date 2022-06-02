@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e351e404-af6f-45a9-b8e2-b3da6cf9efa6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/PurchaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/PurchaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ShopActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ShopActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ShopItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ShopItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ShopListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ShopListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/PassActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/PassActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_pass.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_pass.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -58,19 +52,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
