@@ -11,7 +11,7 @@ public class Main {
         try {
             Store store = new Store();
 
-            String products = FileManager.read("src/main/resources/products.json");
+            String products = FileManager.read("products.json");
             ProductLoader.loadProducts(products, store.products(), store.localisations());
 
             int port = 8000;

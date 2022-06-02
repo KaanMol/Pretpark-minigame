@@ -11,14 +11,21 @@ import java.util.Scanner;
 
 public class FileManager {
     public static String read(String path) {
-        File file = new File(path);
-
-        if (!file.exists()) {
-            Logger.warn("Could not find file: '" + file.getAbsolutePath() + "'");
-            return "";
-        }
-
         try {
+            URL fileUrl = FileManager.class.getClassLoader().getResource(path);
+
+            if (fileUrl == null) {
+                Logger.warn("Could not find resource: '" + path + "'");
+                return "";
+            }
+
+            File file = new File(fileUrl.toURI());
+
+            if (!file.exists()) {
+                Logger.warn("Could not find file: '" + file.getAbsolutePath() + "'");
+                return "";
+            }
+
             Scanner scanner = new Scanner(new FileReader(file));
             StringBuilder source = new StringBuilder();
 
