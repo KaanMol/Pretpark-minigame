@@ -27,6 +27,7 @@ public class Main {
             server.route("/products", new ProductHandler());
             server.route("/admin", new AdminHandler());
             server.route("/cdn", new CdnHandler());
+            server.route("/nfc", new NfcHandler());
 
             server.start();
 

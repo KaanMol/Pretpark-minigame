@@ -17,6 +17,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/database/CardStore.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/Language.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/LocalisationStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/NfcStore.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/ProductStore.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/Store.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/database/WinStore.java" afterDir="false" />
@@ -28,6 +29,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/CardHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/CdnHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/NfcHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/PointsHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/ProductHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/helper/ProductLoader.java" afterDir="false" />

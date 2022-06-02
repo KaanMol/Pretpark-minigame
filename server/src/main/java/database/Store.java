@@ -15,6 +15,8 @@ public class Store {
     private final CardStore cards;
     private final WinStore wins;
 
+    private final NfcStore nfcs;
+
     private final LocalisationStore localisations;
 
     private final ProductStore products;
@@ -25,6 +27,7 @@ public class Store {
         wins = new WinStore();
         products = new ProductStore();
         localisations = new LocalisationStore();
+        nfcs = new NfcStore();
     }
 
     public AccountStore accounts() {
@@ -42,6 +45,8 @@ public class Store {
     public ProductStore products() {
         return products;
     }
+
+    public NfcStore nfcs() { return nfcs;}
 
     public LocalisationStore localisations() {
         return localisations;
