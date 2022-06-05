@@ -2,5 +2,9 @@
   {
     "nfcId": "abcdefghijklmnopqrstuvwxyz",
     "cardNumber": "abc"
+  },
+  {
+    "nfcId": "test",
+    "cardNumber": "test"
   }
 ]
