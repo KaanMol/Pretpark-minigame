@@ -8,6 +8,10 @@
     "cardNumber": "test"
   },
   {
+    "nfcId": "test1",
+    "cardNumber": "test1"
+  },
+  {
     "nfcId": "test2",
     "cardNumber": "test2"
   },

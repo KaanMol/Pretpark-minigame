@@ -25,7 +25,7 @@ public class NfcHandler extends Handler{
         String cardNumber = getStore().nfcs().getcardNumber(nfcId);
 
         if (cardNumber == null) {
-            return conflict("No cardNumber found for nfcId: " + nfcId);
+            return conflict("No cardNumber found for nfcId '" + nfcId + "'");
         }
 
         return ok(cardNumber);
@@ -35,7 +35,7 @@ public class NfcHandler extends Handler{
         String nfcId = getStore().nfcs().getNfcId(cardNumber);
 
         if (nfcId == null) {
-            return conflict("No nfcId found for cardNumber: " + cardNumber);
+            return conflict("No nfcId found for cardNumber '" + cardNumber + "'");
         }
 
         return ok(nfcId);
