@@ -11,15 +11,15 @@ import java.util.List;
 public class CardHandler extends Handler {
     @Override
     protected HttpResponse get() throws IOException {
-        String cardId = getParameter("cardId");
+        String nfcId = getParameter("nfcId");
         String accountId = getParameter("accountId");
 
-        if (cardId != null) {
-            return getCardById(cardId);
+        if (nfcId != null) {
+            return getCardById(nfcId);
         } else if (accountId != null) {
             return getCardsByAccount(accountId);
         } else {
-            return error("Missing parameter; accountId or cardId");
+            return conflict("Missing parameter; accountId or nfcId");
         }
     }
 
@@ -35,11 +35,11 @@ public class CardHandler extends Handler {
         return ok(cards);
     }
 
-    private HttpResponse getCardById(String cardId) throws IOException {
-        Card card = getStore().cards().find(cardId);
+    private HttpResponse getCardById(String nfcId) throws IOException {
+        Card card = getStore().cards().find(nfcId);
 
         if (card == null) {
-            return conflict("Card not registered");
+            return conflict("Card not registered to an account");
         }
 
         return ok(card);
@@ -48,14 +48,27 @@ public class CardHandler extends Handler {
     @Override
     protected HttpResponse post() throws IOException {
         String accountId = getParameter("accountId");
-        String cardId = getParameter("cardId");
+        String cardNumber = getParameter("cardNumber");
+        String nfcId = getStore().nfcs().getNfcId(cardNumber);
 
-        if(getStore().cards().find(cardId) != null) {
+        if(cardNumber == null) {
+            return conflict("Missing parameter 'cardNumber'");
+        }
+
+        if(accountId == null) {
+            return conflict("Missing parameter 'accountId'");
+        }
+
+        if(nfcId == null) {
+            return conflict("Could not find NFC match for cardNumber '" + cardNumber + "'");
+        }
+
+        if(getStore().cards().find(nfcId) != null) {
             return conflict("Card already registered");
         }
 
         Account account = getStore().accounts().findOrCreate(accountId);
-        Card card = getStore().cards().create(cardId, account);
+        Card card = getStore().cards().create(nfcId, account);
 
         return ok(card);
     }

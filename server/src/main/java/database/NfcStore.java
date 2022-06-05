@@ -7,21 +7,19 @@ public class NfcStore {
 
     public NfcStore() {
         this.ids = new HashMap<String, String>();
-
-        set("1-nfc", "1-readable");
     }
 
-    public void set(String nfcId, String readableId) {
-        ids.put(nfcId, readableId);
+    public void set(String nfcId, String cardNumber) {
+        ids.put(nfcId, cardNumber);
     }
 
-    public String getReadableId(String nfcId) {
+    public String getcardNumber(String nfcId) {
         return ids.get(nfcId);
     }
 
-    public String getNfcId(String readableId) {
+    public String getNfcId(String cardNumber) {
         for (String nfcId : ids.keySet()) {
-            if (ids.get(nfcId).equals(readableId)) {
+            if (ids.get(nfcId).equals(cardNumber)) {
                 return nfcId;
             }
         }

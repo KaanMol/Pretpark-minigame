@@ -29,7 +29,7 @@ public class CardStore {
 
     public Card find(String id) {
         for (Card card : cards) {
-            if (card.cardId().equals(id)) {
+            if (card.nfcId().equals(id)) {
                 return card;
             }
         }
@@ -48,7 +48,7 @@ public class CardStore {
 
     public void delete(String id) {
         for (Card card : cards) {
-            if (card.cardId().equals(id)) {
+            if (card.nfcId().equals(id)) {
                 Logger.debug("Deleting card with id " + id);
 
                 cards.remove(card);

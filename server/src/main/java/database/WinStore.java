@@ -16,9 +16,9 @@ public class WinStore {
     }
 
     public Win create(String gameId, Card card, LocalDateTime timestamp, int points) {
-        Logger.debug("Creating win for cardId " + card.cardId() + " with gameId " + gameId);
+        Logger.debug("Creating win for nfcId " + card.nfcId() + " with gameId " + gameId);
 
-        Win win = new Win(gameId, card.cardId(), timestamp.toString(), points);
+        Win win = new Win(gameId, card.nfcId(), timestamp.toString(), points);
         wins.add(win);
         return win;
     }
@@ -26,7 +26,7 @@ public class WinStore {
     public List<Win> findByCard(Card card) {
         List<Win> result = new ArrayList<>();
         for (Win win : wins) {
-            if (win.cardId().equals(card.cardId())) {
+            if (win.nfcId().equals(card.nfcId())) {
                 result.add(win);
             }
         }

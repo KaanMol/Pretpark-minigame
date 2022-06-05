@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import logging.Logger;
 
-public record Card(String cardId, String accountId) {
+public record Card(String nfcId, String accountId) {
 
     public String toJson() throws JsonProcessingException {
         try {

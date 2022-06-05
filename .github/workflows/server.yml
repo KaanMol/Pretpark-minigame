@@ -3,12 +3,12 @@ name: E2E Testing HTTP Server
 on:
   push:
     branches:
-    - main
-    - dev
+      - main
+      - dev
   pull_request:
     branches:
-    - main
-    - dev 
+      - main
+      - dev 
 
 jobs:
   test:
