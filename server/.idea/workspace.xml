@@ -1,37 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a75cdc1-e255-4b86-a509-6426424e3f0e" name="Changes" comment="" />
+    <list default="true" id="e351e404-af6f-45a9-b8e2-b3da6cf9efa6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/AccountStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/CardStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/Language.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/LocalisationStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/NfcStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/ProductStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/WinStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Card.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/Win.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/AdminHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/CardHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/CdnHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/NfcHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/PointsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/ProductHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/helper/ProductLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/HttpMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/HttpResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/JsonHttpResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/http/StreamHttpResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/FileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logging/LogLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logging/LogListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logging/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/burger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cola.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fanta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ijs.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/nuggets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/patat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pizza.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/products.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/slush.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/spa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/suikerspin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
-  <component name="ProjectId" id="29vVrP4OU3j8b7u3OL5jcs1C24y" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29vfQUxNdsDReO5y91bmXpy1gQs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3a75cdc1-e255-4b86-a509-6426424e3f0e" name="Changes" comment="" />
-      <created>1653993744581</created>
+      <changelist id="e351e404-af6f-45a9-b8e2-b3da6cf9efa6" name="Changes" comment="" />
+      <created>1653998464266</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653993744581</updated>
+      <updated>1653998464266</updated>
+      <workItem from="1653998465381" duration="160000" />
+      <workItem from="1654033451067" duration="2885000" />
+      <workItem from="1654156866653" duration="295000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
