@@ -1,5 +1,6 @@
 import database.Store;
 import handlers.*;
+import helper.NfcLoader;
 import helper.ProductLoader;
 import io.FileManager;
 import logging.Logger;
@@ -11,8 +12,11 @@ public class Main {
         try {
             Store store = new Store();
 
-            String products = FileManager.read("products.json");
-            ProductLoader.loadProducts(products, store.products(), store.localisations());
+            String productsJson = FileManager.read("products.json");
+            ProductLoader.loadProducts(productsJson, store.products(), store.localisations());
+
+            String nfcJson = FileManager.read("nfcs.json");
+            NfcLoader.loadNfcs(nfcJson, store.nfcs());
 
             int port = 8000;
 
