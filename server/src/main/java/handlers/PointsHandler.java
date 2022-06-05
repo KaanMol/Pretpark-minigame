@@ -18,7 +18,7 @@ public class PointsHandler extends Handler{
         if (accountId != null) {
             return getByAccountId(accountId);
         } else if (nfcId != null) {
-            return getBynfcId(nfcId);
+            return getByNfcId(nfcId);
         } else {
             return conflict("Missing parameter; accountId or nfcId");
         }
@@ -46,11 +46,11 @@ public class PointsHandler extends Handler{
         return ok(new PointsResult(wins, totalPoints));
     }
 
-    private JsonHttpResponse getBynfcId(String nfcId) {
+    private JsonHttpResponse getByNfcId(String nfcId) {
         Card card = getStore().cards().find(nfcId);
 
         if (card == null) {
-            return conflict("Card not registered");
+            return conflict("Card not registered to an account");
         }
 
         List<Win> wins = getStore().wins().findByCard(card);
@@ -69,10 +69,18 @@ public class PointsHandler extends Handler{
         String nfcId = getParameter("nfcId");
         String gameId = getParameter("gameId");
 
+        if (nfcId == null) {
+            return conflict("Missing parameter 'nfcId'");
+        }
+
+        if (gameId == null) {
+            return conflict("Missing parameter 'gameId'");
+        }
+
         Card card = getStore().cards().find(nfcId);
 
         if (card == null) {
-            return conflict("Card not registered");
+            return conflict("Card not registered to an account");
         }
 
         // todo: algorithm to calculate points
