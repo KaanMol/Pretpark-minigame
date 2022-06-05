@@ -39,7 +39,7 @@ public class CardHandler extends Handler {
         Card card = getStore().cards().find(nfcId);
 
         if (card == null) {
-            return conflict("Card not registered");
+            return conflict("Card not registered to an account");
         }
 
         return ok(card);
