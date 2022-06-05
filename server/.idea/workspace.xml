@@ -20,7 +20,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="953" />
@@ -73,11 +73,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3a75cdc1-e255-4b86-a509-6426424e3f0e" name="Changes" comment="" />
-      <created>1653993744581</created>
+      <changelist id="e351e404-af6f-45a9-b8e2-b3da6cf9efa6" name="Changes" comment="" />
+      <created>1653998464266</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653993744581</updated>
+      <updated>1653998464266</updated>
+      <workItem from="1653998465381" duration="160000" />
+      <workItem from="1654033451067" duration="2885000" />
+      <workItem from="1654156866653" duration="295000" />
     </task>
     <servers />
   </component>

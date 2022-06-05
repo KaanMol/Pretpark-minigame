@@ -1,0 +1,23 @@
+{
+  "name": "server-e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "jest": {
+    "globals": {
+      "ENDPOINT": "http://127.0.0.1:8000"
+    }
+  },
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "jest": "^28.1.0"
+  }
+}
