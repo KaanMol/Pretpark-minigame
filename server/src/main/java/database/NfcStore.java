@@ -7,8 +7,6 @@ public class NfcStore {
 
     public NfcStore() {
         this.ids = new HashMap<String, String>();
-
-        set("1-nfc", "1-readable");
     }
 
     public void set(String nfcId, String readableId) {
