@@ -8,34 +8,34 @@ public class NfcHandler extends Handler{
     @Override
     protected HttpResponse get() throws IOException {
         String nfcId = getParameter("nfcId");
-        String readableId = getParameter("readableId");
+        String cardNumber = getParameter("cardNumber");
 
-        if (nfcId == null && readableId == null) {
-            return error("Missing parameter; nfcId or readableId");
+        if (nfcId == null && cardNumber == null) {
+            return conflict("Missing parameter; nfcId or cardNumber");
         }
 
         if (nfcId != null) {
-            return getReadableId(nfcId);
+            return getCardNumber(nfcId);
         } else {
-            return getNfcId(readableId);
+            return getNfcId(cardNumber);
         }
     }
 
-    private HttpResponse getReadableId(String nfcId) {
-        String readableId = getStore().nfcs().getReadableId(nfcId);
+    private HttpResponse getCardNumber(String nfcId) {
+        String cardNumber = getStore().nfcs().getcardNumber(nfcId);
 
-        if (readableId == null) {
-            return error("No readable id found for nfcId: " + nfcId);
+        if (cardNumber == null) {
+            return conflict("No cardNumber found for nfcId: " + nfcId);
         }
 
-        return ok(readableId);
+        return ok(cardNumber);
     }
 
-    private HttpResponse getNfcId(String readableId) {
-        String nfcId = getStore().nfcs().getNfcId(readableId);
+    private HttpResponse getNfcId(String cardNumber) {
+        String nfcId = getStore().nfcs().getNfcId(cardNumber);
 
         if (nfcId == null) {
-            return error("No nfcId found for readableId: " + readableId);
+            return conflict("No nfcId found for cardNumber: " + cardNumber);
         }
 
         return ok(nfcId);

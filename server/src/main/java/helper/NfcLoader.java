@@ -14,11 +14,11 @@ public class NfcLoader {
 
             for (NfcEntry nfcEntry : nfcEntries) {
                 try {
-                    nfcs.set(nfcEntry.nfcId(), nfcEntry.readableId());
+                    nfcs.set(nfcEntry.nfcId(), nfcEntry.cardNumber());
 
-                    Logger.debug("Matched nfc '" + nfcEntry.nfcId() + "' to '" + nfcEntry.readableId() + "'");
+                    Logger.debug("Matched nfc '" + nfcEntry.nfcId() + "' to '" + nfcEntry.cardNumber() + "'");
                 } catch (Exception ex) {
-                    Logger.warn(ex, "Failed to match nfc '" + nfcEntry.nfcId() + "' to '" + nfcEntry.readableId() + "'");
+                    Logger.warn(ex, "Failed to match nfc '" + nfcEntry.nfcId() + "' to '" + nfcEntry.cardNumber() + "'");
                 }
             }
         } catch (Exception ex) {
@@ -28,5 +28,5 @@ public class NfcLoader {
 
 }
 
-record NfcEntry(String nfcId, String readableId) {
+record NfcEntry(String nfcId, String cardNumber) {
 }

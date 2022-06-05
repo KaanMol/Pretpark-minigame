@@ -13,14 +13,14 @@ public class PointsHandler extends Handler{
     @Override
     protected JsonHttpResponse get() {
         String accountId = getParameter("accountId");
-        String cardId = getParameter("cardId");
+        String nfcId = getParameter("nfcId");
 
         if (accountId != null) {
             return getByAccountId(accountId);
-        } else if (cardId != null) {
-            return getByCardId(cardId);
+        } else if (nfcId != null) {
+            return getBynfcId(nfcId);
         } else {
-            return error("Missing parameter; accountId or cardId");
+            return conflict("Missing parameter; accountId or nfcId");
         }
     }
 
@@ -46,8 +46,8 @@ public class PointsHandler extends Handler{
         return ok(new PointsResult(wins, totalPoints));
     }
 
-    private JsonHttpResponse getByCardId(String cardId) {
-        Card card = getStore().cards().find(cardId);
+    private JsonHttpResponse getBynfcId(String nfcId) {
+        Card card = getStore().cards().find(nfcId);
 
         if (card == null) {
             return conflict("Card not registered");
@@ -66,10 +66,10 @@ public class PointsHandler extends Handler{
 
     @Override
     protected JsonHttpResponse post() {
-        String cardId = getParameter("cardId");
+        String nfcId = getParameter("nfcId");
         String gameId = getParameter("gameId");
 
-        Card card = getStore().cards().find(cardId);
+        Card card = getStore().cards().find(nfcId);
 
         if (card == null) {
             return conflict("Card not registered");
