@@ -16,7 +16,7 @@ public class ProductLoader {
         try {
             ProductEntry[] productEntries = new ObjectMapper().readValue(json, ProductEntry[].class);
 
-            Logger.debug("Loading " + productEntries.length + " products");
+            Logger.info("Loading " + productEntries.length + " products");
 
             for (ProductEntry productEntry : productEntries) {
                 try {
@@ -26,9 +26,9 @@ public class ProductLoader {
                     localisations.set(productEntry.id() + "_description", Language.DUTCH, productEntry.description().dutch());
                     localisations.set(productEntry.id() + "_description", Language.ENGLISH, productEntry.description().english());
 
-                    Logger.debug("Loaded product " + productEntry.id());
+                    Logger.debug("Loaded product '" + productEntry.id() + "'");
                 } catch (Exception ex) {
-                    Logger.warn(ex, "Failed to load product " + productEntry.id());
+                    Logger.warn(ex, "Failed to load product '" + productEntry.id() + "'");
                 }
             }
         } catch (Exception ex) {
