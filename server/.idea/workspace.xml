@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e351e404-af6f-45a9-b8e2-b3da6cf9efa6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ScoreBoard/ScoreboardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ScoreBoard/ScoreboardActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_scoreboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_scoreboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_scoreboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_scoreboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_tabmenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_tabmenu.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e351e404-af6f-45a9-b8e2-b3da6cf9efa6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,9 +20,9 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -92,7 +85,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.123667374" />

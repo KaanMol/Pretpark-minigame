@@ -3,6 +3,7 @@ package com.a2.essteling.ScoreBoard;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -11,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.a2.essteling.Pass.Player;
 import com.a2.essteling.R;
-import com.a2.essteling.Shop.ShopActivity;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class ScoreboardActivity extends AppCompatActivity implements PlayerButtonListener {
@@ -25,6 +24,10 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
     private RecyclerView scoreRecyclerView;
     private ScoreBoardAdaptor scoreBoardAdaptor;
+
+    private TextView totalPointsView;
+
+    private int totalPoints;
 
 
 
@@ -63,6 +66,10 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         //make the recyclerview a linear layout
         scoreRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        totalPointsView = findViewById(R.id.totalPoints);
+        calculateTotalPoints();
+        totalPointsView.setText("Total Points: " + totalPoints);
+
 
     }
 
@@ -81,25 +88,34 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
     private LinkedList<Historie> testHistories(){
         LinkedList<Historie> histories = new LinkedList<>();
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "here", 1420, i));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "there", 1420, i));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "somewhere", 1420, i));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "otherwhere", 1420, i));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "softwhere", 1420, i));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "hardwhere", 1420, i));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "entrance", 1420, i));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "ip addres", 1420, i));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        histories.add(new Historie("game " + i%4, "test", 1420, i));
         this.i++;
         return histories;
+    }
+
+    private void calculateTotalPoints(){
+        totalPoints = 0;
+        players.forEach(player -> {
+            player.getGameHistorie().forEach(historie -> {
+                totalPoints =+ historie.getPoints();
+            });
+        });
     }
 
     private void addPlayersList(String name, int punten, int color, LinkedList<Historie> histories) {
