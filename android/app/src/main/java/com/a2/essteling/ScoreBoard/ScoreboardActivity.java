@@ -88,23 +88,23 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
     private LinkedList<Historie> testHistories(){
         LinkedList<Historie> histories = new LinkedList<>();
-        histories.add(new Historie("game " + i%4, "here", 1420, i));
+        histories.add(new Historie("game " + i%4, "here", 1420, i%7+1));
         this.i++;
-        histories.add(new Historie("game " + i%4, "there", 1420, i));
+        histories.add(new Historie("game " + i%4, "there", 1420, i%7+1));
         this.i++;
-        histories.add(new Historie("game " + i%4, "somewhere", 1420, i));
+        histories.add(new Historie("game " + i%4, "somewhere", 1420, i%7+1));
         this.i++;
-        histories.add(new Historie("game " + i%4, "otherwhere", 1420, i));
+        histories.add(new Historie("game " + i%4, "otherwhere", 1420, i%7+1));
         this.i++;
-        histories.add(new Historie("game " + i%4, "softwhere", 1420, i));
+        histories.add(new Historie("game " + i%4, "softwhere", 1420, i%7+1));
         this.i++;
-        histories.add(new Historie("game " + i%4, "hardwhere", 1420, i));
+        histories.add(new Historie("game " + i%4, "hardwhere", 1420, i%7+1));
         this.i++;
-        histories.add(new Historie("game " + i%4, "entrance", 1420, i));
+        histories.add(new Historie("game " + i%4, "entrance", 1420, i%7+1));
         this.i++;
-        histories.add(new Historie("game " + i%4, "ip addres", 1420, i));
+        histories.add(new Historie("game " + i%4, "ip addres", 1420, i%7+1));
         this.i++;
-        histories.add(new Historie("game " + i%4, "test", 1420, i));
+        histories.add(new Historie("game " + i%4, "test", 1420, i%7+1));
         this.i++;
         return histories;
     }
@@ -113,7 +113,8 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         totalPoints = 0;
         players.forEach(player -> {
             player.getGameHistorie().forEach(historie -> {
-                totalPoints =+ historie.getPoints();
+                totalPoints += historie.getPoints();
+                Log.d(LOG_TAG, i+"");
             });
         });
     }
