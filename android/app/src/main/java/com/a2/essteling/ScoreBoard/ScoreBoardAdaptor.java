@@ -38,7 +38,7 @@ public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.Sc
     public void onBindViewHolder(@NonNull ScoreBoardViewHolder holder, int position) {
         holder.GameTime.setText(mHistories.get(position).getTime()+"");
         holder.GameLocation.setText(mHistories.get(position).getGameLocation());
-        holder.GamePoints.setText(mHistories.get(position).getPoints()+"");
+        holder.GamePoints.setText(mHistories.get(position).getPoints()+" points");
         holder.GameName.setText(mHistories.get(position).getGameName());
     }
 

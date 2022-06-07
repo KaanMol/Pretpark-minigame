@@ -35,9 +35,6 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
         super.onCreate(savedInstanceState);
         testlayers();
-        testlayers();
-        testlayers();
-        testlayers();
 
         //players recycleview
         //get the recyclerview
@@ -58,7 +55,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         scoreRecyclerView = findViewById(R.id.ScoreRecyclerView);
 
         //create the adapter
-        scoreBoardAdaptor = new ScoreBoardAdaptor(this, players.get(5));
+        scoreBoardAdaptor = new ScoreBoardAdaptor(this, players.get(0));
 
         //give the adapter to the recyclerview
         scoreRecyclerView.setAdapter(scoreBoardAdaptor);
@@ -71,33 +68,38 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
     private int i = 0;
 
-
+    //create a test list for the scoreboard
     private void testlayers(){
-        LinkedList<Historie> histories = new LinkedList<>();
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
-        histories.add(new Historie("shit game", "hell", 1420, i));
-        this.i++;
 
-        players.add(new Player("Momin" , 0, Color.GRAY, histories));
-        players.add(new Player("Coen" , 2, Color.GRAY, histories));
-        players.add(new Player("Lucas" , 3, Color.GRAY, histories));
-        players.add(new Player("Kaan" , 2, Color.GRAY, histories));
-        players.add(new Player("Koen" , 4, Color.GRAY, histories));
+
+        players.add(new Player("Momin" , 0, Color.GRAY, testHistories()));
+        players.add(new Player("Coen" , 2, Color.GRAY, testHistories()));
+        players.add(new Player("Lucas" , 3, Color.GRAY, testHistories()));
+        players.add(new Player("Kaan" , 2, Color.GRAY, testHistories()));
+        players.add(new Player("Koen" , 4, Color.GRAY, testHistories()));
+    }
+
+    private LinkedList<Historie> testHistories(){
+        LinkedList<Historie> histories = new LinkedList<>();
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        histories.add(new Historie("game " + i%4, "hell", 1420, i));
+        this.i++;
+        return histories;
     }
 
     private void addPlayersList(String name, int punten, int color, LinkedList<Historie> histories) {
@@ -105,6 +107,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
     }
 
+    //change the scoreboard to the clicked player
     @Override
     public void onPlayerClicked(Player player) {
         Log.d(LOG_TAG, player.getName());
