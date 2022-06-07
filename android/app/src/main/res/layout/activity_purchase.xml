@@ -41,25 +41,28 @@
 
     <TextView
         android:id="@+id/itemNameBuy"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/itemImageBuy"
         app:layout_constraintStart_toStartOf="@+id/itemImageBuy"
         app:layout_constraintTop_toBottomOf="@+id/itemImageBuy" />
 
     <TextView
         android:id="@+id/itemPriceBuy"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/itemNameBuy"
         app:layout_constraintStart_toStartOf="@+id/itemNameBuy"
         app:layout_constraintTop_toBottomOf="@+id/itemNameBuy" />
 
     <TextView
         android:id="@+id/itemDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/itemPriceBuy"
         app:layout_constraintStart_toStartOf="@+id/itemPriceBuy"
         app:layout_constraintTop_toBottomOf="@+id/itemPriceBuy" />
 

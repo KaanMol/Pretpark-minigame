@@ -5,14 +5,15 @@ import android.graphics.Color;
 import com.a2.essteling.ScoreBoard.Historie;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Player {
     private String name;
     private int punten;
-    private Color buttonColor;
-    private ArrayList<Historie> gameHistorie;
+    private int buttonColor;
+    private LinkedList<Historie> gameHistorie;
 
-    public Player(String name, int punten, Color buttonColor, ArrayList<Historie> gameHistorie) {
+    public Player(String name, int punten, int buttonColor, LinkedList<Historie> gameHistorie) {
         this.name = name;
         this.punten = punten;
         this.buttonColor = buttonColor;
@@ -35,19 +36,20 @@ public class Player {
         this.punten = punten;
     }
 
-    public Color getButtonColor() {
+    public int getButtonColor() {
         return buttonColor;
     }
 
-    public void setButtonColor(Color buttonColor) {
+    public void setButtonColor(int buttonColor) {
         this.buttonColor = buttonColor;
     }
 
-    public ArrayList<Historie> getGameHistorie() {
+    public LinkedList<Historie> getGameHistorie() {
         return gameHistorie;
     }
 
-    public void setGameHistorie(ArrayList<Historie> gameHistorie) {
+    public void setGameHistorie(LinkedList<Historie> gameHistorie) {
         this.gameHistorie = gameHistorie;
     }
 }
+

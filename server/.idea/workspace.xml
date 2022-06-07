@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e351e404-af6f-45a9-b8e2-b3da6cf9efa6" name="Changes" comment="" />
+    <list default="true" id="e351e404-af6f-45a9-b8e2-b3da6cf9efa6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ScoreBoard/ScoreboardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/com/a2/essteling/ScoreBoard/ScoreboardActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_scoreboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/activity_scoreboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_scoreboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_scoreboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_tabmenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/layout/layout_tabmenu.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,42 +18,53 @@ import java.util.LinkedList;
 public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.ScoreBoardViewHolder> {
     private static final String LOG_TAG = ScoreBoardAdaptor.class.getSimpleName();
     private LayoutInflater mInFlater;
-    private final LinkedList<Player> mPLayers;
+    private LinkedList<Historie> mHistories;
     private ScoreBoardListener listener;
     Context context;
 
-    public ScoreBoardAdaptor(LayoutInflater mInFlater, LinkedList<Player> mPLayers, ScoreBoardListener listener, Context context) {
+    public ScoreBoardAdaptor(Context context, Player player) {
         this.mInFlater = LayoutInflater.from(context);
-        this.mPLayers = mPLayers;
-        this.listener = listener;
-        this.context = context;
+        this.mHistories = player.getGameHistorie();
     }
 
     @NonNull
     @Override
     public ScoreBoardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mScoreBoardView = mInFlater.inflate(R.layout.layout_tabmenu, parent, false);
+        View mScoreBoardView = mInFlater.inflate(R.layout.layout_scoreboard, parent, false);
         return new ScoreBoardViewHolder(mScoreBoardView, this);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ScoreBoardViewHolder holder, int position) {
+        holder.GameTime.setText(mHistories.get(position).getTime()+"");
+        holder.GameLocation.setText(mHistories.get(position).getGameLocation());
+        holder.GamePoints.setText(mHistories.get(position).getPoints()+"");
+        holder.GameName.setText(mHistories.get(position).getGameName());
+    }
 
+    public void setHistories(LinkedList<Historie> mHistories) {
+        this.mHistories = mHistories;
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mHistories.size();
     }
 
     public class ScoreBoardViewHolder extends RecyclerView.ViewHolder {
         final ScoreBoardAdaptor mAdaptor;
-        public final Button ScoreBoardButton;
+        public final TextView GameName;
+        public final TextView GamePoints;
+        public final TextView GameTime;
+        public final TextView GameLocation;
 
 
         public ScoreBoardViewHolder(@NonNull View itemView, ScoreBoardAdaptor scoreBoardAdaptor) {
             super(itemView);
-            ScoreBoardButton = itemView.findViewById(R.id.buttonPlayerName);
+            GameName = itemView.findViewById(R.id.gameName);
+            GamePoints = itemView.findViewById(R.id.GamePoints);
+            GameLocation = itemView.findViewById(R.id.GameLocation);
+            GameTime = itemView.findViewById(R.id.GameTime);
             this.mAdaptor =  scoreBoardAdaptor;
 
         }
