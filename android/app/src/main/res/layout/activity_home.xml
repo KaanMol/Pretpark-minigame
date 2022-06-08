@@ -12,6 +12,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/layout_title" />
+
+    <TextView
+        android:id="@+id/ShopDesc"
+        android:layout_width="209dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="76dp"
+        android:text="Use your points to get free food/drinks"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/shopButton"
+        app:layout_constraintTop_toTopOf="@+id/shopButton"
+        tools:visibility="visible" />
+
     <ImageView
         android:id="@+id/logoLine"
         android:layout_width="0dp"
@@ -24,47 +38,52 @@
 
     <Button
         android:id="@+id/shopButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/Red"
+        android:drawableRight="@drawable/index4__1_"
         android:onClick="onShopButton"
-        android:text="EsShop"
+        android:text="Shop"
         android:textAllCaps="false"
-        android:textSize="38dp"
-        app:layout_constraintEnd_toEndOf="@+id/scannerButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/scannerButton"
-        app:layout_constraintTop_toBottomOf="@+id/logoLine" />
+        android:textSize="45sp"
+        app:iconTintMode="src_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scannerButton" />
 
     <Button
         android:id="@+id/scannerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/Red"
+        android:drawableRight="@drawable/scanner"
         android:onClick="onScannerButton"
-        android:text="EsScanner"
+        android:text="Scanner"
         android:textAllCaps="false"
-        android:textSize="38dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shopButton" />
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="@+id/shopButton"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="@+id/shopButton"
+        app:layout_constraintTop_toBottomOf="@+id/logoLine" />
 
     <Button
         android:id="@+id/scoreButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/Red"
+        android:drawableRight="@drawable/index2__1_"
         android:onClick="onScoreButton"
-        android:text="EsScore"
+        android:text="Score"
         android:textAllCaps="false"
-        android:textSize="38dp"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="@+id/scannerButton"
-        app:layout_constraintStart_toStartOf="@+id/scannerButton"
-        app:layout_constraintTop_toBottomOf="@+id/scannerButton" />
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/shopButton"
+        app:layout_constraintTop_toBottomOf="@+id/shopButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
