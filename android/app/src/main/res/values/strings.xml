@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">Essteling</string>
+    <string name="itemPrice">Price</string>
+    <string name="itemName">Name</string>
+    <string name="gameName">Maze</string>
+    <string name="player">player</string>
+    <string name="points">points</string>
+    <string name="location">Fabeltjes woud</string>
+    <string name="totalPoints">Total points:</string>
+    <string name="buy">Buy</string>
+    <string name="addCard">Add card</string>
+    <string name="name">Name:</string>
+    <string name="cardNumber">Card number:</string>
+    <string name="typeYourName">type your name</string>
+    <string name="typeYourCardNumber">type your card number</string>
+    <string name="scanner">Scanner</string>
+    <string name="score">Score</string>
+    <string name="shop">Shop</string>
+    <string name="app_name">Esstelling</string>
+    <string name="NoCardsRegistered">No cards registered</string>
+    <string name="NoHistoryFor">No history for: </string>
+    <string name="_points"> points</string>
+    <string name="notEnoughPoints">Not enough points!</string>
+
 </resources>

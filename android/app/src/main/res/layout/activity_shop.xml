@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundGravity="center_vertical"
+    tools:context=".Shop.ShopActivity">
+
+    <TextView
+        android:id="@+id/totalPointsShop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/totalPoints"
+        android:textColor="@color/Red"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/ShopRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ShopRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fadeScrollbars="false"
+        android:foreground="@android:drawable/gallery_thumb"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoLine"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/ShopTitle"
+        style="@style/layout_title"
+        android:fontFamily="@font/interbold"
+        android:singleLine="false"
+        android:text="@string/shop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-34dp"
+        app:layout_constraintEnd_toEndOf="@+id/ShopTitle"
+        app:layout_constraintStart_toStartOf="@+id/ShopTitle"
+        app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
+        app:srcCompat="@drawable/logo_line" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        style="@style/backButton"
+        android:foregroundTint="#FFFFFF"
+        android:onClick="onBackButton"
+        android:scrollbarTrackHorizontal="@drawable/image"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:tint="#FFFFFF"
+        app:backgroundTint="@color/Red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="48dp"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

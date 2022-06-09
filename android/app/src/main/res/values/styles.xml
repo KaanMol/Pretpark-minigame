@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RecycleShopImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">48dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:maxWidth">100dp</item>
+        <item name="android:maxHeight">100dp</item>
+        <item name="android:minWidth">100dp</item>
+        <item name="android:minHeight">100dp</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="RecycleShopName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">48dp</item>
+    </style>
+
+    <style name="RecycleShopPrice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">48dp</item>
+        <item name="android:layout_marginBottom">32dp</item>
+    </style>
+
+    <style name="layout_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">28dp</item>
+        <item name="android:layout_marginTop">28dp</item>
+        <item name="android:textSize">48dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/interbold</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:textColor">@color/Red</item>
+    </style>
+
+    <style name="backButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources>
