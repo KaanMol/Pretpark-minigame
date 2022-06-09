@@ -31,7 +31,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="951" />
     <option name="width" value="978" />
     <option name="height" value="1137" />
@@ -50,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654764571858" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654777129417" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server/src/main/resources/products.json" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -86,7 +86,7 @@
     <option name="totallyTimeSpent" value="1953000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="767" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="767" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
