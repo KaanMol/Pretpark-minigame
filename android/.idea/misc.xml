@@ -15,6 +15,11 @@
         <entry key="..\:/Users/coend/school/super-meme/android/app/src/main/res/layout/layout_shop.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/coend/school/super-meme/android/app/src/main/res/layout/layout_shopitem.xml" value="0.25" />
         <entry key="..\:/Users/coend/school/super-meme/android/app/src/main/res/layout/layout_tabmenu.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/drawable/logo_line.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_purchase.xml" value="0.18659420289855072" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.197" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.197" />
       </map>
     </option>
   </component>
