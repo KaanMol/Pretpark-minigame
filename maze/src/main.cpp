@@ -7,32 +7,37 @@
 // // need to define DATA_PIN.  For led chipsets that are SPI based (four wires - data, clock,
 // // ground, and power), like the LPD8806 define both DATA_PIN and CLOCK_PIN
 // // Clock pin only needed for SPI based chipsets when not using hardware SPI
-// #define DATA_PIN 2
+#define DATA_PIN 2
 
 // // Define the array of leds
 // CRGB leds[NUM_LEDS];
 
-// void setup() {
-//     FastLED.addLeds<WS2811, DATA_PIN, GRB>(leds, NUM_LEDS);
+// void setup()
+// {
+//   FastLED.addLeds<WS2811, DATA_PIN, GRB>(leds, NUM_LEDS);
 // }
 
-// void loop() {
+// void loop()
+// {
 //   FastLED.setBrightness(100);
 
-//   for (int i = 0; i < NUM_LEDS; i++) {
+//   for (int i = 0; i < NUM_LEDS; i++)
+//   {
 //     leds[i] = CRGB::Green;
 //   }
 //   FastLED.show();
 //   delay(500);
 
-//   for (int i = 0; i < NUM_LEDS; i++) {
+//   for (int i = 0; i < NUM_LEDS; i++)
+//   {
 //     leds[i] = CRGB::Red;
 //   }
 
 //   FastLED.show();
 //   delay(500);
 
-//   for (int i = 0; i < NUM_LEDS; i++) {
+//   for (int i = 0; i < NUM_LEDS; i++)
+//   {
 //     leds[i] = CRGB::Blue;
 //   }
 
@@ -170,139 +175,208 @@
 
 #include <Arduino.h>
 
-enum CellType { Player, Wall, Target, Nothing };
+enum CellType
+{
+  Player,
+  Wall,
+  Target,
+  Nothing
+};
 
 typedef struct
 {
-	int x;
-	int y;
+  int x;
+  int y;
 } Point;
 
 #define WIDTH 10
 #define HEIGHT 9
-
+#define BUTTON_FORWARD 4
 /*
   #: wall
   P: player
   ?: target
-  
-  note: this is only the initial state. 
+
+  note: this is only the initial state.
         the P char does not update positions during playing
 */
 const char maze[9][10] = {
-  {'#', '#', '#', ' ', '#', '#', '#', '#', '#', ' ' },
-  {'P', ' ', '#', ' ', ' ', ' ', '#', ' ', '#', ' ' },
-  {'#', ' ', '#', '#', '#', ' ', ' ', ' ', ' ', ' ' },
-  {' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', '#' },
-  {'#', ' ', '#', '#', '#', '#', '#', ' ', '#', ' ' },
-  {' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-  {'#', '#', ' ', ' ', '#', ' ', '#', '#', '#', '#' },
-  {'#', '#', '#', ' ', '#', ' ', ' ', ' ', ' ', ' ' },
-  {'#', ' ', ' ', ' ', '#', '#', '#', ' ', '#', '?' }
-};
+    {'#', '#', '#', ' ', '#', '#', '#', '#', '#', ' '},
+    {'P', ' ', '#', ' ', ' ', ' ', '#', ' ', '#', ' '},
+    {'#', ' ', '#', '#', '#', ' ', ' ', ' ', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#', '#'},
+    {'#', ' ', '#', '#', '#', '#', '#', ' ', '#', ' '},
+    {' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+    {'#', '#', ' ', ' ', '#', ' ', '#', '#', '#', '#'},
+    {'#', '#', '#', ' ', '#', ' ', ' ', ' ', ' ', ' '},
+    {'#', ' ', ' ', ' ', '#', '#', '#', ' ', '#', '?'}};
 
 // const char maze[9][10] = {
-//   {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#' },
-//   {'#', 'P', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#' },
-//   {'#', ' ', '#', ' ', '#', '#', ' ', '#', ' ', '#' },
-//   {'#', ' ', '#', ' ', '#', '#', ' ', '#', ' ', '#' },
-//   {'#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', '#' },
-//   {'#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', '#' },
-//   {'#', ' ', '#', '#', '#', '#', '#', '#', ' ', '#' },
-//   {'#', '?', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#' },
-//   {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#' }
-// };
+//     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
+//     {'#', 'P', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+//     {'#', ' ', '#', ' ', '#', '#', ' ', '#', ' ', '#'},
+//     {'#', ' ', '#', ' ', '#', '#', ' ', '#', ' ', '#'},
+//     {'#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', '#'},
+//     {'#', ' ', '#', ' ', ' ', ' ', ' ', '#', ' ', '#'},
+//     {'#', ' ', '#', '#', '#', '#', '#', '#', ' ', '#'},
+//     {'#', '?', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+//     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#'}};
 
+CRGB colors[WIDTH * HEIGHT];
 Point player_pos;
 
-bool can_move_to(Point position) {
-  if(position.x < 0 || position.x > WIDTH || position.y < 0 || position.y > HEIGHT) {
+bool can_move_to(Point position)
+{
+  if (position.x < 0 || position.x > WIDTH || position.y < 0 || position.y > HEIGHT)
+  {
     return false;
   }
 
   return maze[position.y][position.x] == ' ';
 }
 
-bool move(int dx, int dy) {
-  Point new_pos = { .x = player_pos.x + dx, .y = player_pos.y + dy };
+bool move(int dx, int dy)
+{
+  Point new_pos = {.x = player_pos.x + dx, .y = player_pos.y + dy};
   bool can_move = can_move_to(new_pos);
 
-  if(can_move) {
+  if (can_move)
+  {
     player_pos = new_pos;
   }
 
   return can_move;
 }
 
-bool move_up() {
+bool move_up()
+{
   return move(0, 1);
 }
 
-bool move_down() {
+bool move_down()
+{
   return move(0, -1);
 }
 
-bool move_left() {
+bool move_left()
+{
   return move(-1, 0);
 }
 
-bool move_right() {
+bool move_right()
+{
   return move(1, 0);
 }
 
-CellType get_cell(int x, int y) {
-  if(x < 0 || x > WIDTH || y < 0 || y > HEIGHT) {
+CellType get_cell(int x, int y)
+{
+  if (x < 0 || x > WIDTH || y < 0 || y > HEIGHT)
+  {
     return CellType::Nothing;
   }
 
-  if(x == player_pos.x && y == player_pos.y) {
+  if (x == player_pos.x && y == player_pos.y)
+  {
     return CellType::Player;
   }
 
-  if(maze[y][x] == '?') {
+  if (maze[y][x] == '?')
+  {
     return CellType::Target;
   }
 
-  if(maze[y][x] == '#') {
+  if (maze[y][x] == '#')
+  {
     return CellType::Wall;
   }
 
-   return CellType::Nothing;
+  return CellType::Nothing;
 }
 
-CRGB get_color(CellType type) {
-  switch (type) {
-    case CellType::Player:
-      return CRGB::Blue;
+CRGB get_color(CellType type)
+{
+  switch (type)
+  {
+  case CellType::Player:
+    return CRGB::Blue;
 
-    case CellType::Wall:
-      return CRGB::White;
+  case CellType::Wall:
+    return CRGB::White;
 
-    case CellType::Target:
-      return CRGB::Red;
+  case CellType::Target:
+    return CRGB::Red;
 
-    default:
-      return CRGB::Black;
+  default:
+    return CRGB::Black;
   }
 }
 
-int snake_index(int x, int y) {
+int snake_index(int x, int y)
+{
   int offset = y * WIDTH;
 
-  if(y % 2 != 0) {
-    return WIDTH - x + offset;
-  } else {
+  if (y % 2 == 0)
+  {
     return x + offset;
+  }
+  else
+  {
+    return WIDTH - x - 1 + offset;
   }
 }
 
-void draw_maze() {
-  CRGB colors[WIDTH * HEIGHT];
-  
-  for(int x = 0; x < WIDTH; x++) {
-    for(int y = 0; y < HEIGHT; y++) {
+void draw_maze()
+{
+
+  for (int x = 0; x < WIDTH; x++)
+  {
+    for (int y = 0; y < HEIGHT; y++)
+    {
+
       CellType type = get_cell(x, y);
       colors[snake_index(x, y)] = get_color(type);
     }
   }
+}
+
+void set_initial_player_position()
+{
+  for (int x = 0; x < WIDTH; x++)
+  {
+    for (int y = 0; y < HEIGHT; y++)
+    {
+      if (maze[y][x] == 'P')
+      {
+        Serial.println(x);
+        Serial.println(y);
+        player_pos = {.x = x,
+                      .y = y};
+      }
+    }
+  }
+}
+
+int led = 0;
+
+void setup()
+{
+  Serial.begin(115200);
+  FastLED.addLeds<WS2811, DATA_PIN, GRB>(colors, WIDTH * HEIGHT);
+  FastLED.setBrightness(40);
+  set_initial_player_position();
+  draw_maze();
+  FastLED.show();
+}
+
+void loop()
+{
+  // colors[led] = CRGB::Red;
+  // FastLED.show();
+
+  // delay(500);
+
+  // colors[led] = CRGB::Black;
+  // delay(500);
+  // led++;
+  // led %= 90;
 }
