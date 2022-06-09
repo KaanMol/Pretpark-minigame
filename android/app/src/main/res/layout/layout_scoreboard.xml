@@ -15,11 +15,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
+        <ImageView
             android:id="@+id/gameName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="48dp"
+            android:maxHeight="48dp"
+            android:src="@drawable/ashizons_paprika_logo"
             android:text="@string/gameName"
             android:textSize="20dp" />
 

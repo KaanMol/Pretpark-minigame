@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,7 +39,9 @@ public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.Sc
         holder.GameTime.setText(mHistories.get(position).getTimestamp()+"");
         holder.GameLocation.setText(mHistories.get(position).getGameLocation());
         holder.GamePoints.setText(mHistories.get(position).getPoints()+" points");
-        holder.GameName.setText(mHistories.get(position).getGameId());
+        if(mHistories.get(position).getGameId().equals("1")) {
+            holder.GameName.setImageResource(R.drawable.mazelogo);
+        }
     }
 
     public void setHistories(LinkedList<History> mHistories) {
@@ -53,7 +56,7 @@ public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.Sc
 
     public class ScoreBoardViewHolder extends RecyclerView.ViewHolder {
         final ScoreBoardAdaptor mAdaptor;
-        public final TextView GameName;
+        public final ImageView GameName;
         public final TextView GamePoints;
         public final TextView GameTime;
         public final TextView GameLocation;
