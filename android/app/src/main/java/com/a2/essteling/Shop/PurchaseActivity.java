@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -15,7 +16,7 @@ import com.a2.essteling.ScoreBoard.PlayerList;
 import com.a2.essteling.ScoreBoard.ScoreboardActivity;
 import com.bumptech.glide.Glide;
 
-public class PurchaseActivity extends AppCompatActivity {
+public class PurchaseActivity extends AppCompatActivity implements PointsListener{
     private ShopItem item;
     private TextView itemName;
     private TextView itemPrice;
@@ -29,6 +30,7 @@ public class PurchaseActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
+
         this.item = (ShopItem) getIntent().getExtras().get("item");
 
         itemName = findViewById(R.id.itemNameBuy);
@@ -41,17 +43,29 @@ public class PurchaseActivity extends AppCompatActivity {
         itemDescription.setText(item.getDescription());
 
         totalPoints = findViewById(R.id.totalPointsPurchase);
-        totalPoints.setText("Total Points:" + PlayerList.totalPoints());
+        totalPoints.setText("Total Points :" + PlayerList.totalPoints());
 
         if (item.getImageLocal() == -1) {
             Glide.with(this).load(item.getImage()).into(itemImage);
         } else {
             itemImage.setImageResource(item.getImageLocal());
         }
+
+        PlayerList.addPointsListener(this);
     }
     public void onCouponButton(View view){
-        Intent intent = new Intent(this, CouponActivity.class);
-        intent.putExtra("item", item);
-        startActivity(intent);
+        if(PlayerList.totalPoints() - item.getPrice() >= 0) {
+            PlayerList.spendPoints(item.getPrice());
+            Intent intent = new Intent(this, CouponActivity.class);
+            intent.putExtra("item", item);
+            startActivity(intent);
+        } else{
+            Toast.makeText(this, "Not enough points!", Toast.LENGTH_LONG);
+        }
+    }
+
+    @Override
+    public void updatePoints(int totalPoints) {
+        this.totalPoints.setText("Total Points :" + PlayerList.totalPoints());
     }
 }

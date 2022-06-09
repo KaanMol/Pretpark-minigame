@@ -3,29 +3,51 @@ package com.a2.essteling.ScoreBoard;
 import com.a2.essteling.HomeListener;
 import com.a2.essteling.Pass.Player;
 import com.a2.essteling.R;
+import com.a2.essteling.Shop.PointsListener;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PlayerList {
-    public static LinkedList<Player> players = new LinkedList<>();
+    private static LinkedList<Player> players = new LinkedList<>();
 
-    public static ArrayList<HomeListener> listeners = new ArrayList<>();
+    private static ArrayList<HomeListener> homeListeners = new ArrayList<>();
+    private static ArrayList<PointsListener> pointsListeners = new ArrayList<>();
 
-    public static void addPlayer(Player player){
+    private static int spentPoints = 0;
+
+    public static void addPlayer(Player player) {
         players.add(player);
-        listeners.forEach(listener->{
+        homeListeners.forEach(listener -> {
             listener.onPlayerAdded();
         });
     }
 
-    public static void addListener(HomeListener listener){
-        listeners.add(listener);
+    public static void spendPoints(int totalSpend) {
+        spentPoints += totalSpend;
+
+        pointsListeners.forEach(listener -> {
+            listener.updatePoints(totalPoints());
+        });
+
     }
 
+    public static LinkedList<Player> getPlayers() {
+        return players;
+    }
+
+    public static void addShowListener(HomeListener listener) {
+        homeListeners.add(listener);
+    }
+
+    public static void addPointsListener(PointsListener listener) {
+        pointsListeners.add(listener);
+    }
+
+
     public static int totalPoints() {
-        if(players.isEmpty()){
+        if (players.isEmpty()) {
             return 0;
         }
 
@@ -37,11 +59,11 @@ public class PlayerList {
                 totalPoints.addAndGet(historie.getPoints());
             });
         });
-        return totalPoints.get();
+        return totalPoints.get() - spentPoints;
 
     }
 
-    public static void resetColor(){
+    public static void resetColor() {
         players.forEach(player -> {
             player.setColor(R.color.Red);
         });
@@ -49,7 +71,7 @@ public class PlayerList {
 
     //create a test list for the scoreboard
     public static void testPlayers() {
-        if(players.size() < 4) {
+        if (players.size() < 4) {
             addPlayer(new Player("Momin", testHistories()));
             addPlayer(new Player("Coen", testHistories()));
             addPlayer(new Player("Lucas", testHistories()));
@@ -59,7 +81,7 @@ public class PlayerList {
     }
 
     public static LinkedList<History> testHistories() {
-        int i = (int) (Math.random()*100);
+        int i = (int) (Math.random() * 100);
         LinkedList<History> histories = new LinkedList<>();
         histories.add(new History("game " + i % 4, "here", "14:20", i % 7 + 1, "0000"));
         i++;

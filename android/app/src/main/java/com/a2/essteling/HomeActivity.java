@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity implements HomeListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ShopitemList.startQueue(this);
+//        ShopitemList.startQueue(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -32,9 +32,9 @@ public class HomeActivity extends AppCompatActivity implements HomeListener {
         shopButton = findViewById(R.id.shopButton);
         scoreButton = findViewById(R.id.scoreButton);
 
-        PlayerList.addListener(this);
+        PlayerList.addShowListener(this);
 
-        if (PlayerList.players.size() == 0) {
+        if (PlayerList.getPlayers().size() == 0) {
             scoreButton.setClickable(false);
             scoreButton.setBackgroundTintList(this.getResources().getColorStateList(android.R.color.darker_gray));
         } else {
