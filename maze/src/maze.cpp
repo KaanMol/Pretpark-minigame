@@ -13,7 +13,7 @@ bool Maze::can_move_to(Point position) {
         return false;
     }
 
-    return maze[position.y][position.x] == ' ' || maze[position.y][position.x] == '?';  
+    return maze[position.y][position.x] == ' ' || maze[position.y][position.x] == '?' || maze[position.y][position.x] == 'P';  
 }
 
 CellType Maze::get_cell(int x, int y) {
@@ -42,6 +42,7 @@ bool Maze::move(int dx, int dy) {
 
     if (get_cell(new_pos.x, new_pos.y) == CellType::Target) {
         target_reached = true;
+        this->set_black();
     }
 
     if (can_move) {
@@ -117,3 +118,9 @@ void Maze::set_initial_player_position() {
     }
 }
 
+void Maze::set_black() {
+    for (int i = 0; i < WIDTH * HEIGHT; i++) {
+        colors[i] = CRGB::Black;
+    }
+    FastLED.show();
+}

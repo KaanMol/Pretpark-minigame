@@ -40,7 +40,11 @@ class Maze {
         void draw();
 
         void set_initial_player_position();
+
+        void set_black();
+
         CRGB colors[WIDTH * HEIGHT];
+        bool target_reached = false;
         
     private:
         /*
@@ -84,5 +88,5 @@ class Maze {
     //     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#'}};
         
         Point player_pos;
-        int target_reached = false;
+        
 };
