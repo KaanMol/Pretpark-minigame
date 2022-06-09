@@ -7,6 +7,18 @@
     tools:context=".Shop.ShopActivity"
    >
 
+    <TextView
+        android:id="@+id/totalPoints2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="10dp"
+        android:text="Total Points:"
+        android:textColor="@color/Red"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/ShopRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ShopRecyclerView"
         android:layout_width="0dp"
@@ -16,8 +28,10 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoLine" />
+        app:layout_constraintTop_toBottomOf="@+id/logoLine"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/ShopTitle"

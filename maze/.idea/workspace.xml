@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8a047e5-e940-44ca-ae76-f211a6470c1f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../server/src/main/resources/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/resources/products.json" afterDir="false" />
-    </list>
+    <list default="true" id="d8a047e5-e940-44ca-ae76-f211a6470c1f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../server/src/main/resources/products.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+            <state relative-caret-position="784">
+              <caret line="49" column="10" lean-forward="true" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -33,7 +31,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="951" />
     <option name="width" value="978" />
     <option name="height" value="1137" />
@@ -52,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654764358665" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654764571858" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../server/src/main/resources/products.json" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -80,15 +78,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654762470303</updated>
-      <workItem from="1654762471620" duration="1158000" />
+      <workItem from="1654762471620" duration="1953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1158000" />
+    <option name="totallyTimeSpent" value="1953000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="767" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="767" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -146,8 +144,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../server/src/main/resources/products.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+        <state relative-caret-position="784">
+          <caret line="49" column="10" lean-forward="true" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
         </state>
       </provider>
     </entry>

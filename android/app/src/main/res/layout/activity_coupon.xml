@@ -71,4 +71,16 @@
         app:layout_constraintTop_toBottomOf="@+id/logoLine"
         app:srcCompat="@drawable/ashizons_paprika_logo" />
 
+    <TextView
+        android:id="@+id/totalPoints5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="10dp"
+        android:text="Total Points:"
+        android:textColor="@color/Red"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/itemImageBuy"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
