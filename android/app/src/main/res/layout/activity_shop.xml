@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fadeScrollbars="false"
+        android:foreground="@android:drawable/gallery_thumb"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,17 +38,5 @@
         app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
         app:srcCompat="@drawable/logo_line" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="417dp"
-        android:layout_height="563dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="1dp"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
-        app:srcCompat="@drawable/redbox2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

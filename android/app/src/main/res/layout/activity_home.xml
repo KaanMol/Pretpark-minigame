@@ -13,77 +13,71 @@
         app:layout_constraintTop_toTopOf="parent"
         style="@style/layout_title" />
 
-    <TextView
-        android:id="@+id/ShopDesc"
-        android:layout_width="209dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="76dp"
-        android:text="Use your points to get free food/drinks"
-        android:textAllCaps="false"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/shopButton"
-        app:layout_constraintTop_toTopOf="@+id/shopButton"
-        tools:visibility="visible" />
-
     <ImageView
         android:id="@+id/logoLine"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-34dp"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="@+id/appTitle"
         app:layout_constraintStart_toStartOf="@+id/appTitle"
         app:layout_constraintTop_toBottomOf="@+id/appTitle"
         app:srcCompat="@drawable/logo_line" />
 
-    <Button
-        android:id="@+id/shopButton"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/Red"
-        android:drawableRight="@drawable/index4__1_"
-        android:onClick="onShopButton"
-        android:text="Shop"
-        android:textAllCaps="false"
-        android:textSize="45sp"
-        app:iconTintMode="src_in"
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scannerButton" />
+        app:layout_constraintTop_toBottomOf="@+id/logoLine">
 
-    <Button
-        android:id="@+id/scannerButton"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/Red"
-        android:drawableRight="@drawable/scanner"
-        android:onClick="onScannerButton"
-        android:text="Scanner"
-        android:textAllCaps="false"
-        android:textSize="45sp"
-        app:layout_constraintEnd_toEndOf="@+id/shopButton"
-        app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toStartOf="@+id/shopButton"
-        app:layout_constraintTop_toBottomOf="@+id/logoLine" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/scoreButton"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/Red"
-        android:drawableRight="@drawable/index2__1_"
-        android:onClick="onScoreButton"
-        android:text="Score"
-        android:textAllCaps="false"
-        android:textSize="45sp"
-        app:layout_constraintEnd_toEndOf="@+id/scannerButton"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="@+id/shopButton"
-        app:layout_constraintTop_toBottomOf="@+id/shopButton" />
+
+            <Button
+                android:id="@+id/shopButton"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/Red"
+                android:drawableRight="@drawable/index4__1_"
+                android:onClick="onShopButton"
+                android:text="Shop"
+                android:textAllCaps="false"
+                android:textSize="45sp"
+                app:iconTintMode="src_in" />
+
+            <Button
+                android:id="@+id/scannerButton"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/Red"
+                android:drawableRight="@drawable/scanner"
+                android:onClick="onScannerButton"
+                android:text="Scanner"
+                android:textAllCaps="false"
+                android:textSize="45sp" />
+
+            <Button
+                android:id="@+id/scoreButton"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/Red"
+                android:drawableRight="@drawable/index2__1_"
+                android:onClick="onScoreButton"
+                android:text="Score"
+                android:textAllCaps="false"
+                android:textSize="45sp" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

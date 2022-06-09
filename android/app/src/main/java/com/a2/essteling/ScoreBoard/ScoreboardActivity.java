@@ -66,6 +66,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         //make the recyclerview a linear layout
         scoreRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //set the total points
         totalPointsView = findViewById(R.id.totalPoints);
         calculateTotalPoints();
         totalPointsView.setText("Total Points: " + totalPoints);
@@ -114,7 +115,6 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         players.forEach(player -> {
             player.getGameHistorie().forEach(historie -> {
                 totalPoints += historie.getPoints();
-                Log.d(LOG_TAG, i+"");
             });
         });
     }
