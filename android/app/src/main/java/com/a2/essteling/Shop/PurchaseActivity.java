@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat;
 
 import com.a2.essteling.HomeActivity;
 import com.a2.essteling.R;
+import com.a2.essteling.ScoreBoard.PlayerList;
 import com.a2.essteling.ScoreBoard.ScoreboardActivity;
 import com.bumptech.glide.Glide;
 
@@ -20,6 +21,7 @@ public class PurchaseActivity extends AppCompatActivity {
     private TextView itemPrice;
     private TextView itemDescription;
     private ImageView itemImage;
+    private TextView totalPoints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,9 @@ public class PurchaseActivity extends AppCompatActivity {
         itemName.setText(item.getName());
         itemPrice.setText(item.getPrice()+ " points");
         itemDescription.setText(item.getDescription());
+
+        totalPoints = findViewById(R.id.totalPointsPurchase);
+        totalPoints.setText("Total Points:" + PlayerList.totalPoints());
 
         if (item.getImageLocal() == -1) {
             Glide.with(this).load(item.getImage()).into(itemImage);

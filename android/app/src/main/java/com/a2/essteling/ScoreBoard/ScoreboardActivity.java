@@ -79,8 +79,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
         //set the total points
         totalPointsView = findViewById(R.id.totalPoints);
-        calculateTotalPoints();
-        totalPointsView.setText("Total Points: " + totalPoints);
+        totalPointsView.setText("Total Points: " + PlayerList.totalPoints());
     }
 
     private int i = 0;
@@ -117,15 +116,6 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         histories.add(new History("game " + i % 4, "test", "14:20", i % 7 + 1, "0000"));
         this.i++;
         return histories;
-    }
-
-    private void calculateTotalPoints() {
-        totalPoints = 0;
-        players.forEach(player -> {
-            player.getGameHistorie().forEach(historie -> {
-                totalPoints += historie.getPoints();
-            });
-        });
     }
 
     private void addPlayersList(String name, LinkedList<History> histories) {

@@ -7,13 +7,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.a2.essteling.R;
+import com.a2.essteling.ScoreBoard.PlayerList;
 
 public class ShopActivity extends AppCompatActivity implements ShopItemListener {
     private static final String LOG_TAG = ShopActivity.class.getSimpleName();
     private RecyclerView mRecyclerView;
     private ShopListAdapter mAdapter;
+    private TextView totalPoints;
 
     private ShopItem[] items = ShopitemList.getShopItems();
 
@@ -37,7 +40,9 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener 
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
 
+        totalPoints = findViewById(R.id.totalPointsShop);
 
+        totalPoints.setText("Total points: " + PlayerList.totalPoints());
 
 
 
