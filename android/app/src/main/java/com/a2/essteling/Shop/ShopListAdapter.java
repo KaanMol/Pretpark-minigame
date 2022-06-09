@@ -18,7 +18,7 @@ import com.bumptech.glide.Glide;
 public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopViewHolder> {
     private static final String LOG_TAG = ShopListAdapter.class.getSimpleName();
     private LayoutInflater mInflater;
-    private final ShopItem[] mShopItems;
+    private ShopItem[] mShopItems;
     private ShopItemListener listener;
     Context context;
 
@@ -40,13 +40,15 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
     @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
-        holder.ShopItemName.setText(mShopItems[position].getName());
-        holder.ShopItemPrice.setText(mShopItems[position].getPrice()+" points");
+        if(mShopItems[0] != null) {
+            holder.ShopItemName.setText(mShopItems[position].getName());
+            holder.ShopItemPrice.setText(mShopItems[position].getPrice() + " points");
 
-        if (mShopItems[position].getImageLocal() == -1) {
-            Glide.with(context).load(mShopItems[position].getImage()).into(holder.ShopItemImage);
-        } else {
-            holder.ShopItemImage.setImageResource(mShopItems[position].getImageLocal());
+            if (mShopItems[position].getImageLocal() == -1) {
+                Glide.with(context).load(mShopItems[position].getImage()).into(holder.ShopItemImage);
+            } else {
+                holder.ShopItemImage.setImageResource(mShopItems[position].getImageLocal());
+            }
         }
         holder.ShopItemImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +65,11 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
     @Override
     public int getItemCount() {
         return mShopItems.length;
+    }
+
+    public void setShopItems(ShopItem[] mShopItems) {
+        this.mShopItems = mShopItems;
+        notifyDataSetChanged();
     }
 
     class ShopViewHolder extends RecyclerView.ViewHolder {

@@ -13,6 +13,9 @@
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/layout_shopitem.xml" value="0.1" />
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/layout_tabmenu.xml" value="0.16666666666666666" />
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.115" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_pass.xml" value="0.18659420289855072" />
+        <entry key="app/src/main/res/layout/activity_purchase.xml" value="0.11854103343465046" />
       </map>
     </option>
   </component>

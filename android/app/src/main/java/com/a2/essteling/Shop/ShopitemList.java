@@ -14,11 +14,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class ShopitemList extends Application {
     private static final String LOG_TAG = ShopitemList.class.getSimpleName();
     private static ShopItem[] shopItems;
     private static StringRequest request;
+    private static ArrayList<ShopItemListListener> listeners = new ArrayList<>();
 
     public ShopitemList() {
         updateList();
@@ -37,6 +39,10 @@ public class ShopitemList extends Application {
                     ShopItem[] items = new ObjectMapper().readValue(response, ShopItem[].class);
 
                     shopItems = items;
+
+                    listeners.forEach(listener -> {
+                        listener.updateShopItemList(items);
+                    });
 
                     Log.d(LOG_TAG, "response succesfully received");
 
@@ -58,4 +64,10 @@ public class ShopitemList extends Application {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(request);
         Log.d(LOG_TAG, "started queue " + LocalTime.now());
-    }}
+    }
+
+    public static void addListener(ShopItemListListener listener){
+        listeners.add(listener);
+    }
+
+}
