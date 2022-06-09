@@ -37,13 +37,29 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/scannerButton"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="52dp"
+                android:backgroundTint="@color/Red"
+                android:drawableRight="@drawable/scanner"
+                android:onClick="onScannerButton"
+                android:text="Scanner"
+                android:textAllCaps="false"
+                android:textSize="45sp" />
 
             <Button
                 android:id="@+id/shopButton"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="52dp"
                 android:backgroundTint="@color/Red"
                 android:drawableRight="@drawable/index4__1_"
                 android:onClick="onShopButton"
@@ -53,24 +69,13 @@
                 app:iconTintMode="src_in" />
 
             <Button
-                android:id="@+id/scannerButton"
-                android:layout_width="300dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="32dp"
-                android:backgroundTint="@color/Red"
-                android:drawableRight="@drawable/scanner"
-                android:onClick="onScannerButton"
-                android:text="Scanner"
-                android:textAllCaps="false"
-                android:textSize="45sp" />
-
-            <Button
                 android:id="@+id/scoreButton"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="52dp"
                 android:backgroundTint="@color/Red"
                 android:drawableRight="@drawable/index2__1_"
                 android:onClick="onScoreButton"
