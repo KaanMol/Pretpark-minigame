@@ -6,6 +6,8 @@ import domain.Win;
 import http.JsonHttpResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,7 +77,7 @@ public class PointsHandler extends Handler {
         // todo: algorithm to calculate points
         int points = 10;
 
-        getStore().wins().create(gameId, card, LocalDateTime.now(), points);
+        getStore().wins().create(gameId, card, ZonedDateTime.now(ZoneId.of("Europe/Paris")), points);
 
         return ok("Points added");
     }
