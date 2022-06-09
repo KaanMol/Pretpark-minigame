@@ -2,6 +2,7 @@ package com.a2.essteling.Shop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class PurchaseActivity extends AppCompatActivity implements PointsListene
     private TextView itemDescription;
     private ImageView itemImage;
     private TextView totalPoints;
+    private static final String LOG_TAG = PurchaseActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class PurchaseActivity extends AppCompatActivity implements PointsListene
             intent.putExtra("item", item);
             startActivity(intent);
         } else{
-            Toast.makeText(this, "Not enough points!", Toast.LENGTH_LONG);
+            Toast.makeText(this, "Not enough points!", Toast.LENGTH_LONG).show();
         }
     }
 
