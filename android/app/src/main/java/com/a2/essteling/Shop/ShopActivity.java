@@ -61,7 +61,7 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener,
 
         totalPoints = findViewById(R.id.totalPointsShop);
 
-        totalPoints.setText("Total points: " + PlayerList.totalPoints());
+        totalPoints.setText((getString(R.string.totalPoints)) + " "+PlayerList.totalPoints());
 
 
 
@@ -69,7 +69,7 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener,
 
     @Override
     public void updatePoints(int totalPoints) {
-        this.totalPoints.setText("Total Points :" + PlayerList.totalPoints());
+        this.totalPoints.setText((getString(R.string.totalPoints)) +" "+ PlayerList.totalPoints());
     }
 
     //react to clicked items

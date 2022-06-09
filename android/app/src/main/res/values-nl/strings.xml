@@ -4,9 +4,9 @@
     <string name="itemName">Naam</string>
     <string name="gameName">Doolhof</string>
     <string name="player">speler</string>
-    <string name="points">punt(en)</string>
-    <string name="location">sprookjes bos</string>
-    <string name="totalPoints">Total Points: </string>
+    <string name="points">punten</string>
+    <string name="location">Sprookjes bos</string>
+    <string name="totalPoints">Puntentotaal:</string>
     <string name="buy">Kopen</string>
     <string name="addCard">Voeg kaart toe</string>
     <string name="name">Naam:</string>
@@ -18,7 +18,9 @@
     <string name="shop">Winkel</string>
     <string name="app_name">Essteling</string>
     <string name="NoCardsRegistered">Geen kaarten geregistreerd</string>
-    <string name="NoHistoryFor">Geen geschiedenis voor: "</string>
+    <string name="NoHistoryFor">Geen geschiedenis voor: </string>
+    <string name="_points"> punten</string>
+    <string name="notEnoughPoints">Niet genoeg punten!</string>
 
 
 </resources>

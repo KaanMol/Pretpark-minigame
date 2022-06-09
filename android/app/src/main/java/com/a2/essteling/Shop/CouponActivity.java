@@ -34,7 +34,7 @@ public class CouponActivity extends AppCompatActivity {
         itemName.setText(item.getName());
 
         totalPoints = findViewById(R.id.totalPointsCoupon);
-        totalPoints.setText("Total Points: " + PlayerList.totalPoints());
+        totalPoints.setText(getString(R.string.totalPoints) +" "+ PlayerList.totalPoints());
 
 
         if (item.getImageLocal() == -1) {
