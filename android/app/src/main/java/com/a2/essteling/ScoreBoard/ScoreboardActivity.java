@@ -74,13 +74,13 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
 
         } else {
-            Toast.makeText(this, "No cards registered", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.NoCardsRegistered, Toast.LENGTH_LONG).show();
         }
 
 
         //set the total points
         totalPointsView = findViewById(R.id.totalPoints);
-        totalPointsView.setText("Total Points: " + PlayerList.totalPoints());
+        totalPointsView.setText(getString(R.string.totalPoints) + PlayerList.totalPoints());
     }
 
     private int i = 0;
@@ -103,7 +103,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         Log.d(LOG_TAG, player.getName());
 
         if(player.getGameHistorie().isEmpty()){
-            Toast.makeText(this, "No history for: " + player.getName(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.NoHistoryFor) + player.getName(), Toast.LENGTH_LONG).show();
         }
 
         scoreBoardAdaptor.setHistories(player.getGameHistorie());

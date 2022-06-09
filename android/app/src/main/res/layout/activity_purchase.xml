@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="10dp"
-        android:text="Total Points: 0"
+        android:text="@string/totalPoints"
         android:textColor="@color/Red"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/itemImageBuy"
@@ -23,7 +23,7 @@
         style="@style/layout_title"
         android:fontFamily="@font/interbold"
         android:singleLine="false"
-        android:text="Shop"
+        android:text="@string/shop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,7 +55,7 @@
         android:id="@+id/itemNameBuy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintEnd_toEndOf="@+id/itemImageBuy"
         app:layout_constraintStart_toStartOf="@+id/itemImageBuy"
         app:layout_constraintTop_toBottomOf="@+id/itemImageBuy" />
@@ -64,7 +64,7 @@
         android:id="@+id/itemPriceBuy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintEnd_toEndOf="@+id/itemNameBuy"
         app:layout_constraintStart_toStartOf="@+id/itemNameBuy"
         app:layout_constraintTop_toBottomOf="@+id/itemNameBuy" />
@@ -73,7 +73,7 @@
         android:id="@+id/itemDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         app:layout_constraintEnd_toEndOf="@+id/itemPriceBuy"
         app:layout_constraintStart_toStartOf="@+id/itemPriceBuy"
         app:layout_constraintTop_toBottomOf="@+id/itemPriceBuy" />
@@ -87,7 +87,7 @@
         android:layout_marginBottom="16dp"
         android:backgroundTint="#70C33C"
         android:fontFamily="@font/intermedium"
-        android:text="Buy"
+        android:text="@string/buy"
         android:textSize="24sp"
         android:onClick="onCouponButton"
         app:layout_constraintBottom_toBottomOf="parent"

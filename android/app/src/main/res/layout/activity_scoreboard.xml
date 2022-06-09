@@ -11,7 +11,7 @@
         style="@style/layout_title"
         android:fontFamily="@font/interbold"
         android:singleLine="false"
-        android:text="Score"
+        android:text="@string/score"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
-        android:text="Total Points: 0"
+        android:text="@string/totalPoints"
         android:textColor="@color/Red"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

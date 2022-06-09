@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="10dp"
-        android:text="Total Points: 0"
+        android:text="@string/totalPoints"
         android:textColor="@color/Red"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/ShopRecyclerView"
@@ -38,7 +38,7 @@
         style="@style/layout_title"
         android:fontFamily="@font/interbold"
         android:singleLine="false"
-        android:text="Shop"
+        android:text="@string/shop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

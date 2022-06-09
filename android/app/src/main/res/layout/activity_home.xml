@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/appTitle"
-        android:text="Essteling"
+        android:text="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/layout_title" />
@@ -48,7 +48,7 @@
                 android:backgroundTint="@color/Red"
                 android:drawableRight="@drawable/scanner"
                 android:onClick="onScannerButton"
-                android:text="Scanner"
+                android:text="@string/scanner"
                 android:textAllCaps="false"
                 android:textSize="45sp"
                 />
@@ -64,7 +64,7 @@
                 android:backgroundTint="@color/Red"
                 android:drawableRight="@drawable/index4__1_"
                 android:onClick="onShopButton"
-                android:text="Shop"
+                android:text="@string/shop"
                 android:textAllCaps="false"
                 android:textSize="45sp"
                 app:iconTintMode="src_in" />
@@ -80,7 +80,7 @@
                 android:backgroundTint="@color/Red"
                 android:drawableRight="@drawable/index2__1_"
                 android:onClick="onScoreButton"
-                android:text="Score"
+                android:text="@string/score"
                 android:textAllCaps="false"
                 android:textSize="45sp" />
         </LinearLayout>

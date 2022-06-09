@@ -20,14 +20,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
-            android:text="Doolhof "
+            android:text="@string/gameName"
             android:textSize="20dp" />
 
         <TextView
             android:id="@+id/GamePoints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 punt "
+            android:text="@string/points"
             android:textSize="20dp" />
     </LinearLayout>
 
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
-            android:text="sprookjes bos " />
+            android:text="@string/location" />
 
         <TextView
             android:id="@+id/GameTime"
