@@ -16,6 +16,10 @@ public class AdminHandler extends Handler {
     protected HttpResponse post() throws IOException {
         String action = getParameter("action");
 
+        if (action == null) {
+            return conflict("Missing action parameter");
+        }
+
         switch (action.trim().toLowerCase(Locale.ROOT)) {
             case "reset":
                 getStore().clear();

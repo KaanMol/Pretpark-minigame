@@ -13,13 +13,13 @@ public class CdnHandler extends Handler {
         String file = getParameter("file");
 
         if (file == null) {
-            return error("Missing parameter 'file'");
+            return conflict("Missing parameter 'file'");
         }
 
         InputStream stream = FileManager.getResource(file);
 
         if (stream == null) {
-            return error("Resource '" + file + "' not found");
+            return conflict("Resource '" + file + "' not found");
         }
 
         byte[] bytes = stream.readAllBytes();

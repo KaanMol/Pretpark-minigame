@@ -10,6 +10,7 @@
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
@@ -32,6 +33,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/NfcHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/PointsHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/handlers/ProductHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/helper/NfcLoader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/helper/ProductLoader.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/http/HttpMethod.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/http/HttpResponse.java" afterDir="false" />
@@ -45,6 +47,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/cola.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/fanta.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/ijs.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/nfcs.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/nuggets.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/patat.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/pizza.png" afterDir="false" />

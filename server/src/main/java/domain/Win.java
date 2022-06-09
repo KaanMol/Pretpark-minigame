@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import logging.Logger;
 
-public record Win(String gameId, String cardId, String timestamp, int points) {
+public record Win(String gameId, String nfcId, String timestamp, int points) {
 
     public String toJson() throws JsonProcessingException {
         try {
