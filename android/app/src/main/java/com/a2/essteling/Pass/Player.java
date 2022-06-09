@@ -11,18 +11,18 @@ import java.util.LinkedList;
 public class Player implements HistoryListener {
     private String name;
     private LinkedList<History> gameHistorie;
-    private String accountId;
+    private String cardId;
 
     public Player(String name, LinkedList<History> gameHistorie) {
         this.name = name;
         this.gameHistorie = gameHistorie;
     }
 
-    public Player(String name, String accountId, Context context){
+    public Player(String name, String cardId, Context context){
         this.name = name;
-        this. accountId = accountId;
+        this.cardId = cardId;
 
-        HistoryList historyListRequest = new HistoryList(accountId, this, context);
+        HistoryList historyListRequest = new HistoryList(cardId, this, context);
 
         this.gameHistorie = new LinkedList<>();
 

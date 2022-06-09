@@ -48,7 +48,7 @@ public class PassActivity extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                     response -> {
                         Log.d(LOG_TAG, "Response: " + response);
-                        PlayerList.players.add(new Player(name, accountId, this));
+                        PlayerList.players.add(new Player(name, cardId, this));
                     },
                     error -> {
                         Log.d(LOG_TAG, "Error: " + error);
@@ -59,10 +59,10 @@ public class PassActivity extends AppCompatActivity {
                         try {
                             body = new String(error.networkResponse.data,"UTF-8");
                             Log.d(LOG_TAG, body);
-                            Toast toast = Toast.makeText(this, body, Toast.LENGTH_LONG);
-                            toast.show();
+                            Toast.makeText(getBaseContext(), body, Toast.LENGTH_LONG).show();
                         } catch (UnsupportedEncodingException e) {
                             // exception
+                            Log.d(LOG_TAG, "huh????");
                         }
                     });
 

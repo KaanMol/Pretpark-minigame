@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -71,7 +72,11 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
             scoreRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
+        } else {
+            Toast.makeText(this, "No cards registered", Toast.LENGTH_LONG).show();
         }
+
+
         //set the total points
         totalPointsView = findViewById(R.id.totalPoints);
         calculateTotalPoints();
@@ -137,6 +142,11 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
     @Override
     public void onPlayerClicked(Player player) {
         Log.d(LOG_TAG, player.getName());
+
+        if(player.getGameHistorie().isEmpty()){
+            Toast.makeText(this, "No history for: " + player.getName(), Toast.LENGTH_LONG).show();
+        }
+
         scoreBoardAdaptor.setHistories(player.getGameHistorie());
     }
 }
