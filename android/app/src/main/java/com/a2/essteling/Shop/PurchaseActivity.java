@@ -1,13 +1,17 @@
 package com.a2.essteling.Shop;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.a2.essteling.HomeActivity;
 import com.a2.essteling.R;
+import com.a2.essteling.ScoreBoard.ScoreboardActivity;
 import com.bumptech.glide.Glide;
 
 public class PurchaseActivity extends AppCompatActivity {
@@ -39,7 +43,10 @@ public class PurchaseActivity extends AppCompatActivity {
         } else {
             itemImage.setImageResource(item.getImageLocal());
         }
-
-
+    }
+    public void onCouponButton(View view){
+        Intent intent = new Intent(this, CouponActivity.class);
+        intent.putExtra("item", item);
+        startActivity(intent);
     }
 }
