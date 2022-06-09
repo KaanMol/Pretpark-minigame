@@ -7,6 +7,24 @@
     tools:context=".Shop.CouponActivity">
 
     <TextView
+        android:id="@+id/itemDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/itemNameBuy"
+        app:layout_constraintStart_toStartOf="@+id/itemNameBuy"
+        app:layout_constraintTop_toBottomOf="@+id/itemNameBuy" />
+
+    <TextView
+        android:id="@+id/itemNameBuy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/itemImageBuy"
+        app:layout_constraintStart_toStartOf="@+id/itemImageBuy"
+        app:layout_constraintTop_toBottomOf="@+id/itemImageBuy" />
+
+    <TextView
         android:id="@+id/ShopTitle"
         style="@style/layout_title"
         android:fontFamily="@font/interbold"
@@ -17,14 +35,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="255dp"
+        android:layout_width="279dp"
         android:layout_height="170dp"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="37dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/qr" />
 
