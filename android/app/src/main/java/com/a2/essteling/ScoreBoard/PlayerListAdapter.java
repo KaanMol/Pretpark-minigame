@@ -52,7 +52,7 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
 
                PlayerList.resetColor();
 
-                playerList.get(position).setColor(android.R.color.darker_gray);
+                playerList.get(position).setColor(R.color.Red);
 
                 notifyDataSetChanged();
             }

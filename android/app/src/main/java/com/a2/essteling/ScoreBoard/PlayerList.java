@@ -65,7 +65,7 @@ public class PlayerList {
 
     public static void resetColor() {
         players.forEach(player -> {
-            player.setColor(R.color.Red);
+            player.setColor(android.R.color.darker_gray);
         });
     }
 

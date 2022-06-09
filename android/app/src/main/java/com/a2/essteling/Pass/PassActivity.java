@@ -57,6 +57,8 @@ public class PassActivity extends AppCompatActivity {
                         String[] nfcId = response.split("\"");
                         PlayerList.addPlayer(new Player(name, nfcId[3], this));
 
+                        Toast.makeText(this, "added " + name + " to players", Toast.LENGTH_LONG);
+
                         Intent intent = new Intent(this, HomeActivity.class);
                         startActivity(intent);
                     },

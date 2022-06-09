@@ -35,7 +35,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, android.R.color.darker_gray));
         setContentView(R.layout.activity_scoreboard);
 
         super.onCreate(savedInstanceState);
@@ -46,7 +46,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
             PlayerList.resetColor();
 
             this.players = PlayerList.getPlayers();
-            this.players.get(0).setColor(android.R.color.darker_gray);
+            this.players.get(0).setColor(R.color.Red);
 
             //players recycleview
             //get the recyclerview
