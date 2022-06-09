@@ -11,7 +11,7 @@
         style="@style/layout_title"
         android:fontFamily="@font/interbold"
         android:singleLine="false"
-        android:text="EsShop"
+        android:text="Shop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fadeScrollbars="false"
+        android:foreground="@android:drawable/gallery_thumb"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +24,7 @@
         style="@style/layout_title"
         android:fontFamily="@font/interbold"
         android:singleLine="false"
-        android:text="EsShop"
+        android:text="Shop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,4 +37,6 @@
         app:layout_constraintStart_toStartOf="@+id/ShopTitle"
         app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
         app:srcCompat="@drawable/logo_line" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
