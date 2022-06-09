@@ -37,7 +37,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         setContentView(R.layout.activity_scoreboard);
 
         super.onCreate(savedInstanceState);
-//        testlayers();
+        PlayerList.testlayers();
 
 
         if (!PlayerList.players.isEmpty()) {
@@ -84,39 +84,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
     private int i = 0;
 
-    //create a test list for the scoreboard
-    private void testlayers() {
 
-
-        players.add(new Player("Momin", testHistories()));
-        players.add(new Player("Coen", testHistories()));
-        players.add(new Player("Lucas", testHistories()));
-        players.add(new Player("Kaan", testHistories()));
-        players.add(new Player("Koen", testHistories()));
-    }
-
-    private LinkedList<History> testHistories() {
-        LinkedList<History> histories = new LinkedList<>();
-        histories.add(new History("game " + i % 4, "here", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        histories.add(new History("game " + i % 4, "there", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        histories.add(new History("game " + i % 4, "somewhere", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        histories.add(new History("game " + i % 4, "otherwhere", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        histories.add(new History("game " + i % 4, "softwhere", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        histories.add(new History("game " + i % 4, "hardwhere", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        histories.add(new History("game " + i % 4, "entrance", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        histories.add(new History("game " + i % 4, "ip addres", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        histories.add(new History("game " + i % 4, "test", "14:20", i % 7 + 1, "0000"));
-        this.i++;
-        return histories;
-    }
 
     private void addPlayersList(String name, LinkedList<History> histories) {
         players.add(new Player(name, histories));

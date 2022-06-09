@@ -24,4 +24,37 @@ public class PlayerList {
         return totalPoints.get();
 
     }
+
+    //create a test list for the scoreboard
+    public static void testlayers() {
+        players.add(new Player("Momin", testHistories()));
+        players.add(new Player("Coen", testHistories()));
+        players.add(new Player("Lucas", testHistories()));
+        players.add(new Player("Kaan", testHistories()));
+        players.add(new Player("Koen", testHistories()));
+    }
+
+    public static LinkedList<History> testHistories() {
+        int i = (int) (Math.random()*100);
+        LinkedList<History> histories = new LinkedList<>();
+        histories.add(new History("game " + i % 4, "here", "14:20", i % 7 + 1, "0000"));
+        i++;
+        histories.add(new History("game " + i % 4, "there", "14:20", i % 7 + 1, "0000"));
+        i++;
+        histories.add(new History("game " + i % 4, "somewhere", "14:20", i % 7 + 1, "0000"));
+        i++;
+        histories.add(new History("game " + i % 4, "otherwhere", "14:20", i % 7 + 1, "0000"));
+        i++;
+        histories.add(new History("game " + i % 4, "softwhere", "14:20", i % 7 + 1, "0000"));
+        i++;
+        histories.add(new History("game " + i % 4, "hardwhere", "14:20", i % 7 + 1, "0000"));
+        i++;
+        histories.add(new History("game " + i % 4, "entrance", "14:20", i % 7 + 1, "0000"));
+        i++;
+        histories.add(new History("game " + i % 4, "ip addres", "14:20", i % 7 + 1, "0000"));
+        i++;
+        histories.add(new History("game " + i % 4, "test", "14:20", i % 7 + 1, "0000"));
+        i++;
+        return histories;
+    }
 }

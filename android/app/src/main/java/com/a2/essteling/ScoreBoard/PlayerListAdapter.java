@@ -23,11 +23,13 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
     private LinkedList<Player> playerList;
     private LayoutInflater mInflater;
     private PlayerButtonListener listener;
+    private Context context;
 
     public PlayerListAdapter(Context context, LinkedList<Player> playerList, PlayerButtonListener listener) {
         this.mInflater = LayoutInflater.from(context);
         this.playerList = playerList;
         this.listener = listener;
+        this.context = context;
     }
 
     @NonNull
@@ -40,11 +42,21 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
     @Override
     public void onBindViewHolder(@NonNull PlayerListHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.playerButton.setText(playerList.get(position).getName());
+        holder.playerButton.setBackgroundTintList(context.getResources().getColorStateList(playerList.get(position).getColor()));
+
 
         holder.playerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.onPlayerClicked(playerList.get(position));
+
+                playerList.forEach(player -> {
+                    player.setColor(R.color.Red);
+                });
+
+                playerList.get(position).setColor(R.color.black);
+
+                notifyDataSetChanged();
             }
         });
 
