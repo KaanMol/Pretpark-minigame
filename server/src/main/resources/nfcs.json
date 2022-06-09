@@ -34,5 +34,17 @@
   {
     "nfcId": "test7",
     "cardNumber": "test7"
+  },
+  { 
+    "nfcId": "1637320320000",
+    "cardNumber": "een"
+  },
+  {
+    "nfcId": "3521219820000",
+    "cardNumber": "twee"
+  },
+  {
+    "nfcId": "674120620000",
+    "cardNumber": "drie"
   }
 ]
