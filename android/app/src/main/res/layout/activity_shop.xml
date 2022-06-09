@@ -55,7 +55,6 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backButton"
         style="@style/backButton"
-        android:foreground="@drawable/image"
         android:foregroundTint="#FFFFFF"
         android:onClick="onBackButton"
         android:scrollbarTrackHorizontal="@drawable/image"
