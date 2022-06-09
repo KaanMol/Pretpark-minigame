@@ -41,12 +41,12 @@
     {
         "id": "fanta",
         "name": {
-            "dutch": "Verzilver deze coupon om een gratis 500ml Fanta fles te krijgen in een restaurant van de Essteling",
-            "english": "Redeem this coupon to get a free 500ml bottle of Fanta in a restaurant of the Essteling"
+            "dutch": "Fanta",
+            "english": "Fanta"
         },
         "description": {
-            "dutch": "momin vul dit in",
-            "english": "momin fill this in"
+            "dutch": "Verzilver deze coupon om een gratis 500ml Fanta fles te krijgen in een restaurant van de Essteling",
+            "english": "Redeem this coupon to get a free 500ml bottle of Fanta in a restaurant of the Essteling"
         },
         "image": "fanta.png",
         "price": 1
