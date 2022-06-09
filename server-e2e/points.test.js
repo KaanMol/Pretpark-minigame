@@ -37,8 +37,7 @@ describe("GET /points", () => {
     let res = await axios.get(`${global.ENDPOINT}/points?accountId=12`);
 
     expect(res.status).toBe(200);
-    expect(res.data.wins).toEqual([]);
-    expect(res.data.totalPoints).toEqual(0);
+    expect(res.data).toEqual([]);
   });
 
   it("Return empty array when the nfc does not have any points", async () => {
@@ -51,8 +50,7 @@ describe("GET /points", () => {
     let res = await axios.get(`${global.ENDPOINT}/points?nfcId=test2`);
 
     expect(res.status).toBe(200);
-    expect(res.data.wins).toEqual([]);
-    expect(res.data.totalPoints).toEqual(0);
+    expect(res.data).toEqual([]);
     
   });
 });
