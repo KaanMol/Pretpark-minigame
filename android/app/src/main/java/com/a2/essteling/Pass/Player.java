@@ -14,6 +14,7 @@ public class Player implements HistoryListener {
     private LinkedList<History> gameHistorie;
     private String cardId;
     private int colorId;
+    private HistoryList historyListRequest;
 
     public Player(String name, LinkedList<History> gameHistorie) {
         this.name = name;
@@ -25,12 +26,16 @@ public class Player implements HistoryListener {
         this.name = name;
         this.cardId = cardId;
 
-        HistoryList historyListRequest = new HistoryList(cardId, this, context);
+        historyListRequest = new HistoryList(cardId, this, context);
 
         this.gameHistorie = new LinkedList<>();
         this.colorId = R.color.Red;
 
 
+    }
+
+    public void updateHistoryRequest(Context context) {
+        historyListRequest = new HistoryList(cardId, this, context);
     }
 
     public String getName() {

@@ -23,9 +23,9 @@ public class HistoryList extends Application {
     private StringRequest request;
     private HistoryListener listener;
 
-    public HistoryList(String accountId, HistoryListener listener, Context context) {
+    public HistoryList(String nfcId, HistoryListener listener, Context context) {
         this.listener = listener;
-        updateList(accountId);
+        updateList(nfcId);
         startQueue(context);
     }
 
@@ -34,7 +34,7 @@ public class HistoryList extends Application {
     }
 
     private void updateList(String nfcId) {
-        request = new StringRequest(Request.Method.GET, "https://mobiele-beleving.herokuapp.com/points?nfcId="+nfcId, new Response.Listener<String>() {
+        request = new StringRequest(Request.Method.GET, "https://mobiele-beleving-dev.herokuapp.com/points?nfcId="+nfcId, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -44,11 +44,12 @@ public class HistoryList extends Application {
                     histories = new LinkedList<>();
 
                     for (int i = 0; i < items.length; i++) {
-                        histories.add(new History(items[i].getGameId(), "noloco", items[i].getTimestamp().substring(11, 14), items[i].getPoints(), items[i].getNfcId()));
+                        histories.add(new History(items[i].getGameId(), "noloco", items[i].getTimestamp().substring(11, 16), items[i].getPoints(), items[i].getNfcId()));
                     }
 
-                    Log.d(LOG_TAG, "response succesfully received");
-
+                    if(items.length > 0) {
+                        Log.d(LOG_TAG, "response succesfully received " + items[0].getNfcId());
+                    }
                     listener.onHistoryReceived(histories);
 
                 } catch (IOException e) {

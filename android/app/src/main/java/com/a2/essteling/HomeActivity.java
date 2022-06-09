@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity implements HomeListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        ShopitemList.startQueue(this);
+        ShopitemList.startQueue(this);
         
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);

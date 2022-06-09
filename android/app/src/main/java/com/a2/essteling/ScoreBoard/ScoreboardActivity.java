@@ -18,7 +18,7 @@ import com.a2.essteling.R;
 
 import java.util.LinkedList;
 
-public class ScoreboardActivity extends AppCompatActivity implements PlayerButtonListener {
+public class ScoreboardActivity extends AppCompatActivity implements PlayerButtonListener, PlayerListener {
     private static final String LOG_TAG = ScoreboardActivity.class.getSimpleName();
     private LinkedList<Player> players = new LinkedList<>();
 
@@ -39,14 +39,14 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         setContentView(R.layout.activity_scoreboard);
 
         super.onCreate(savedInstanceState);
-        PlayerList.testPlayers();
+//        PlayerList.testPlayers();
 
 
         if (!PlayerList.getPlayers().isEmpty()) {
             PlayerList.resetColor();
 
             this.players = PlayerList.getPlayers();
-            this.players.get(0).setColor(R.color.black);
+            this.players.get(0).setColor(android.R.color.darker_gray);
 
             //players recycleview
             //get the recyclerview
@@ -116,6 +116,15 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
             Toast.makeText(this, getString(R.string.NoHistoryFor) + player.getName(), Toast.LENGTH_LONG).show();
         }
 
+        player.updateHistoryRequest(this);
+
         scoreBoardAdaptor.setHistories(player.getGameHistorie());
+    }
+
+    @Override
+    public void updatePlayer(Player player) {
+        Log.d(LOG_TAG, player.getName());
+        scoreBoardAdaptor.setHistories(player.getGameHistorie());
+        scoreBoardAdaptor.notifyDataSetChanged();
     }
 }

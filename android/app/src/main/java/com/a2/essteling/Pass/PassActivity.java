@@ -54,7 +54,11 @@ public class PassActivity extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                     response -> {
                         Log.d(LOG_TAG, "Response: " + response);
-                        PlayerList.addPlayer(new Player(name, cardId, this));
+                        String[] nfcId = response.split("\"");
+                        PlayerList.addPlayer(new Player(name, nfcId[3], this));
+
+                        Intent intent = new Intent(this, HomeActivity.class);
+                        startActivity(intent);
                     },
                     error -> {
                         Log.d(LOG_TAG, "Error: " + error);
