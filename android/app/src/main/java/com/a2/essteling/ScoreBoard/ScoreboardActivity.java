@@ -41,8 +41,10 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
 
 
         if (!PlayerList.players.isEmpty()) {
+            PlayerList.resetColor();
 
             this.players = PlayerList.players;
+            this.players.get(0).setColor(R.color.black);
 
             //players recycleview
             //get the recyclerview

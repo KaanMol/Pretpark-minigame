@@ -1,6 +1,7 @@
 package com.a2.essteling.ScoreBoard;
 
 import com.a2.essteling.Pass.Player;
+import com.a2.essteling.R;
 
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -25,13 +26,21 @@ public class PlayerList {
 
     }
 
+    public static void resetColor(){
+        players.forEach(player -> {
+            player.setColor(R.color.Red);
+        });
+    }
+
     //create a test list for the scoreboard
     public static void testlayers() {
-        players.add(new Player("Momin", testHistories()));
-        players.add(new Player("Coen", testHistories()));
-        players.add(new Player("Lucas", testHistories()));
-        players.add(new Player("Kaan", testHistories()));
-        players.add(new Player("Koen", testHistories()));
+        if(players.size() < 4) {
+            players.add(new Player("Momin", testHistories()));
+            players.add(new Player("Coen", testHistories()));
+            players.add(new Player("Lucas", testHistories()));
+            players.add(new Player("Kaan", testHistories()));
+            players.add(new Player("Koen", testHistories()));
+        }
     }
 
     public static LinkedList<History> testHistories() {

@@ -44,7 +44,7 @@ public class HistoryList extends Application {
                     histories = new LinkedList<>();
 
                     for (int i = 0; i < items.length; i++) {
-                        histories.add(new History(items[i].getGameId(), "noloco", items[i].getTimestamp(), items[i].getPoints(), items[i].getNfcId()));
+                        histories.add(new History(items[i].getGameId(), "noloco", items[i].getTimestamp().substring(11, 14), items[i].getPoints(), items[i].getNfcId()));
                     }
 
                     Log.d(LOG_TAG, "response succesfully received");
