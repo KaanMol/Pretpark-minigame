@@ -1,23 +1,31 @@
 package com.a2.essteling.Pass;
 
-import android.graphics.Color;
+import android.content.Context;
 
-import com.a2.essteling.ScoreBoard.Historie;
+import com.a2.essteling.ScoreBoard.History;
+import com.a2.essteling.ScoreBoard.HistoryList;
+import com.a2.essteling.ScoreBoard.HistoryListener;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Player {
+public class Player implements HistoryListener {
     private String name;
-    private int punten;
-    private int buttonColor;
-    private LinkedList<Historie> gameHistorie;
+    private LinkedList<History> gameHistorie;
+    private String accountId;
 
-    public Player(String name, int punten, int buttonColor, LinkedList<Historie> gameHistorie) {
+    public Player(String name, LinkedList<History> gameHistorie) {
         this.name = name;
-        this.punten = punten;
-        this.buttonColor = buttonColor;
         this.gameHistorie = gameHistorie;
+    }
+
+    public Player(String name, String accountId, Context context){
+        this.name = name;
+        this. accountId = accountId;
+
+        HistoryList historyListRequest = new HistoryList(accountId, this, context);
+
+        this.gameHistorie = new LinkedList<>();
+
     }
 
     public String getName() {
@@ -28,28 +36,17 @@ public class Player {
         this.name = name;
     }
 
-    public int getPunten() {
-        return punten;
-    }
-
-    public void setPunten(int punten) {
-        this.punten = punten;
-    }
-
-    public int getButtonColor() {
-        return buttonColor;
-    }
-
-    public void setButtonColor(int buttonColor) {
-        this.buttonColor = buttonColor;
-    }
-
-    public LinkedList<Historie> getGameHistorie() {
+    public LinkedList<History> getGameHistorie() {
         return gameHistorie;
     }
 
-    public void setGameHistorie(LinkedList<Historie> gameHistorie) {
+    public void setGameHistorie(LinkedList<History> gameHistorie) {
         this.gameHistorie = gameHistorie;
+    }
+
+    @Override
+    public void onHistoryReceived(LinkedList<History> histories) {
+        this.gameHistorie = histories;
     }
 }
 

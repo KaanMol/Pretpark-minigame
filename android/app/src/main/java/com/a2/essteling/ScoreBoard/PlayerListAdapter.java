@@ -1,5 +1,6 @@
 package com.a2.essteling.ScoreBoard;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -37,9 +38,8 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PlayerListHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PlayerListHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.playerButton.setText(playerList.get(position).getName());
-        holder.playerButton.setHintTextColor(playerList.get(position).getButtonColor());
 
         holder.playerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +55,11 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
     @Override
     public int getItemCount() {
         return this.playerList.size();
+    }
+
+    public void setPlayers(LinkedList<Player> players) {
+        this.playerList = players;
+        notifyDataSetChanged();
     }
 
     public class PlayerListHolder extends RecyclerView.ViewHolder{

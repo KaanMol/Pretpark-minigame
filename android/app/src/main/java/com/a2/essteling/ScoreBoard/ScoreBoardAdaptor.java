@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +17,7 @@ import java.util.LinkedList;
 public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.ScoreBoardViewHolder> {
     private static final String LOG_TAG = ScoreBoardAdaptor.class.getSimpleName();
     private LayoutInflater mInFlater;
-    private LinkedList<Historie> mHistories;
+    private LinkedList<History> mHistories;
     private ScoreBoardListener listener;
     Context context;
 
@@ -36,14 +35,15 @@ public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.Sc
 
     @Override
     public void onBindViewHolder(@NonNull ScoreBoardViewHolder holder, int position) {
-        holder.GameTime.setText(mHistories.get(position).getTime()+"");
+        holder.GameTime.setText(mHistories.get(position).getTimestamp()+"");
         holder.GameLocation.setText(mHistories.get(position).getGameLocation());
         holder.GamePoints.setText(mHistories.get(position).getPoints()+" points");
-        holder.GameName.setText(mHistories.get(position).getGameName());
+        holder.GameName.setText(mHistories.get(position).getGameId());
     }
 
-    public void setHistories(LinkedList<Historie> mHistories) {
+    public void setHistories(LinkedList<History> mHistories) {
         this.mHistories = mHistories;
+        notifyDataSetChanged();
     }
 
     @Override
