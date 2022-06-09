@@ -26,6 +26,8 @@ public class PassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
 
+        PlayerList.testPlayers();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pass);
 
@@ -48,7 +50,7 @@ public class PassActivity extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                     response -> {
                         Log.d(LOG_TAG, "Response: " + response);
-                        PlayerList.players.add(new Player(name, cardId, this));
+                        PlayerList.addPlayer(new Player(name, cardId, this));
                     },
                     error -> {
                         Log.d(LOG_TAG, "Error: " + error);

@@ -14,7 +14,7 @@ import com.a2.essteling.ScoreBoard.ScoreboardActivity;
 import com.a2.essteling.Shop.ShopActivity;
 import com.a2.essteling.Shop.ShopitemList;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements HomeListener {
     private static final String LOG_TAG = HomeActivity.class.getSimpleName();
     private Button shopButton;
     private Button scoreButton;
@@ -32,9 +32,9 @@ public class HomeActivity extends AppCompatActivity {
         shopButton = findViewById(R.id.shopButton);
         scoreButton = findViewById(R.id.scoreButton);
 
+        PlayerList.addListener(this);
+
         if (PlayerList.players.size() == 0) {
-//            shopButton.setClickable(false);
-//            shopButton.setBackgroundTintList(this.getResources().getColorStateList(android.R.color.darker_gray));
             scoreButton.setClickable(false);
             scoreButton.setBackgroundTintList(this.getResources().getColorStateList(android.R.color.darker_gray));
         } else {
@@ -59,5 +59,11 @@ public class HomeActivity extends AppCompatActivity {
     public void onScoreButton(View view) {
         Intent intent = new Intent(this, ScoreboardActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onPlayerAdded() {
+        scoreButton.setClickable(true);
+        scoreButton.setBackgroundTintList(this.getResources().getColorStateList(R.color.Red));
     }
 }

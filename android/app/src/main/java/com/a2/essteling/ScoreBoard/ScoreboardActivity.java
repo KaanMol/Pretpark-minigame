@@ -1,6 +1,5 @@
 package com.a2.essteling.ScoreBoard;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -37,7 +36,7 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         setContentView(R.layout.activity_scoreboard);
 
         super.onCreate(savedInstanceState);
-        PlayerList.testlayers();
+        PlayerList.testPlayers();
 
 
         if (!PlayerList.players.isEmpty()) {

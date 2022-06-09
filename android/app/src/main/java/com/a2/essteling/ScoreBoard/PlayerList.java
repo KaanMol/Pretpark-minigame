@@ -1,13 +1,28 @@
 package com.a2.essteling.ScoreBoard;
 
+import com.a2.essteling.HomeListener;
 import com.a2.essteling.Pass.Player;
 import com.a2.essteling.R;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PlayerList {
     public static LinkedList<Player> players = new LinkedList<>();
+
+    public static ArrayList<HomeListener> listeners = new ArrayList<>();
+
+    public static void addPlayer(Player player){
+        players.add(player);
+        listeners.forEach(listener->{
+            listener.onPlayerAdded();
+        });
+    }
+
+    public static void addListener(HomeListener listener){
+        listeners.add(listener);
+    }
 
     public static int totalPoints() {
         if(players.isEmpty()){
@@ -33,13 +48,13 @@ public class PlayerList {
     }
 
     //create a test list for the scoreboard
-    public static void testlayers() {
+    public static void testPlayers() {
         if(players.size() < 4) {
-            players.add(new Player("Momin", testHistories()));
-            players.add(new Player("Coen", testHistories()));
-            players.add(new Player("Lucas", testHistories()));
-            players.add(new Player("Kaan", testHistories()));
-            players.add(new Player("Koen", testHistories()));
+            addPlayer(new Player("Momin", testHistories()));
+            addPlayer(new Player("Coen", testHistories()));
+            addPlayer(new Player("Lucas", testHistories()));
+            addPlayer(new Player("Kaan", testHistories()));
+            addPlayer(new Player("Koen", testHistories()));
         }
     }
 
