@@ -50,9 +50,7 @@ public class PlayerListAdapter extends RecyclerView.Adapter<PlayerListAdapter.Pl
             public void onClick(View view) {
                 listener.onPlayerClicked(playerList.get(position));
 
-                playerList.forEach(player -> {
-                    player.setColor(R.color.Red);
-                });
+               PlayerList.resetColor();
 
                 playerList.get(position).setColor(R.color.black);
 
