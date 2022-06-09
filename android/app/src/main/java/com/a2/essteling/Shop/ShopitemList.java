@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ShopitemList extends Application {
     private static final String LOG_TAG = ShopitemList.class.getSimpleName();
@@ -31,7 +32,7 @@ public class ShopitemList extends Application {
     }
 
     public static void updateList() {
-        request = new StringRequest(Request.Method.GET, "https://mobiele-beleving-dev.herokuapp.com/products", new Response.Listener<String>() {
+        request = new StringRequest(Request.Method.GET, "https://mobiele-beleving-dev.herokuapp.com/products?language=" + Locale.getDefault().getDisplayLanguage().toLowerCase(Locale.ROOT), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {

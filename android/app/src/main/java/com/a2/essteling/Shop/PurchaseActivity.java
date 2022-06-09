@@ -70,4 +70,11 @@ public class PurchaseActivity extends AppCompatActivity implements PointsListene
     public void updatePoints(int totalPoints) {
         this.totalPoints.setText("Total Points :" + PlayerList.totalPoints());
     }
+
+    public void onBackButton(View view){
+        Intent intent = new Intent(this, ShopActivity.class);
+        startActivity(intent);
+
+    }
+
 }

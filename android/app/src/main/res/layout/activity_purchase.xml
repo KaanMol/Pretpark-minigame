@@ -93,4 +93,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:onClick="onBackButton"
+        app:backgroundTint="@color/Red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="48dp"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        style="@style/backButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,9 @@
 package com.a2.essteling.ScoreBoard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -10,6 +12,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.a2.essteling.HomeActivity;
 import com.a2.essteling.Pass.Player;
 import com.a2.essteling.R;
 
@@ -82,6 +85,13 @@ public class ScoreboardActivity extends AppCompatActivity implements PlayerButto
         totalPointsView = findViewById(R.id.totalPoints);
         totalPointsView.setText(getString(R.string.totalPoints) + PlayerList.totalPoints());
     }
+
+    public void onBackButton(View view){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+
+    }
+
 
     private int i = 0;
 

@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
+import com.a2.essteling.HomeActivity;
 import com.a2.essteling.R;
 import com.a2.essteling.ScoreBoard.PlayerList;
 
@@ -87,4 +89,11 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener,
         Log.d(LOG_TAG, "list updated");
         mAdapter.setShopItems(shopItems);
     }
+
+    public void onBackButton(View view){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+
+    }
+
 }

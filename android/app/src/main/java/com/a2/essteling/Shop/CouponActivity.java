@@ -2,10 +2,13 @@ package com.a2.essteling.Shop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.a2.essteling.HomeActivity;
 import com.a2.essteling.R;
 import com.a2.essteling.ScoreBoard.PlayerList;
 import com.bumptech.glide.Glide;
@@ -44,4 +47,11 @@ public class CouponActivity extends AppCompatActivity {
         }
 
     }
+
+    public void onBackButton(View view){
+        Intent intent = new Intent(this, PurchaseActivity.class);
+        startActivity(intent);
+
+    }
+
 }

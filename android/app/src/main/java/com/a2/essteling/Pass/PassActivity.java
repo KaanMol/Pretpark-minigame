@@ -3,13 +3,16 @@ package com.a2.essteling.Pass;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.a2.essteling.HomeActivity;
 import com.a2.essteling.R;
 import com.a2.essteling.ScoreBoard.PlayerList;
 import com.android.volley.Request;
@@ -70,5 +73,11 @@ public class PassActivity extends AppCompatActivity {
 
             requestQueue.add(stringRequest);
         });
+    }
+
+    public void onBackButton(View view){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+
     }
 }

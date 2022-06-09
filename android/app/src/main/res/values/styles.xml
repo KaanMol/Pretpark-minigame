@@ -37,4 +37,12 @@
         <item name="android:singleLine">false</item>
         <item name="android:textColor">@color/Red</item>
     </style>
+
+    <style name="backButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:clickable">true</item>
+    </style>
 </resources>
