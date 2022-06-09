@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PointsHandler extends Handler{
+public class PointsHandler extends Handler {
     @Override
     protected JsonHttpResponse get() {
         String accountId = getParameter("accountId");
@@ -27,23 +27,18 @@ public class PointsHandler extends Handler{
     private JsonHttpResponse getByAccountId(String accountId) {
         Account account = getStore().accounts().find(accountId);
 
-        if(account == null) {
+        if (account == null) {
             return conflict("Account not registered");
         }
 
         List<Card> cards = getStore().cards().findByAccount(account);
         List<Win> wins = new ArrayList<>();
 
-        int totalPoints = 0;
-
         for (Card card : cards) {
-            for(Win win : getStore().wins().findByCard(card)) {
-                wins.add(win);
-                totalPoints += win.points();
-            }
+            wins.addAll(getStore().wins().findByCard(card));
         }
 
-        return ok(new PointsResult(wins, totalPoints));
+        return ok(wins);
     }
 
     private JsonHttpResponse getByNfcId(String nfcId) {
@@ -55,13 +50,7 @@ public class PointsHandler extends Handler{
 
         List<Win> wins = getStore().wins().findByCard(card);
 
-        int totalPoints = 0;
-
-        for (Win win : wins) {
-            totalPoints += win.points();
-        }
-
-        return ok(new PointsResult(wins, totalPoints));
+        return ok(wins);
     }
 
     @Override
@@ -100,8 +89,4 @@ public class PointsHandler extends Handler{
     protected JsonHttpResponse delete() throws IOException {
         return error("Not implemented");
     }
-}
-
-record PointsResult(List<Win> wins, int totalPoints) {
-
 }
