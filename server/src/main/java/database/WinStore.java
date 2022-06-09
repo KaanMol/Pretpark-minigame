@@ -5,6 +5,7 @@ import domain.Win;
 import logging.Logger;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class WinStore {
         this.wins = new ArrayList<>();
     }
 
-    public Win create(String gameId, Card card, LocalDateTime timestamp, int points) {
+    public Win create(String gameId, Card card, ZonedDateTime timestamp, int points) {
         Logger.debug("Creating win for nfcId " + card.nfcId() + " with gameId " + gameId);
 
         Win win = new Win(gameId, card.nfcId(), timestamp.toString(), points);
