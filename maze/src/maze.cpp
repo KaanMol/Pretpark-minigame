@@ -1,14 +1,30 @@
 #include "maze.h"
 
 Maze::Maze() {
-
+    
 }
 
 Maze::~Maze() {
 
 }
 
-bool Maze::can_move_to(Point position) {
+void Maze::init() {
+    FastLED.addLeds<WS2811, DATA_PIN, GRB>(this->colors, WIDTH * HEIGHT);
+	FastLED.setBrightness(40);
+    this->displayOff();
+
+    pinMode(32, INPUT);
+	pinMode(33, INPUT);
+	pinMode(34, INPUT);
+	pinMode(35, INPUT);
+}
+
+void Maze::start() {
+    this->setInitialPlayerPosition();
+    this->draw();
+}
+
+bool Maze::canMoveTo(Point position) {
     if (position.x < 0 || position.x > WIDTH || position.y < 0 || position.y > HEIGHT) {
         return false;
     }
@@ -16,12 +32,12 @@ bool Maze::can_move_to(Point position) {
     return maze[position.y][position.x] == ' ' || maze[position.y][position.x] == '?' || maze[position.y][position.x] == 'P';  
 }
 
-CellType Maze::get_cell(int x, int y) {
+CellType Maze::getCell(int x, int y) {
     if (x < 0 || x > WIDTH || y < 0 || y > HEIGHT) {
         return CellType::Nothing;
     }
 
-    if (x == player_pos.x && y == player_pos.y) {
+    if (x == this->playerPosition.x && y == this->playerPosition.y) {
         return CellType::Player;
     }
 
@@ -37,38 +53,54 @@ CellType Maze::get_cell(int x, int y) {
 }
 
 bool Maze::move(int dx, int dy) {
-    Point new_pos = {.x = player_pos.x + dx, .y = player_pos.y + dy};
-    bool can_move = can_move_to(new_pos);
+    Point newPosition = {.x = this->playerPosition.x + dx, .y = this->playerPosition.y + dy};
+    bool canMove = canMoveTo(newPosition);
 
-    if (get_cell(new_pos.x, new_pos.y) == CellType::Target) {
-        target_reached = true;
-        this->set_black();
+    if (this->getCell(newPosition.x, newPosition.y) == CellType::Target) {
+        this->targetReached = true;
+        this->displayOff();
     }
 
-    if (can_move) {
-        player_pos = new_pos;
+    if (canMove) {
+        this->playerPosition = newPosition;
     }
 
-    return can_move;
+    return canMove;
 }
 
-bool Maze::move_up() {
-    return move(0, -1);
+bool Maze::moveUp() {
+    bool isMoved = this->move(0, -1);
+    this->draw();
+    // TODO: Please fix this line properly, instead of using delays...
+    delay(BUTTON_DELAY);
+    return isMoved;
 }
 
-bool Maze::move_down() {
-    return move(0, 1);
+bool Maze::moveDown() {
+    bool isMoved = this->move(0, 1);
+    this->draw();
+    // TODO: Please fix this line properly, instead of using delays...
+    delay(BUTTON_DELAY);
+    return isMoved;
 }
 
-bool Maze::move_left() {
-    return move(-1, 0);
+bool Maze::moveLeft() {
+    bool isMoved = this->move(-1, 0);
+    this->draw();
+    // TODO: Please fix this line properly, instead of using delays...
+    delay(BUTTON_DELAY);
+    return isMoved;
 }
 
-bool Maze::move_right() {
-    return move(1, 0);
+bool Maze::moveRight() {
+    bool isMoved = this->move(1, 0);
+    this->draw();
+    // TODO: Please fix this line properly, instead of using delays...
+    delay(BUTTON_DELAY);
+    return isMoved;
 }
 
-CRGB Maze::get_color(CellType type) {
+CRGB Maze::getColor(CellType type) {
     switch (type) {
         case CellType::Player:
             return CRGB::Blue;
@@ -84,7 +116,7 @@ CRGB Maze::get_color(CellType type) {
     }
 }
 
-int Maze::snake_index(int x, int y) {
+int Maze::snakeIndex(int x, int y) {
     int offset = y * WIDTH;
 
     if (y % 2 == 0) {
@@ -97,19 +129,21 @@ int Maze::snake_index(int x, int y) {
 void Maze::draw() {
     for (int x = 0; x < WIDTH; x++) {
         for (int y = 0; y < HEIGHT; y++) {
-            CellType type = get_cell(x, y);
-            colors[snake_index(x, y)] = get_color(type);
+            CellType type = this->getCell(x, y);
+            colors[this->snakeIndex(x, y)] = this->getColor(type);
         }
     }
+
+    FastLED.show();
 }
 
-void Maze::set_initial_player_position() {
+void Maze::setInitialPlayerPosition() {
     for (int x = 0; x < WIDTH; x++) {
         for (int y = 0; y < HEIGHT; y++) {
             if (maze[y][x] == 'P') {
                 Serial.println(x);
                 Serial.println(y);
-                player_pos = {
+                this->playerPosition = {
                                 .x = x,
                                 .y = y
                             };
@@ -118,9 +152,13 @@ void Maze::set_initial_player_position() {
     }
 }
 
-void Maze::set_black() {
+void Maze::displayOff() {
     for (int i = 0; i < WIDTH * HEIGHT; i++) {
         colors[i] = CRGB::Black;
     }
     FastLED.show();
+}
+
+bool Maze::hasReachedTarget() {
+    return this->targetReached;
 }

@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <FastLED.h>
 #define DATA_PIN 2
-
+#define BUTTON_DELAY 500
 #define WIDTH 10
 #define HEIGHT 9
 #define BUTTON_FORWARD 4
@@ -24,29 +24,29 @@ class Maze {
     public:
         Maze();
         ~Maze();
-        bool can_move_to(Point position);
-        CellType get_cell(int x, int y);
-        bool move(int dx, int dy);
+        void init();
+        void start();
 
-        bool move_up();
-        bool move_down();
-        bool move_left();
-        bool move_right();
+        bool moveUp();
+        bool moveDown();
+        bool moveLeft();
+        bool moveRight();
 
-        CRGB get_color(CellType type);
-
-        int snake_index(int x, int y);
-
-        void draw();
-
-        void set_initial_player_position();
-
-        void set_black();
-
-        CRGB colors[WIDTH * HEIGHT];
-        bool target_reached = false;
+        bool hasReachedTarget();
         
     private:
+        void displayOff();
+        CellType getCell(int x, int y);
+
+        bool move(int dx, int dy);
+        bool canMoveTo(Point position);
+        int snakeIndex(int x, int y);
+        
+        CRGB getColor(CellType type);
+        void draw();
+        void setInitialPlayerPosition();
+        CRGB colors[WIDTH * HEIGHT];
+
         /*
         #: wall
         P: player
@@ -66,16 +66,6 @@ class Maze {
             {'#', '#', '#', ' ', '#', ' ', ' ', ' ', ' ', ' '},
             {'#', ' ', ' ', ' ', '#', '#', '#', ' ', '#', '?'}};
 
-        // const char win[9][10] = {
-        //     {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        //     {'#', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' '},
-        //     {'#', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' '},
-        //     {'#', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' '},
-        //     {'#', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' '},
-        //     {'#', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' '},
-        //     {'#', ' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' '},
-        //     {' ', '#', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' '},
-        //     {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}};
         // const char maze[9][10] = {
     //     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
     //     {'#', 'P', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
@@ -87,6 +77,6 @@ class Maze {
     //     {'#', '?', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
     //     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#'}};
         
-        Point player_pos;
-        
+        Point playerPosition;
+        bool targetReached = false;
 };
