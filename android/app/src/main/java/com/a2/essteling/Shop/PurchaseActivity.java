@@ -41,11 +41,11 @@ public class PurchaseActivity extends AppCompatActivity implements PointsListene
         itemImage = findViewById(R.id.itemImageBuy);
 
         itemName.setText(item.getName());
-        itemPrice.setText(item.getPrice()+ " points");
+        itemPrice.setText(item.getPrice()+ getString(R.string._points));
         itemDescription.setText(item.getDescription());
 
         totalPoints = findViewById(R.id.totalPointsPurchase);
-        totalPoints.setText("Total Points :" + PlayerList.totalPoints());
+        totalPoints.setText(getString(R.string.totalPoints) + " " +PlayerList.totalPoints());
 
         if (item.getImageLocal() == -1) {
             Glide.with(this).load(item.getImage()).into(itemImage);
@@ -62,13 +62,13 @@ public class PurchaseActivity extends AppCompatActivity implements PointsListene
             intent.putExtra("item", item);
             startActivity(intent);
         } else{
-            Toast.makeText(this, "Not enough points!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.notEnoughPoints, Toast.LENGTH_LONG).show();
         }
     }
 
     @Override
     public void updatePoints(int totalPoints) {
-        this.totalPoints.setText("Total Points :" + PlayerList.totalPoints());
+        this.totalPoints.setText(getString(R.string.totalPoints) + " "+ PlayerList.totalPoints());
     }
 
     public void onBackButton(View view){

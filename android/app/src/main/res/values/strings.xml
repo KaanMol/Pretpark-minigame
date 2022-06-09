@@ -3,9 +3,9 @@
     <string name="itemName">Name</string>
     <string name="gameName">Maze</string>
     <string name="player">player</string>
-    <string name="points">point(s)</string>
+    <string name="points">points</string>
     <string name="location">Sprookjes bos</string>
-    <string name="totalPoints">Total Points:</string>
+    <string name="totalPoints">Total points:</string>
     <string name="buy">Buy</string>
     <string name="addCard">Add card</string>
     <string name="name">Name:</string>
@@ -17,6 +17,8 @@
     <string name="shop">Shop</string>
     <string name="app_name">Esstelling</string>
     <string name="NoCardsRegistered">No cards registered</string>
-    <string name="NoHistoryFor">\"No history for: \"</string>
+    <string name="NoHistoryFor">No history for: </string>
+    <string name="_points"> points</string>
+    <string name="notEnoughPoints">Not enough points!</string>
 
 </resources>
