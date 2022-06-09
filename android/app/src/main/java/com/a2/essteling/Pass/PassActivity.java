@@ -29,7 +29,8 @@ public class PassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
 
-        PlayerList.testPlayers();
+        //add a list of testplayers
+//        PlayerList.testPlayers();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pass);
