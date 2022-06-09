@@ -37,6 +37,9 @@ public class HomeActivity extends AppCompatActivity {
 //            shopButton.setBackgroundTintList(this.getResources().getColorStateList(android.R.color.darker_gray));
             scoreButton.setClickable(false);
             scoreButton.setBackgroundTintList(this.getResources().getColorStateList(android.R.color.darker_gray));
+        } else {
+            scoreButton.setClickable(true);
+            scoreButton.setBackgroundTintList(this.getResources().getColorStateList(R.color.Red));
         }
     }
 
