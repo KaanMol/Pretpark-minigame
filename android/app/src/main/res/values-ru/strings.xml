@@ -21,5 +21,6 @@
     <string name="NoHistoryFor">EsNo history for: </string>
     <string name="_points"> Espoints</string>
     <string name="notEnoughPoints">EsNot enough points!</string>
+    <string name="cardRegistered">EsCard registered</string>
 </resources>
 
