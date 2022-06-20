@@ -1,4 +1,4 @@
-package com.a2.essteling.ScoreBoard;
+package com.a2.essteling.PlayerData;
 
 import android.app.Application;
 import android.content.Context;
@@ -15,7 +15,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.LinkedList;
-import java.util.List;
 
 public class HistoryList extends Application {
     private final String LOG_TAG = HistoryList.class.getSimpleName();
@@ -33,8 +32,11 @@ public class HistoryList extends Application {
         return histories;
     }
 
+    //Start a new request to get the latest history on all players
     private void updateList(String nfcId) {
+        Log.i(LOG_TAG, "Update history list");
         request = new StringRequest(Request.Method.GET, "https://mobiele-beleving-dev.herokuapp.com/points?nfcId="+nfcId, new Response.Listener<String>() {
+
             @Override
             public void onResponse(String response) {
                 try {
@@ -44,7 +46,7 @@ public class HistoryList extends Application {
                     histories = new LinkedList<>();
 
                     for (int i = 0; i < items.length; i++) {
-                        histories.add(new History(items[i].getGameId(), "noloco", items[i].getTimestamp().substring(11, 16), items[i].getPoints(), items[i].getNfcId()));
+                        histories.add(new History(items[i].getGameId(), "noLocation", items[i].getTimestamp().substring(11, 16), items[i].getPoints(), items[i].getNfcId()));
                     }
 
                     if(items.length > 0) {
@@ -58,6 +60,7 @@ public class HistoryList extends Application {
                 }
             }
         }, new Response.ErrorListener() {
+            //report loading error
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d(LOG_TAG, "error " + LocalTime.now());

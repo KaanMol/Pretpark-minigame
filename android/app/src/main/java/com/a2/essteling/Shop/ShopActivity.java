@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.a2.essteling.HomeActivity;
 import com.a2.essteling.R;
-import com.a2.essteling.ScoreBoard.PlayerList;
+import com.a2.essteling.PlayerData.PlayerList;
 
 public class ShopActivity extends AppCompatActivity implements ShopItemListener, PointsListener, ShopItemListListener {
     private static final String LOG_TAG = ShopActivity.class.getSimpleName();
@@ -25,38 +25,28 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener,
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(LOG_TAG, "Opened shop activity");
         getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.Red));
 
+        //listener to change list
         ShopitemList.addListener(this);
 
         ShopitemList.startQueue(this);
 
+        //listener to update points when changed
+        PlayerList.addPointsListener(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
+        //check if the items have loaded
         if(ShopitemList.getShopItems() != null) {
-
             //get the recyclerview
             mRecyclerView = findViewById(R.id.ShopRecyclerView);
-
             //create the adapter
             mAdapter = new ShopListAdapter(this, items, this);
-
             //give the adapter to the recyclerview
             mRecyclerView.setAdapter(mAdapter);
-
-            //make the recyclerview a grid layout
-            mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        } else{
-            //get the recyclerview
-            mRecyclerView = findViewById(R.id.ShopRecyclerView);
-
-            //create the adapter
-            mAdapter = new ShopListAdapter(this, new ShopItem[1], this);
-
-            //give the adapter to the recyclerview
-            mRecyclerView.setAdapter(mAdapter);
-
             //make the recyclerview a grid layout
             mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         }
@@ -69,6 +59,7 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener,
 
     }
 
+    //update points when changed
     @Override
     public void updatePoints(int totalPoints) {
         this.totalPoints.setText((getString(R.string.totalPoints)) +" "+ PlayerList.totalPoints());
@@ -84,16 +75,25 @@ public class ShopActivity extends AppCompatActivity implements ShopItemListener,
         startActivity(intent);
     }
 
+    //show the newly loaded items
     @Override
     public void updateShopItemList(ShopItem[] shopItems) {
         Log.d(LOG_TAG, "list updated");
-        mAdapter.setShopItems(shopItems);
+
+        this.items = shopItems;
+        //get the recyclerview
+        mRecyclerView = findViewById(R.id.ShopRecyclerView);
+        //create the adapter
+        mAdapter = new ShopListAdapter(this, shopItems, this);
+        //give the adapter to the recyclerview
+        mRecyclerView.setAdapter(mAdapter);
+        //make the recyclerview a grid layout
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     }
 
     public void onBackButton(View view){
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-
+        Log.i(LOG_TAG, "Back button pressed");
+        this.finish();
     }
 
 }

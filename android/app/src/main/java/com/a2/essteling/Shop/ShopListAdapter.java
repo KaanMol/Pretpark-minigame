@@ -40,22 +40,27 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
     @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
+        //only work if there are shopitems
         if(mShopItems[0] != null) {
+            //set the text
             holder.ShopItemName.setText(mShopItems[position].getName());
             holder.ShopItemPrice.setText(mShopItems[position].getPrice() + " points");
 
+            //set the image via local or url
             if (mShopItems[position].getImageLocal() == -1) {
                 Glide.with(context).load(mShopItems[position].getImage()).into(holder.ShopItemImage);
             } else {
                 holder.ShopItemImage.setImageResource(mShopItems[position].getImageLocal());
             }
         }
+
+        //react to a clicked shopitem
         holder.ShopItemImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(LOG_TAG, view.toString() + " Button clicked!");
-                listener.onItemClicked(mShopItems[position]);
 
+                listener.onItemClicked(mShopItems[position]);
             }
         });
     }
@@ -67,6 +72,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopVi
         return mShopItems.length;
     }
 
+    //change the list
     public void setShopItems(ShopItem[] mShopItems) {
         this.mShopItems = mShopItems;
         notifyDataSetChanged();

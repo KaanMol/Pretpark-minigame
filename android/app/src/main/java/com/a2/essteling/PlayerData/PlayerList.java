@@ -1,8 +1,8 @@
-package com.a2.essteling.ScoreBoard;
+package com.a2.essteling.PlayerData;
+
+import android.util.Log;
 
 import com.a2.essteling.HomeListener;
-import com.a2.essteling.Pass.Player;
-import com.a2.essteling.R;
 import com.a2.essteling.Shop.PointsListener;
 
 import java.util.ArrayList;
@@ -15,16 +15,22 @@ public class PlayerList {
     private static ArrayList<HomeListener> homeListeners = new ArrayList<>();
     private static ArrayList<PointsListener> pointsListeners = new ArrayList<>();
 
+    private static final String LOG_TAG = PlayerList.class.getSimpleName();
+
+    //total points spent
     private static int spentPoints = 0;
 
     public static void addPlayer(Player player) {
+        Log.i(LOG_TAG, "adding new player " + player.getName());
         players.add(player);
         homeListeners.forEach(listener -> {
             listener.onPlayerAdded();
         });
     }
 
+    //spend a number of points
     public static void spendPoints(int totalSpend) {
+        Log.i(LOG_TAG, "Spend " + totalSpend + " points");
         spentPoints += totalSpend;
 
         pointsListeners.forEach(listener -> {
@@ -46,6 +52,7 @@ public class PlayerList {
     }
 
 
+    //calculate the total point earned
     public static int totalPoints() {
         if (players.isEmpty()) {
             return 0;
@@ -63,6 +70,7 @@ public class PlayerList {
 
     }
 
+    //reset the button color for each player
     public static void resetColor() {
         players.forEach(player -> {
             player.setColor(android.R.color.darker_gray);
@@ -71,6 +79,8 @@ public class PlayerList {
 
     //create a test list for the scoreboard
     public static void testPlayers() {
+        Log.d(LOG_TAG, "making testplayers");
+
         if (players.size() < 4) {
             addPlayer(new Player("Momin", testHistories()));
             addPlayer(new Player("Coen", testHistories()));
@@ -83,23 +93,23 @@ public class PlayerList {
     public static LinkedList<History> testHistories() {
         int i = (int) (Math.random() * 100);
         LinkedList<History> histories = new LinkedList<>();
-        histories.add(new History("game " + i % 4, "here", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "here      ", "14:20", i % 7 + 1, "0000"));
         i++;
-        histories.add(new History("game " + i % 4, "there", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "there     ", "14:20", i % 7 + 1, "0000"));
         i++;
-        histories.add(new History("game " + i % 4, "somewhere", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "somewhere ", "14:20", i % 7 + 1, "0000"));
         i++;
-        histories.add(new History("game " + i % 4, "otherwhere", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "otherwhere", "14:20", i % 7 + 1, "0000"));
         i++;
-        histories.add(new History("game " + i % 4, "softwhere", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "softwhere ", "14:20", i % 7 + 1, "0000"));
         i++;
-        histories.add(new History("game " + i % 4, "hardwhere", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "hardwhere ", "14:20", i % 7 + 1, "0000"));
         i++;
-        histories.add(new History("game " + i % 4, "entrance", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "entrance  ", "14:20", i % 7 + 1, "0000"));
         i++;
-        histories.add(new History("game " + i % 4, "ip addres", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "ip addres ", "14:20", i % 7 + 1, "0000"));
         i++;
-        histories.add(new History("game " + i % 4, "test", "14:20", i % 7 + 1, "0000"));
+        histories.add(new History("1", "test      ", "14:20", i % 7 + 1, "0000"));
         i++;
         return histories;
     }
