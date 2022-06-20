@@ -6,77 +6,96 @@
     android:layout_height="match_parent"
     tools:context=".Shop.PurchaseActivity">
 
-    <TextView
-        android:id="@+id/totalPointsPurchase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/totalPoints"
-        android:textColor="@color/Red"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/itemImageBuy"
-        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/ShopTitle"
-        style="@style/layout_title"
-        android:fontFamily="@font/interbold"
-        android:singleLine="false"
-        android:text="@string/shop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/logoLine"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-34dp"
-        app:layout_constraintEnd_toEndOf="@+id/ShopTitle"
-        app:layout_constraintStart_toStartOf="@+id/ShopTitle"
-        app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
-        app:srcCompat="@drawable/logo_line" />
-
-    <ImageView
-        android:id="@+id/itemImageBuy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:maxWidth="300dp"
-        android:maxHeight="300dp"
-        android:minWidth="300dp"
-        android:minHeight="300dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/buyButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoLine"
-        app:srcCompat="@drawable/ashizons_paprika_logo" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/itemNameBuy"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/itemImageBuy"
-        app:layout_constraintStart_toStartOf="@+id/itemImageBuy"
-        app:layout_constraintTop_toBottomOf="@+id/itemImageBuy" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/itemPriceBuy"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/itemNameBuy"
-        app:layout_constraintStart_toStartOf="@+id/itemNameBuy"
-        app:layout_constraintTop_toBottomOf="@+id/itemNameBuy" />
+            <TextView
+                android:id="@+id/totalPointsPurchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/totalPoints"
+                android:textColor="@color/Red"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/itemImageBuy"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/itemDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/itemPriceBuy"
-        app:layout_constraintStart_toStartOf="@+id/itemPriceBuy"
-        app:layout_constraintTop_toBottomOf="@+id/itemPriceBuy" />
+            <TextView
+                android:id="@+id/ShopTitle"
+                style="@style/layout_title"
+                android:fontFamily="@font/interbold"
+                android:singleLine="false"
+                android:text="@string/shop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/logoLine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-34dp"
+                app:layout_constraintEnd_toEndOf="@+id/ShopTitle"
+                app:layout_constraintStart_toStartOf="@+id/ShopTitle"
+                app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
+                app:srcCompat="@drawable/logo_line" />
+
+            <ImageView
+                android:id="@+id/itemImageBuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="300dp"
+                android:maxHeight="300dp"
+                android:minWidth="300dp"
+                android:minHeight="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoLine"
+                app:srcCompat="@drawable/ashizons_paprika_logo" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/itemImageBuy"
+                app:layout_constraintStart_toStartOf="@+id/itemImageBuy"
+                app:layout_constraintTop_toBottomOf="@+id/itemImageBuy">
+
+                <TextView
+                    android:id="@+id/itemNameBuy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/itemPriceBuy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/itemDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/buyButton"
@@ -87,20 +106,20 @@
         android:layout_marginBottom="16dp"
         android:backgroundTint="#70C33C"
         android:fontFamily="@font/intermedium"
+        android:onClick="onCouponButton"
         android:text="@string/buy"
         android:textSize="24sp"
-        android:onClick="onCouponButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backButton"
+        style="@style/backButton"
         android:onClick="onBackButton"
         app:backgroundTint="@color/Red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxImageSize="48dp"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        style="@style/backButton" />
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 </androidx.constraintlayout.widget.ConstraintLayout>

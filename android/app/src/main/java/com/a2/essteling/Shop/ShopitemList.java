@@ -31,6 +31,7 @@ public class ShopitemList extends Application {
         return shopItems;
     }
 
+    //create a request to update shopitemlist
     public static void updateList() {
         request = new StringRequest(Request.Method.GET, "https://mobiele-beleving-dev.herokuapp.com/products?language=" + Locale.getDefault().getDisplayLanguage().toLowerCase(Locale.ROOT), new Response.Listener<String>() {
             @Override
@@ -61,12 +62,14 @@ public class ShopitemList extends Application {
         Log.d(LOG_TAG, "request made " + LocalTime.now());
     }
 
+    //start the request
     public static  void startQueue(Context context){
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(request);
         Log.d(LOG_TAG, "started queue " + LocalTime.now());
     }
 
+    //add a listener
     public static void addListener(ShopItemListListener listener){
         listeners.add(listener);
     }

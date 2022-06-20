@@ -16,6 +16,7 @@ public class ShopItem implements Serializable {
 
     private String image;
 
+    //constructor for local test items
     public ShopItem(String productId, String name, int price, String description, int imageLocal) {
         this.productId = productId;
         this.price = price;
@@ -25,6 +26,7 @@ public class ShopItem implements Serializable {
 
     }
 
+    //constructor for local test items with no image
     public ShopItem(String productId, String name, int price, String description) {
         this.productId = productId;
         this.name = name;
@@ -34,6 +36,7 @@ public class ShopItem implements Serializable {
         this.imageLocal = R.drawable.ashizons_paprika_logo;
     }
 
+    //constructor for items from server
     public ShopItem(String productId, String name,int price, String description, String image) {
         this.productId = productId;
         this.name = name;
@@ -89,6 +92,7 @@ public class ShopItem implements Serializable {
         return image;
     }
 
+    //-1 to show it has a server image
     public void setImage(String image) {
         this.imageLocal = -1;
         this.image = "https://mobiele-beleving-dev.herokuapp.com/cdn?file="+image;

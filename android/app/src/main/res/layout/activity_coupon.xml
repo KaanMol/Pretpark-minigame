@@ -6,81 +6,100 @@
     android:layout_height="match_parent"
     tools:context=".Shop.CouponActivity">
 
-    <TextView
-        android:id="@+id/itemDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/itemNameBuy"
-        app:layout_constraintStart_toStartOf="@+id/itemNameBuy"
-        app:layout_constraintTop_toBottomOf="@+id/itemNameBuy" />
-
-    <TextView
-        android:id="@+id/itemNameBuy"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/itemImageBuy"
-        app:layout_constraintStart_toStartOf="@+id/itemImageBuy"
-        app:layout_constraintTop_toBottomOf="@+id/itemImageBuy" />
-
-    <TextView
-        android:id="@+id/ShopTitle"
-        style="@style/layout_title"
-        android:fontFamily="@font/interbold"
-        android:singleLine="false"
-        android:text="@string/shop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="279dp"
-        android:layout_height="170dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/qr" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <ImageView
-        android:id="@+id/logoLine"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-34dp"
-        app:layout_constraintEnd_toEndOf="@+id/ShopTitle"
-        app:layout_constraintStart_toStartOf="@+id/ShopTitle"
-        app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
-        app:srcCompat="@drawable/logo_line" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/itemImageBuy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:maxWidth="300dp"
-        android:maxHeight="300dp"
-        android:minWidth="300dp"
-        android:minHeight="300dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoLine"
-        app:srcCompat="@drawable/ashizons_paprika_logo" />
+            <TextView
+                android:id="@+id/itemDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="@+id/itemNameBuy"
+                app:layout_constraintStart_toStartOf="@+id/itemNameBuy"
+                app:layout_constraintTop_toBottomOf="@+id/itemNameBuy" />
 
-    <TextView
-        android:id="@+id/totalPointsCoupon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/totalPoints"
-        android:textColor="@color/Red"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/itemImageBuy"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/itemNameBuy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="@+id/itemImageBuy"
+                app:layout_constraintStart_toStartOf="@+id/itemImageBuy"
+                app:layout_constraintTop_toBottomOf="@+id/itemImageBuy" />
+
+            <TextView
+                android:id="@+id/ShopTitle"
+                style="@style/layout_title"
+                android:fontFamily="@font/interbold"
+                android:singleLine="false"
+                android:text="@string/shop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="279dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="37dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemDescription"
+                app:srcCompat="@drawable/qr" />
+
+            <ImageView
+                android:id="@+id/logoLine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-34dp"
+                app:layout_constraintEnd_toEndOf="@+id/ShopTitle"
+                app:layout_constraintStart_toStartOf="@+id/ShopTitle"
+                app:layout_constraintTop_toBottomOf="@+id/ShopTitle"
+                app:srcCompat="@drawable/logo_line" />
+
+            <ImageView
+                android:id="@+id/itemImageBuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxWidth="300dp"
+                android:maxHeight="300dp"
+                android:minWidth="300dp"
+                android:minHeight="300dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logoLine"
+                app:srcCompat="@drawable/ashizons_paprika_logo" />
+
+            <TextView
+                android:id="@+id/totalPointsCoupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/totalPoints"
+                android:textColor="@color/Red"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/itemImageBuy"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

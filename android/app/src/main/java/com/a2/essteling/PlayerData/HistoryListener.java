@@ -1,4 +1,6 @@
-package com.a2.essteling.ScoreBoard;
+package com.a2.essteling.PlayerData;
+
+import com.a2.essteling.PlayerData.History;
 
 import java.util.LinkedList;
 
