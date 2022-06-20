@@ -1,11 +1,11 @@
-package com.a2.essteling.Pass;
+package com.a2.essteling.PlayerData;
 
 import android.content.Context;
 
 import com.a2.essteling.R;
-import com.a2.essteling.ScoreBoard.History;
-import com.a2.essteling.ScoreBoard.HistoryList;
-import com.a2.essteling.ScoreBoard.HistoryListener;
+import com.a2.essteling.PlayerData.History;
+import com.a2.essteling.PlayerData.HistoryList;
+import com.a2.essteling.PlayerData.HistoryListener;
 
 import java.util.LinkedList;
 

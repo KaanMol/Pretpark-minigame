@@ -5,7 +5,7 @@
       <map>
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/activity_coupon.xml" value="0.22" />
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/activity_home.xml" value="0.22" />
-        <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/activity_pass.xml" value="0.9795918367346939" />
+        <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/activity_pass.xml" value="0.14666666666666667" />
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/activity_purchase.xml" value="0.1" />
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/activity_scoreboard.xml" value="0.1" />
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/activity_shop.xml" value="0.3360995850622407" />
@@ -13,6 +13,11 @@
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/layout_shopitem.xml" value="0.1" />
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/layout/layout_tabmenu.xml" value="0.16666666666666666" />
         <entry key="..\:/Data/proftaak android/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.115" />
+        <entry key="..\:/Users/coend/school/super-meme/android/app/src/main/res/layout/activity_coupon.xml" value="0.3569230769230769" />
+        <entry key="..\:/Users/coend/school/super-meme/android/app/src/main/res/layout/activity_purchase.xml" value="0.19722222222222222" />
+        <entry key="..\:/Users/coend/school/super-meme/android/app/src/main/res/layout/activity_shop.xml" value="0.1" />
+        <entry key="..\:/Users/coend/school/super-meme/android/app/src/main/res/layout/layout_scoreboard.xml" value="0.33" />
+        <entry key="..\:/Users/coend/school/super-meme/android/app/src/main/res/layout/layout_shopitem.xml" value="0.19722222222222222" />
       </map>
     </option>
   </component>

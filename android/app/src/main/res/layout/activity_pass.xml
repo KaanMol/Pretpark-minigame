@@ -12,14 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/Red"
         android:fontFamily="@font/intermedium"
         android:text="@string/addCard"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCard" />
 
@@ -74,10 +74,10 @@
         android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textCard"
         app:layout_constraintTop_toBottomOf="@+id/logoLine"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.082" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textCard"
