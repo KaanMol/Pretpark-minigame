@@ -10,7 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.a2.essteling.Pass.Player;
+import com.a2.essteling.PlayerData.Player;
+import com.a2.essteling.PlayerData.History;
 import com.a2.essteling.R;
 
 import java.util.LinkedList;
@@ -25,6 +26,7 @@ public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.Sc
     public ScoreBoardAdaptor(Context context, Player player) {
         this.mInFlater = LayoutInflater.from(context);
         this.mHistories = player.getGameHistorie();
+        this.context = context;
     }
 
     @NonNull
@@ -36,9 +38,9 @@ public class ScoreBoardAdaptor extends RecyclerView.Adapter<ScoreBoardAdaptor.Sc
 
     @Override
     public void onBindViewHolder(@NonNull ScoreBoardViewHolder holder, int position) {
-        holder.GameTime.setText(mHistories.get(position).getTimestamp()+"");
+        holder.GameTime.setText(mHistories.get(position).getTimestamp()+"\t");
         holder.GameLocation.setText(mHistories.get(position).getGameLocation());
-        holder.GamePoints.setText(mHistories.get(position).getPoints()+" points");
+        holder.GamePoints.setText(mHistories.get(position).getPoints()+" "+context.getString(R.string.points));
         if(mHistories.get(position).getGameId().equals("1")) {
             holder.GameName.setImageResource(R.drawable.mazelogo);
         }
