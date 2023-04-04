@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.a2.essteling.Pass.PassActivity;
-import com.a2.essteling.ScoreBoard.PlayerList;
+import com.a2.essteling.PlayerData.PlayerList;
 import com.a2.essteling.ScoreBoard.ScoreboardActivity;
 import com.a2.essteling.Shop.ShopActivity;
 import com.a2.essteling.Shop.ShopitemList;
@@ -35,13 +35,15 @@ public class HomeActivity extends AppCompatActivity implements HomeListener {
 
         PlayerList.addShowListener(this);
 
-        if (PlayerList.getPlayers().size() == 0) {
-            scoreButton.setClickable(false);
-            scoreButton.setBackgroundTintList(this.getResources().getColorStateList(android.R.color.darker_gray));
-        } else {
-            scoreButton.setClickable(true);
-            scoreButton.setBackgroundTintList(this.getResources().getColorStateList(R.color.Red));
-        }
+
+        //old code to only allow user to enter the scanner first until a card is registered
+//        if (PlayerList.getPlayers().size() == 0) {
+//            scoreButton.setClickable(false);
+//            scoreButton.setBackgroundTintList(this.getResources().getColorStateList(android.R.color.darker_gray));
+//        } else {
+//            scoreButton.setClickable(true);
+//            scoreButton.setBackgroundTintList(this.getResources().getColorStateList(R.color.Red));
+//        }
     }
 
     //go to the shop

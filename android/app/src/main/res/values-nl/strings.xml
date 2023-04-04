@@ -21,6 +21,7 @@
     <string name="NoHistoryFor">Geen geschiedenis voor: </string>
     <string name="_points"> punten</string>
     <string name="notEnoughPoints">Niet genoeg punten!</string>
+    <string name="cardRegistered">Kaart geregistreerd</string>
 
 
 </resources>

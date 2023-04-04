@@ -20,5 +20,6 @@
     <string name="NoHistoryFor">No history for: </string>
     <string name="_points"> points</string>
     <string name="notEnoughPoints">Not enough points!</string>
+    <string name="cardRegistered">Card registered</string>
 
 </resources>

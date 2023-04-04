@@ -1,4 +1,4 @@
-package com.a2.essteling.ScoreBoard;
+package com.a2.essteling.PlayerData;
 
 public class History {
     private String gameId;
